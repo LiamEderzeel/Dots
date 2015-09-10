@@ -1,0 +1,7 @@
+[user]
+	name = LiamEderzeel
+	email = liamederzeel@gmail.com
+[push]
+	default = simple
+[core]
+	excludesfile = /Users/liamederzeel/.gitignore_global
