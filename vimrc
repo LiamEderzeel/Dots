@@ -8,14 +8,20 @@ set backspace=2                         " Backspace beyond insert point
 set tabstop=4                           " Size of hard tbstop
 set shiftwidth=4                        " Size of indent
 set expandtab                           " Use space instead of tab characters
+match ErrorMsg '\s\+$'
 let g:indentLine_enabled = 1            " Enable indentLine plugin
-let g:indentLine_char = '┆'            " Line indent type ¦ ┆ ︙│ 
+let g:indentLine_char = '┆'             " Line indent type ¦ ┆ ︙│
 let g:indentLine_color_term = 239       " Set lineindents to comment color
+set clipboard=unnamed                " Set clipboard buffer to unnamed
 colorscheme	monokai                     " Set theme to monokai
 let g:monokai_italic = 1                " Enable italic
 let g:monokai_thick_border = 1          " Set window border
-let g:airline_powerline_fonts = 1       "airline uses powerline font
+let g:airline_powerline_fonts = 1       " airline uses powerline font
 let g:airline_theme = 'base16'
+let g:airline#extensions#tabline#enabled = 1
+autocmd BufWritePre * :%s/\s\+$//e      " Removes traling spaces
+let g:move_key_modifier = 'C'
+let g:sonicpi_enable = 1
 
 set nocompatible                        " be iMproved, required
 filetype off                            " required
@@ -31,11 +37,16 @@ Plugin 'gmarik/Vundle.vim'              " let Vundle manage Vundle, required
 Plugin 'crusoexia/vim-monokai'
 Plugin 'pangloss/vim-javascript'
 Plugin 'crusoexia/vim-javascript-lib'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mattn/emmet-vim'
 Plugin 'OrangeT/vim-csharp'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
+Plugin 'matze/vim-move'
+Plugin 'dermusikman/sonicpi.vim'
+Plugin 'JulesWang/css.vim'
+Plugin 'cakebaker/scss-syntax.vim'
 
 "Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 call vundle#end()            " required
