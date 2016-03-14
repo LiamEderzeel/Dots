@@ -1,0 +1,1 @@
+/Users/liamederzeel/.config/nvim/init.vim
