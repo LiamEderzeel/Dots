@@ -1,6 +1,6 @@
-# ~/.tmuxinator/Deadlines.yml
+# ~/.tmuxinator/Tama.yml
 
-name: Deadlines
+name: Lucy
 root: ~/
 
 # Optional tmux socket
@@ -25,18 +25,9 @@ root: ~/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t Deadlines
+# post: tmux -CC attach -t Tama
 
 windows:
-    - Front-end:
-        - cd /www/sites/deadlines/wwwroot
-        - nvim
-    - Back-end:
-        - cd /www/sites/deadlinesapi
-        - nvim
-    - Server:
-        - ssh root@188.226.192.169
-        - tmux a -t Deadlines
-    - SCSS:
-        - cd /www/sites/deadlines/wwwroot/assets/css
-        - sass --watch style.scss:style.css
+  - editor:
+      - cd /www/sites/Lucy/wwwroot
+      - nvim

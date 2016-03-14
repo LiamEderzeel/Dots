@@ -29,5 +29,5 @@ root: ~/
 
 windows:
     - Front-end:
-        - cd /www/sites/valetijn/wwwroot
+        - cd /www/sites/valentijn/wwwroot
         - vim
