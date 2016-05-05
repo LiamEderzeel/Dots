@@ -1,7 +1,7 @@
-# ~/.tmuxinator/Shaders.yml
+# ~/.tmuxinator/Databases.yml
 
-name: Shaders
-root: /Users/liamederzeel/Google Drive/HKU 1516/Unity/Shaders2
+name: Databases
+root: /www/sites/databases/wwwroot
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,9 +25,8 @@ root: /Users/liamederzeel/Google Drive/HKU 1516/Unity/Shaders2
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t Shaders
+# post: tmux -CC attach -t Databases
 
 windows:
   - editor:
-      # - cd ~/Google\ Drive/HKU\ 1516/Unity/shaders
-      - nvim
+      - v

@@ -1,0 +1,8 @@
+# ~/.tmuxinator/Screeps.yml
+
+name: Screeps
+root: ~/Google Drive/Projects/screeps
+
+windows:
+  - editor:
+      - v

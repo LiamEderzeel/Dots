@@ -1,7 +1,7 @@
-# ~/.tmuxinator/Shaders.yml
+# ~/.tmuxinator/Bombsquad.yml
 
-name: Shaders
-root: /Users/liamederzeel/Google Drive/HKU 1516/Unity/Shaders2
+name: Bombsquad
+root: ~/Google Drive/HKU 1516/Projecten/Here I am/Bombsquad
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,9 +25,9 @@ root: /Users/liamederzeel/Google Drive/HKU 1516/Unity/Shaders2
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t Shaders
+# post: tmux -CC attach -t Bombsquad
 
 windows:
   - editor:
-      # - cd ~/Google\ Drive/HKU\ 1516/Unity/shaders
-      - nvim
+      - v
+  - console:

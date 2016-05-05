@@ -85,4 +85,5 @@ source $ZSH/oh-my-zsh.sh
 
 # Tmuxinator
 source ~/.bin/tmuxinator.zsh
-export EDITOR='vim'
+export EDITOR='nvim'
+alias v='nvim'
