@@ -29,6 +29,7 @@ let g:move_key_modifier = 'C'
 let g:sonicpi_enable = 1
 set undofile
 set undodir="$HOME/.vim_unso_files"
+let g:syntastic_loc_list_height = 5
 
 
 set nocompatible                        " be iMproved, required
@@ -63,13 +64,13 @@ Plug 'dermusikman/sonicpi.vim'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/MatchTagAlways'
 Plug 'edkolev/tmuxline.vim'
-
-Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
 Plug 'crusoexia/vim-javascript-lib'
 call plug#end()
 
 " CtrlP plugin
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_user_command = 'find %s -type f | grep -v "`cat .ctrlpignore`"'
 
 " Vim-javascript
 set rtp+=/Users/raguay/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim

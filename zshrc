@@ -1,11 +1,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/liamederzeel/.oh-my-zsh
 
+DEFAULT_USER='liamederzeel'
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="liamederzeel"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -87,3 +89,4 @@ source $ZSH/oh-my-zsh.sh
 source ~/.bin/tmuxinator.zsh
 export EDITOR='nvim'
 alias v='nvim'
+plugins=(git)

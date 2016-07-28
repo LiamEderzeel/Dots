@@ -1,7 +1,7 @@
-# ~/.tmuxinator/Deadlines.yml
+# ~/.tmuxinator/Portfolio.yml
 
-name: Deadlines
-root: /www/sites/deadlines/wwwroot
+name: Portfolio
+root: /www/sites/portfolio/wwwroot
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,18 +25,10 @@ root: /www/sites/deadlines/wwwroot
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t Deadlines
+# post: tmux -CC attach -t Portfolio
 
 windows:
-    - Front-end:
-        - cd /www/sites/deadlines/wwwroot
-        - v
-    - Back-end:
-        - cd /www/sites/deadlinesapi
-        - v
-    - Server:
-        - ssh root@188.226.192.169
-        - tmux a -t Deadlines
-    - SCSS:
-        - cd /www/sites/deadlines/wwwroot/assets/css
-        - sass --watch style.scss:style.css
+  - editor:
+      - v
+  - scss:
+      - scss --watch styles/style.scss:styles/style.css

@@ -5,3 +5,5 @@
 	default = simple
 [core]
 	excludesfile = /Users/liamederzeel/.gitignore_global
+[credential]
+	helper = osxkeychain

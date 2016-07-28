@@ -29,5 +29,7 @@ root: /www/sites/valentijn/wwwroot
 # post: tmux -CC attach -t valentijn
 
 windows:
-    - Front-end:
-        - vim
+  - editor:
+      - v
+  - scss:
+      - scss --watch assets/css/style.scss:assets/css/style.css
