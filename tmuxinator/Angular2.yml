@@ -1,6 +1,6 @@
 # ~/.tmuxinator/DeadlinesA2.yml
 
-name: DeadlinesA2
+name: Angular2
 root: /www/sites/DeadlinesA2/src
 
 # Optional tmux socket
