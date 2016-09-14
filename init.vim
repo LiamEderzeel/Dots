@@ -53,7 +53,7 @@ Plug 'OrangeT/vim-csharp'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'matze/vim-move'
+" Plug 'matze/vim-move'
 Plug 'dermusikman/sonicpi.vim'
 Plug 'JulesWang/css.vim'
 Plug 'cakebaker/scss-syntax.vim'
@@ -66,6 +66,7 @@ Plug 'scrooloose/syntastic'
 Plug 'Valloric/MatchTagAlways'
 Plug 'edkolev/tmuxline.vim'
 Plug 'crusoexia/vim-javascript-lib'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Plug 'clausreinke/typescript-tools.vim', { 'do': 'npm install' }
 Plug 'leafgarland/typescript-vim'
@@ -230,11 +231,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-noremap L g_
-noremap H ^
-noremap J 5j
-noremap K 5k
-nnoremap ; :
+" noremap L g_
+" noremap H ^
+" noremap J 5j
+" noremap K 5k
+" nnoremap ; :
 vmap < <gv
 vmap > >gv
 vnoremap <c-/> :TComment<cr>
@@ -266,3 +267,12 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 let g:gitgutter_async = 0
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+
+" Tmux navigator
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr> " Should be <C-h> but neovim has a bug
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
