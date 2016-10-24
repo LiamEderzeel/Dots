@@ -1,7 +1,7 @@
-# ~/.tmuxinator/Deadlines.yml
+# ~/.tmuxinator/Deadlines3.0.yml
 
-name: Deadlines
-root: /www/sites/deadlines/wwwroot
+name: Deadlines3
+root: /www/sites/Deadlines3.0
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,18 +25,9 @@ root: /www/sites/deadlines/wwwroot
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t Deadlines
+# post: tmux -CC attach -t Deadlines3.0
 
 windows:
-    - Front-end:
-        - cd /www/sites/deadlines/wwwroot
-        - v
-    - Back-end:
-        - cd /www/sites/deadlinesapi
-        - v
-    - Server:
-        - ssh root@188.226.192.169
-        - tmux a -t Deadlines
-    - SCSS:
-        - cd /www/sites/deadlines/wwwroot/assets/css
-        - sass --watch style.scss:style.css
+  - editor: v
+  - backend: cd /www/sites/deadlinesapi
+  - server: npm run serve
