@@ -55,7 +55,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/liamederzeel/.rvm/bin"
+export PATH="/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/liamederzeel/.rvm/bin:$HOME/npm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -89,4 +89,6 @@ source $ZSH/oh-my-zsh.sh
 source ~/.bin/tmuxinator.zsh
 export EDITOR='nvim'
 alias v='nvim'
+alias tmuxinator='mux'
 plugins=(git)
+eval "$(pyenv init -)"

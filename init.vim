@@ -75,7 +75,7 @@ Plug 'Quramy/tsuquyomi'
 call plug#end()
 
 " CtrlP plugin
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/plugged/ctrlp.vim
 " let g:ctrlp_user_command = 'find %s -type f | grep -v "`cat .ctrlpignore`"'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tmp|e2e)|(\.(swp|ico|git|svn))$'
 
