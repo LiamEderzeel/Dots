@@ -72,10 +72,12 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'leafgarland/typescript-vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make -f make_mac.mak'}
 Plug 'Quramy/tsuquyomi'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-colorscheme-switcher'
 call plug#end()
 
 " CtrlP plugin
-set runtimepath^=~/.vim/plugged/ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 " let g:ctrlp_user_command = 'find %s -type f | grep -v "`cat .ctrlpignore`"'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tmp|e2e)|(\.(swp|ico|git|svn))$'
 

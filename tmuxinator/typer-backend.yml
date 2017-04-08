@@ -1,0 +1,9 @@
+# ~/.tmuxinator/Typer.yml
+
+name: Typer Backend
+root: /projects/typer-backend
+
+windows:
+  - editor:
+  - server: npm start
+  - mongodb: mongod

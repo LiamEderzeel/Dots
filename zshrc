@@ -89,6 +89,11 @@ source $ZSH/oh-my-zsh.sh
 source ~/.bin/tmuxinator.zsh
 export EDITOR='nvim'
 alias v='nvim'
+alias a='atom'
 alias tmuxinator='mux'
-plugins=(git)
-eval "$(pyenv init -)"
+# alias TC='mux start TryCodingBackend; mux start TryCodingFrontend'
+alias TP='mux start Typer-Frontend; mux start Typer-Backend'
+alias screeps='a /Users/liamederzeel/Library/Application\ Support/screeps/scripts/188_226_192_169___21025/default'
+plugins=(git zsh-syntax-highlighting)
+# eval "$(pyenv init -)"
+source /Users/liamederzeel/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

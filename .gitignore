@@ -11,3 +11,12 @@
 Icon?
 ehthumbs.db
 [Tt]humbs.db
+
+atom/.*
+atom/packages/
+atom/dev/
+atom/compile-cache/
+atom/blob-store/
+atom/recovery/
+atom/storage/
+

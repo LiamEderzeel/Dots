@@ -1,0 +1,12 @@
+# ~/.tmuxinator/TCF.yml
+
+name: TryCodingFrontend
+root: /www/sites/TryCodingFrontend
+
+windows:
+    - editor:
+        - a .
+    - server: npm start
+    - css:
+        - cd src/assets/css
+        - sass --watch style.scss:style.css

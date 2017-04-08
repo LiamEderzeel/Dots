@@ -1,0 +1,47 @@
+"*":
+  "activate-power-mode":
+    screenShake: {}
+  core:
+    disabledPackages: [
+      "activate-power-mode"
+      "term3"
+      "relative-numbers"
+      "highlight-line"
+      "vim-mode"
+      "background-tips"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "solo-dark-ui"
+      "solo-dark-syntax"
+    ]
+    useCustomTitleBar: true
+  editor:
+    fontFamily: "Roboto Mono"
+    fontSize: 13
+    invisibles: {}
+    showInvisibles: true
+    tabLength: 4
+    tabType: "hard"
+  "exception-reporting":
+    userId: "4169d5fc-ec46-e4f2-ccfc-3b44479dc3c4"
+  linter:
+    errorPanelHeight: 35
+  minimap:
+    autoToggle: false
+  "omnisharp-atom":
+    codeFormat: false
+    codeLens: false
+  pigments:
+    ignoredScopes: [
+      "\\.comment"
+    ]
+    markerType: "native-square-dot"
+  "relative-numbers": {}
+  welcome:
+    showOnStartup: false
+".source.ts":
+  editor:
+    autoIndent: true
+    autoIndentOnPaste: true
+    showInvisibles: false

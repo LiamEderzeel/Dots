@@ -1,0 +1,11 @@
+# ~/.tmuxinator/Typer.yml
+
+name: Typer Frontend
+root: /projects/typer-frontend
+
+windows:
+  - editor:
+  - frontend: npm start
+  - scss:
+      - src/assets/styles/
+      - sass --watch style.scss:style.min.css --style compressed

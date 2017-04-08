@@ -68,7 +68,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " CtrlP plugin
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/plugged/ctrlp.vim
 
 " Vim-javascript
 set rtp+=/Users/raguay/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
