@@ -1,11 +1,13 @@
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
-
-"   _      _                   ______    _                        _
-"  | |    (_)                 |  ____|  | |                      | |
-"  | |     _  __ _ _ __ ___   | |__   __| | ___ _ __ _______  ___| |
-"  | |    | |/ _` | '_ ` _ \  |  __| / _` |/ _ \ '__|_  / _ \/ _ \ |
-"  | |____| | (_| | | | | | | | |___| (_| |  __/ |   / /  __/  __/ |
-"  |______|_|\__,_|_| |_| |_| |______\__,_|\___|_|  /___\___|\___|_|
+"                   __
+"    __          __/\ \__               __
+"   /\_\    ___ /\_\ \ ,_\      __  __ /\_\    ___ ___
+"   \/\ \ /' _ `\/\ \ \ \/     /\ \/\ \\/\ \ /' __` __`\
+"    \ \ \/\ \/\ \ \ \ \ \_  __\ \ \_/ |\ \ \/\ \/\ \/\ \
+"     \ \_\ \_\ \_\ \_\ \__\/\_\\ \___/  \ \_\ \_\ \_\ \_\
+"      \/_/\/_/\/_/\/_/\/__/\/_/ \/__/    \/_/\/_/\/_/\/_/
+"
+"       author: Liam Ederzeel
 
 " Environment {
     " Identify platform {
@@ -42,156 +44,169 @@
     " }
 " }
 
-" Plug {
-
+" Bundles {
     " Config {
-        if &compatible
-          set nocompatible  " Be iMproved
-        endif
-
-        " Required:
         set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+        call dein#begin(expand('~/.vim/bundle'))
+        call dein#add('Shougo/dein.vim')
+        " }
+    " Unite {
+        call dein#add('Shougo/denite.nvim')
+    " }
+    " Utilities{
+        " call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+        " call dein#add('tpope/vim-dispatch') " Asynchronous build and test dispatcher
+        " call dein#add('Shougo/deoplete.nvim')
+        " call dein#add('editorconfig/editorconfig-vim')
+        " call dein#add('tpope/vim-vinegar')                            " Netrw helper
+        " call dein#add('tpope/vim-obsession')                          " Session Managment
+        " call dein#add('tpope/vim-eunuch')                             " Unix helpers
+        " call dein#add('tpope/vim-commentary')                         " Toggle comments
+        " call dein#add('tpope/vim-surround')                           " Sorroundings
+        " call dein#add('tpope/vim-repeat')                             " More . command
+        " call dein#add('tpope/vim-abolish')                            " Better replace
+        " call dein#add('tpope/vim-unimpaired')                         " Key mappings for [
+        " call dein#add('tommcdo/vim-exchange')                         " Exchange motion
+        " call dein#add('AndrewRadev/splitjoin.vim')                    " Split onelinners with gS
+        " call dein#add('SirVer/ultisnips')                             " Snippets
+        " call dein#add('honza/vim-snippets')
+        " call dein#add('wellle/targets.vim')                           " Better motions
+        " call dein#add('neomake/neomake')                              " Async Syntax check
+        " call dein#add('Raimondi/delimitMate')                        " Auto close quotes parentesis etc
+        " call dein#add('mhinz/vim-grepper')                            " Multiple grep support
+        " call dein#add('sjl/gundo.vim')                               " Undo tree
+        " call dein#add('mhinz/vim-startify')                           " Start Screen
+        " call dein#add('godlygeek/tabular')                            " Align code
+        " call dein#add('vim-scripts/BufOnly.vim')                      " Close All other buffers
+        " call dein#add('mjbrownie/swapit')                       " Toggle between true false
+        " call dein#add('junegunn/fzf')                       " Toggle between true false
+        " call dein#add('junegunn/fzf.vim')                       " Toggle between true false
+        " call dein#add('scrooloose/syntastic')
+        call dein#add('tpope/vim-dispatch')
+        call dein#add('tpope/vim-pathogen')
+        call dein#add('tomtom/tcomment_vim')
+        call dein#add('mattn/emmet-vim')
+        call dein#add('matze/vim-move')
+        call dein#add('dermusikman/sonicpi.vim')
+        call dein#add('Shougo/deoplete.nvim')
+        call dein#add('mhinz/vim-startify')
+        call dein#add('neomake/neomake')
+        " call dein#add('kien/ctrlp.vim')
+        call dein#add('Yggdroot/indentLine')
+        call dein#add('junegunn/fzf', { 'build': './install --all' })
+        call dein#add('junegunn/fzf.vim')
+        call dein#add('brooth/far.vim')
+        call dein#add('christoomey/vim-tmux-navigator')
 
-        " Required:
-        if dein#load_state('~/.vim/bundle')
-          call dein#begin('~/.vim/bundle')
-
-          " Let dein manage dein
-          " Required:
-          call dein#add('~/.vim/bundle/repos/github.com/Shougo/dein.vim')
-
-          " Add or remove your plugins here:
-          " call dein#add('Shougo/neosnippet.vim')
-          " call dein#add('Shougo/neosnippet-snippets')
-
-            " UI {
-                call dein#add('freeo/vim-kalisi')
-                call dein#add('AlxHnr/clear_colors')
-                call dein#add('rakr/vim-one')
-                call dein#add('crusoexia/vim-monokai')
-                call dein#add('frankier/neovim-colors-solarized-truecolor-only')
-                call dein#add('bling/vim-airline')
-                call dein#add('airblade/vim-gitgutter')
-                call dein#add('vim-airline/vim-airline-themes')
-                call dein#add('edkolev/tmuxline.vim')
+        if OSX()
+            " call dein#add('wakatime/vim-wakatime')                        " register time
+        endif
+    " }
+    " Prose {
+        call dein#add('reedes/vim-pencil', {'on_ft': ['markdown', 'text']})
+        call dein#add('reedes/vim-lexical', {'on_ft': ['markdown', 'text']})
+        call dein#add('reedes/vim-wordy', {'on_ft': ['markdown', 'text']})
+        call dein#add('dbmrq/vim-ditto', {'on_ft': ['markdown', 'text']})
+        call dein#add('junegunn/goyo.vim', {'on_ft': ['markdown', 'text']})
+        call dein#add('junegunn/limelight.vim', {'on_ft': ['markdown', 'text']})
+        " call dein#add('reedes/vim-textobj-sentence', {'in_ft': 'markdown'})
+    " }
+    " VCS {
+        call dein#add('tpope/vim-fugitive')                           " Git wrapper
+        " call dein#add('airblade/vim-gitgutter')                       " Git gutter simbols
+        " call dein#add('mhinz/vim-signify')
+    " }
+    " Languages {
+        call dein#add('sheerun/vim-polyglot',{
+                    \})
+        call dein#add('rust-lang/rust.vim', {
+                    \ })
+        call dein#add('racer-rust/vim-racer', {
+                    \ })
+        call dein#add('cespare/vim-toml', {
+                    \ 'on_ft': 'toml'
+                    \ })
+        call dein#add('mattn/emmet-vim', {
+                    \ })
+        call dein#add('othree/html5.vim', {
+                    \ 'on_ft': 'html'
+                    \ })
+        call dein#add('elzr/vim-json', {
+                    \ 'on_ft': 'json'
+                    \ })
+        call dein#add('pangloss/vim-javascript', {
+                    \ })
+        call dein#add('mxw/vim-jsx', {
+                    \ })
+        call dein#add('jaawerth/nrun.vim', {
+                    \ })
+        " call dein#add('zchee/deoplete-jedi', {
+        "             \ 'on_ft': 'python'
+        "             \ })
+        " call dein#add('vim-scripts/django.vim', {
+        "             \ 'on_ft': 'python'
+        "             \ })
+        " if OSX()
+        "     call dein#add('OmniSharp/omnisharp-vim', {
+        "                 \ 'build': 'sh -c "cd server/ && xbuild"',
+        "                 \ 'on_ft': 'cs'
+        "                 \ })
+        "     call dein#add('Robzz/deoplete-omnisharp',{
+        "                 \ 'on_ft': 'cs',
+        "                 \ 'depends': 'omnisharp-vim'
+        "                 \ })
+        " endif
+        call dein#add('jdonaldson/vaxe', {
+                    \ 'on_ft': 'haxe'
+                    \ })
+    " }
+    " UI {
+        call dein#add('freeo/vim-kalisi')
+        call dein#add('AlxHnr/clear_colors')
+        call dein#add('rakr/vim-one')
+        call dein#add('crusoexia/vim-monokai')
+        call dein#add('frankier/neovim-colors-solarized-truecolor-only')
+        call dein#add('bling/vim-airline')
+        call dein#add('airblade/vim-gitgutter')
+        call dein#add('vim-airline/vim-airline-themes')
+        call dein#add('edkolev/tmuxline.vim')
+        call dein#add('Valloric/MatchTagAlways')
+        " call dein#add('tpope/vim-flagship')                           " Statusline
+        " call dein#add('nathanaelkane/vim-indent-guides')             " Ident visual guide
+        " call dein#add('gregsexton/MatchTag')                         " Highlite Matching tag
+        " call dein#add('altercation/vim-colors-solarized')
+        " call dein#add('w0ng/vim-hybrid')
+        " call dein#add('whatyouhide/vim-gotham')
+        " call dein#add('morhetz/gruvbox')
+    " }
+            " Language {
+                call dein#add('vim-polyglot')
+                call dein#add('leafgarland/typescript-vim')
+                call dein#add('vim-scripts/ShaderHighLight')
+                call dein#add('JulesWang/css.vim')
+                call dein#add('OrangeT/vim-csharp')
+                call dein#add('cakebaker/scss-syntax.vim')
+                call dein#add('pangloss/vim-javascript')
+                call dein#add('crusoexia/vim-javascript-lib')
+                if OSX()
+                    call dein#add('OmniSharp/omnisharp-vim', {
+                            \ 'build': 'sh -c "cd server/ && xbuild"',
+                            \ 'on_ft': 'cs'
+                            \ })
+                    call dein#add('Robzz/deoplete-omnisharp',{
+                            \ 'on_ft': 'cs',
+                            \ 'depends': 'omnisharp-vim'
+                            \ })
+                endif
             " }
 
-        " Utilities{
-            " call dein#add('scrooloose/syntastic')
-            call dein#add('tpope/vim-dispatch')
-            call dein#add('tpope/vim-pathogen')
-            call dein#add('Valloric/MatchTagAlways')
-            call dein#add('tomtom/tcomment_vim')
-            call dein#add('mattn/emmet-vim')
-            call dein#add('matze/vim-move')
-            call dein#add('dermusikman/sonicpi.vim')
-            call dein#add('Shougo/deoplete.nvim')
-            call dein#add('mhinz/vim-startify')
-            call dein#add('neomake/neomake')
-            " call dein#add('kien/ctrlp.vim')
-            call dein#add('Yggdroot/indentLine')
-            call dein#add('junegunn/fzf', { 'build': './install --all' })
-            call dein#add('junegunn/fzf.vim')
-            call dein#add('brooth/far.vim')
-        " }
+    call dein#end()
 
-        " Language {
-            call dein#add('vim-polyglot')
-            call dein#add('leafgarland/typescript-vim')
-            call dein#add('vim-scripts/ShaderHighLight')
-            call dein#add('JulesWang/css.vim')
-            call dein#add('OrangeT/vim-csharp')
-            call dein#add('cakebaker/scss-syntax.vim')
-            call dein#add('pangloss/vim-javascript')
-            call dein#add('crusoexia/vim-javascript-lib')
-            if OSX()
-                call dein#add('OmniSharp/omnisharp-vim', {
-                        \ 'build': 'sh -c "cd server/ && xbuild"',
-                        \ 'on_ft': 'cs'
-                        \ })
-                call dein#add('Robzz/deoplete-omnisharp/',{
-                        \ 'on_ft': 'cs',
-                        \ 'depends': 'omnisharp-vim'
-                        \ })
-            endif
-        " }
-
-          " You can specify revision/branch/tag.
-          " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
-          " Required:
-          call dein#end()
-          call dein#save_state()
-        endif
-
-        " Required:
-        filetype plugin indent on
-
-        " If you want to install not installed plugins on startup.
-        "if dein#check_install()
-        "  call dein#install()
-        "endif
-    " }
-
-    " Plug {
-    " call plug#begin('~/.vim/plugged')
-    "
-    " " UI {
-    "     Plug 'freeo/vim-kalisi'
-    "     Plug 'AlxHnr/clear_colors'
-    "     Plug 'rakr/vim-one'
-    "     Plug 'crusoexia/vim-monokai'
-    "     " Plug 'frankier/neovim-colors-solarized-truecolor-only'
-    "     Plug 'bling/vim-airline'
-    "     Plug 'airblade/vim-gitgutter'
-    "     Plug 'vim-airline/vim-airline-themes'
-    "     Plug 'edkolev/tmuxline.vim'
-    " " }
-    "
-    " " Utilities{
-    "     " Plug 'scrooloose/syntastic'
-    "     Plug 'tpope/vim-dispatch'
-    "     Plug 'tpope/vim-pathogen'
-    "     Plug 'Valloric/MatchTagAlways'
-    "     Plug 'tomtom/tcomment_vim'
-    "     Plug 'mattn/emmet-vim'
-    "     Plug 'matze/vim-move'
-    "     Plug 'dermusikman/sonicpi.vim'
-    "     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    "     Plug 'mhinz/vim-startify'
-    "     Plug 'neomake/neomake'
-    "     Plug 'kien/ctrlp.vim'
-    "     " function! BuildYCM(info)
-    "     "   if a:info.status == 'installed' || a:info.force
-    "     "     !./install.py --all
-    "     "   endif
-    "     " endfunction
-    "     " Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-    "     Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-    "     Plug 'Yggdroot/indentLine'
-    " " }
-    "
-    " " Language {
-    "     Plug 'vim-polyglot'
-    "     Plug 'leafgarland/typescript-vim'
-    "     Plug 'vim-scripts/ShaderHighLight'
-    "     Plug 'JulesWang/css.vim'
-    "     Plug 'OrangeT/vim-csharp'
-    "     Plug 'cakebaker/scss-syntax.vim'
-    "     Plug 'pangloss/vim-javascript'
-    "     Plug 'crusoexia/vim-javascript-lib'
-    "     Plug 'OmniSharp/omnisharp-vim'
-    " " }
-    "
-    " function! Installjshint(info)
-    "   if a:info.status == 'installed' || a:info.force
-    "     !npm install -g jshint
-    "   endif
-    " endfunction
-    " Plug 'scrooloose/syntastic', { 'do': function('Installjshint') }
-    "
-    " call plug#end()
-    " }
+    if dein#check_install()
+      call dein#install()
+    endif
+    call dein#check_lazy_plugins()
+    call dein#save_state()
 " }
 
 " General {
@@ -239,7 +254,7 @@
     " }
 " }
 
-" Vim GUI {
+" UI {
     if has('nvim')
         let $NVIM_TUI_ENABLE_TRUE_COLOR=1
         let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
@@ -265,14 +280,15 @@
     " let g:monokai_italic = 1                " Enable italic
     " let g:monokai_thick_border = 1          " Set window border
 
-    set cursorline                          " Highlight current line
-    set ruler                               " Shows line and column of cursor
-    set relativenumber number               " Line numbers
-    set backspace=2                         " Backspace beyond insert point
+    set cursorline                                  " Highlight current line
+    set ruler                                       " Shows line and column of cursor
+    set relativenumber number                       " Line numbers
+    set backspace=2                                 " Backspace beyond insert point
     set cmdheight=1
-    set laststatus=2                        " Always display the statusline in all windows
+    set laststatus=2                                " Always display the statusline in all windows
     set guifont=Inconsolata\ for\ Powerline:h14
-    set noshowmode                          " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+    set noshowmode                                  " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+    set fillchars+=vert:┆
 
 " }
 
@@ -300,36 +316,8 @@
     vnoremap <c-/> :TComment<cr>
     " nnoremap <leader>p :set ft=php<cr>
     " nnoremap <leader>h :set ft=html<cr>
+    nnoremap <space> za                     " Toggel folds
 " }
-
-match ErrorMsg '\s\+$'
-let g:python_host_prog = '/path/to/python'
-let g:UltiSnipsUsePythonVersion = 2
-
-" neomake stuff no qlu
-autocmd! BufWritePost * Neomake
-
-set nocompatible                        " be iMproved, required
-" filetype off                            " required
-
-" if ! has('gui_running')
-"     set ttimeoutlen=10
-"     augroup FastEscape
-"         autocmd!
-"         au InsertEnter * set timeoutlen=0
-"         au InsertLeave * set timeoutlen=1000
-"     augroup END
-" endif
-
-let g:user_emmet_mode='n'
-
-if has("unix")
-    let s:uname = system("uname")
-    let g:python_host_prog='/usr/bin/python'
-    if s:uname == "Darwin\n"
-        let g:python_host_prog='/usr/local/bin/python' " found via `which python`
-    endif
-endif
 
 " Plugins {
 
@@ -467,6 +455,8 @@ let g:syntastic_loc_list_height = 5
         " let g:syntastic_check_on_open = 1
         " let g:syntastic_check_on_wq = 0
 
+    " }
+
         " OmniSharp {
         if dein#tap("omnisharp-vim")
             let g:OmniSharp_server_type = 'v1'
@@ -509,18 +499,15 @@ let g:syntastic_loc_list_height = 5
             " nnoremap <silent> [omnisharp]s :OmniSharpFindSymbol<cr>
             " nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
             " vnoremap <leader><space> :call OmniSharp#GetCodeActions('visual')<cr>
+            "
+            "
+            "
         endif
-    " }
     " }
 
     " Vim-javascript {
-    set rtp+=/Users/raguay/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+        set rtp+=/Users/raguay/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
     " }
-
-    " " CtrlP {
-    "     set runtimepath^=~/.vim/plugged/ctrlp.vim
-    " " let g:ctrlp_user_command = 'find %s -type f | grep -v "`cat .ctrlpignore`"'
-    " " }
 
     " indentLine {
         let g:indentLine_enabled = 1            " Enable indentLine plugin
@@ -537,9 +524,11 @@ let g:syntastic_loc_list_height = 5
 " }
 
     " fzf {
-        nnoremap <silent> <c-p> :call fzf#run({
-            \   'down': '40%',
-            \   'sink': 'botright split' })<CR>
+        " nnoremap <silent> <c-p> :call fzf#run({
+        "     \   'down': '40%',
+        "     \   'sink': 'botright split' })<CR>
+
+        nnoremap <silent> <c-p> :FZF<CR>
     " }
 
     " Deoplete {
@@ -586,5 +575,77 @@ let g:syntastic_loc_list_height = 5
             aug END
         endif
     " }
+
+    " Tmux Navigation {
+        nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+    " }
+
+    " Startify {
+
+        " let g:startify_custom_header = [
+        "         \ '                                 ________  __ __        ',
+        "         \ '            __                  /\_____  \/\ \\ \       ',
+        "         \ '    __  __ /\_\    ___ ___      \/___//''/''\ \ \\ \    ',
+        "         \ '   /\ \/\ \\/\ \ /'' __` __`\        /'' /''  \ \ \\ \_ ',
+        "         \ '   \ \ \_/ |\ \ \/\ \/\ \/\ \      /'' /''__  \ \__ ,__\',
+        "         \ '    \ \___/  \ \_\ \_\ \_\ \_\    /\_/ /\_\  \/_/\_\_/  ',
+        "         \ '     \/__/    \/_/\/_/\/_/\/_/    \//  \/_/     \/_/    ',
+        "         \ ]
+
+        let g:startify_custom_header = [
+                \ '                    __                   ',
+                \ '      ___   __  __ /\_\    ___ ___       ',
+                \ '    /'' _ `\/\ \/\ \\/\ \ /'' __` __`\     ',
+                \ '    /\ \/\ \ \ \_/ |\ \ \/\ \/\ \/\ \    ',
+                \ '    \ \_\ \_\ \___/  \ \_\ \_\ \_\ \_\   ',
+                \ '     \/_/\/_/\/__/    \/_/\/_/\/_/\/_/   ',
+                \ ]
+
+            let g:startify_bookmarks = [ {'c': '~/.nvimrc'}, '~/.zshrc' ]
+        " }
+
+    " Neomake {
+        " neomake stuff no qlu
+        autocmd! BufWritePost * Neomake
+        " autocmd! BufWritePost,BufEnter * Neomake
+        " autocmd! BufWritePost,BufReadPost * Neomake
+        " let g:neomake_open_list = 2
+        " let g:neomake_warning_sign = {
+        "   \ 'text': 'W',
+        "   \ 'texthl': 'WarningMsg',
+        "   \ }
+        " let g:neomake_error_sign = {
+        "   \ 'text': 'E',
+        "   \ 'texthl': 'ErrorMsg',
+        "   \ }
+    " }
 " }
 
+" Misc {
+    " match ErrorMsg '\s\+$'
+    " let g:python_host_prog = '/path/to/python'
+    " let g:UltiSnipsUsePythonVersion = 2
+    "
+    "
+    " set nocompatible                        " be iMproved, required
+    " " filetype off                            " required
+    "
+    " " if ! has('gui_running')
+    " "     set ttimeoutlen=10
+    " "     augroup FastEscape
+    " "         autocmd!
+    " "         au InsertEnter * set timeoutlen=0
+    " "         au InsertLeave * set timeoutlen=1000
+    " "     augroup END
+    " " endif
+    "
+    " let g:user_emmet_mode='n'
+    "
+    " if has("unix")
+    "     let s:uname = system("uname")
+    "     let g:python_host_prog='/usr/bin/python'
+    "     if s:uname == "Darwin\n"
+    "         let g:python_host_prog='/usr/local/bin/python' " found via `which python`
+    "     endif
+    " endif
+" }
