@@ -9,6 +9,9 @@ DEFAULT_USER='liamederzeel'
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="liamederzeel"
 
+# Sould display true colors (added bij me)
+export TERM=xterm-256color
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -56,6 +59,7 @@ plugins=(git)
 # User configuration
 
 export PATH="/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/liamederzeel/.rvm/bin:$HOME/npm/bin"
+export PATH=/Library/Frameworks/Mono.framework/Versions/Current/bin/:${PATH}
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -85,15 +89,28 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# smart pane switching with awareness of vim splits
+# bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-h) || tmux select-pane -L"
+# bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-j) || tmux select-pane -D"
+# bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-k) || tmux select-pane -U"
+# bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-l) || tmux select-pane -R"
+# bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys 'C-\\') || tmux select-pane -l"
+
 # Tmuxinator
 source ~/.bin/tmuxinator.zsh
 export EDITOR='nvim'
+alias tmux="env TERM=xterm-256color tmux"
 alias v='nvim'
 alias a='atom'
-alias tmuxinator='mux'
+alias mux='tmuxinator'
+
 # alias TC='mux start TryCodingBackend; mux start TryCodingFrontend'
 alias TP='mux start Typer-Frontend; mux start Typer-Backend'
 alias screeps='a /Users/liamederzeel/Library/Application\ Support/screeps/scripts/188_226_192_169___21025/default'
 plugins=(git zsh-syntax-highlighting)
 # eval "$(pyenv init -)"
 source /Users/liamederzeel/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+archey

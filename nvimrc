@@ -1,4 +1,3 @@
-" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
 "                   __
 "    __          __/\ \__               __
 "   /\_\    ___ /\_\ \ ,_\      __  __ /\_\    ___ ___
@@ -6,7 +5,7 @@
 "    \ \ \/\ \/\ \ \ \ \ \_  __\ \ \_/ |\ \ \/\ \/\ \/\ \
 "     \ \_\ \_\ \_\ \_\ \__\/\_\\ \___/  \ \_\ \_\ \_\ \_\
 "      \/_/\/_/\/_/\/_/\/__/\/_/ \/__/    \/_/\/_/\/_/\/_/
-"
+
 "       author: Liam Ederzeel
 
 " Environment {
@@ -62,16 +61,16 @@
         " call dein#add('tpope/vim-obsession')                          " Session Managment
         " call dein#add('tpope/vim-eunuch')                             " Unix helpers
         " call dein#add('tpope/vim-commentary')                         " Toggle comments
-        " call dein#add('tpope/vim-surround')                           " Sorroundings
+        call dein#add('tpope/vim-surround')                           " Sorroundings
         " call dein#add('tpope/vim-repeat')                             " More . command
         " call dein#add('tpope/vim-abolish')                            " Better replace
         " call dein#add('tpope/vim-unimpaired')                         " Key mappings for [
         " call dein#add('tommcdo/vim-exchange')                         " Exchange motion
         " call dein#add('AndrewRadev/splitjoin.vim')                    " Split onelinners with gS
-        " call dein#add('SirVer/ultisnips')                             " Snippets
+        call dein#add('SirVer/ultisnips')                             " Snippets
         " call dein#add('honza/vim-snippets')
         " call dein#add('wellle/targets.vim')                           " Better motions
-        " call dein#add('neomake/neomake')                              " Async Syntax check
+        " call dein#add('neomake/neomake')
         " call dein#add('Raimondi/delimitMate')                        " Auto close quotes parentesis etc
         " call dein#add('mhinz/vim-grepper')                            " Multiple grep support
         " call dein#add('sjl/gundo.vim')                               " Undo tree
@@ -79,9 +78,8 @@
         " call dein#add('godlygeek/tabular')                            " Align code
         " call dein#add('vim-scripts/BufOnly.vim')                      " Close All other buffers
         " call dein#add('mjbrownie/swapit')                       " Toggle between true false
-        " call dein#add('junegunn/fzf')                       " Toggle between true false
-        " call dein#add('junegunn/fzf.vim')                       " Toggle between true false
         " call dein#add('scrooloose/syntastic')
+        call dein#add('airblade/vim-rooter')
         call dein#add('tpope/vim-dispatch')
         call dein#add('tpope/vim-pathogen')
         call dein#add('tomtom/tcomment_vim')
@@ -90,11 +88,11 @@
         call dein#add('dermusikman/sonicpi.vim')
         call dein#add('Shougo/deoplete.nvim')
         call dein#add('mhinz/vim-startify')
-        call dein#add('neomake/neomake')
+        call dein#add('neomake/neomake')                                " Async Syntax check
         " call dein#add('kien/ctrlp.vim')
         call dein#add('Yggdroot/indentLine')
-        call dein#add('junegunn/fzf', { 'build': './install --all' })
-        call dein#add('junegunn/fzf.vim')
+        call dein#add('junegunn/fzf', { 'build': './install --all' })   " Fuzzy finder
+        call dein#add('junegunn/fzf.vim')                               " fzf vim plugin
         call dein#add('brooth/far.vim')
         call dein#add('christoomey/vim-tmux-navigator')
 
@@ -116,53 +114,11 @@
         " call dein#add('airblade/vim-gitgutter')                       " Git gutter simbols
         " call dein#add('mhinz/vim-signify')
     " }
-    " Languages {
-        call dein#add('sheerun/vim-polyglot',{
-                    \})
-        call dein#add('rust-lang/rust.vim', {
-                    \ })
-        call dein#add('racer-rust/vim-racer', {
-                    \ })
-        call dein#add('cespare/vim-toml', {
-                    \ 'on_ft': 'toml'
-                    \ })
-        call dein#add('mattn/emmet-vim', {
-                    \ })
-        call dein#add('othree/html5.vim', {
-                    \ 'on_ft': 'html'
-                    \ })
-        call dein#add('elzr/vim-json', {
-                    \ 'on_ft': 'json'
-                    \ })
-        call dein#add('pangloss/vim-javascript', {
-                    \ })
-        call dein#add('mxw/vim-jsx', {
-                    \ })
-        call dein#add('jaawerth/nrun.vim', {
-                    \ })
-        " call dein#add('zchee/deoplete-jedi', {
-        "             \ 'on_ft': 'python'
-        "             \ })
-        " call dein#add('vim-scripts/django.vim', {
-        "             \ 'on_ft': 'python'
-        "             \ })
-        " if OSX()
-        "     call dein#add('OmniSharp/omnisharp-vim', {
-        "                 \ 'build': 'sh -c "cd server/ && xbuild"',
-        "                 \ 'on_ft': 'cs'
-        "                 \ })
-        "     call dein#add('Robzz/deoplete-omnisharp',{
-        "                 \ 'on_ft': 'cs',
-        "                 \ 'depends': 'omnisharp-vim'
-        "                 \ })
-        " endif
-        call dein#add('jdonaldson/vaxe', {
-                    \ 'on_ft': 'haxe'
-                    \ })
-    " }
     " UI {
         call dein#add('freeo/vim-kalisi')
         call dein#add('AlxHnr/clear_colors')
+        call dein#add('mhartington/oceanic-next')
+        call dein#add('liamederzeel/solo.vim')
         call dein#add('rakr/vim-one')
         call dein#add('crusoexia/vim-monokai')
         call dein#add('frankier/neovim-colors-solarized-truecolor-only')
@@ -179,26 +135,47 @@
         " call dein#add('whatyouhide/vim-gotham')
         " call dein#add('morhetz/gruvbox')
     " }
-            " Language {
-                call dein#add('vim-polyglot')
-                call dein#add('leafgarland/typescript-vim')
-                call dein#add('vim-scripts/ShaderHighLight')
-                call dein#add('JulesWang/css.vim')
-                call dein#add('OrangeT/vim-csharp')
-                call dein#add('cakebaker/scss-syntax.vim')
-                call dein#add('pangloss/vim-javascript')
-                call dein#add('crusoexia/vim-javascript-lib')
-                if OSX()
-                    call dein#add('OmniSharp/omnisharp-vim', {
-                            \ 'build': 'sh -c "cd server/ && xbuild"',
-                            \ 'on_ft': 'cs'
-                            \ })
-                    call dein#add('Robzz/deoplete-omnisharp',{
-                            \ 'on_ft': 'cs',
-                            \ 'depends': 'omnisharp-vim'
-                            \ })
-                endif
-            " }
+    " Language {
+        call dein#add('lilydjwg/colorizer')
+        call dein#add('vim-scripts/vim-polyglot')
+        call dein#add('leafgarland/typescript-vim')
+        call dein#add('vim-scripts/ShaderHighLight')
+        call dein#add('JulesWang/css.vim')
+        call dein#add('OrangeT/vim-csharp')
+        call dein#add('cakebaker/scss-syntax.vim')
+        call dein#add('pangloss/vim-javascript')
+        call dein#add('crusoexia/vim-javascript-lib')
+        call dein#add('padawan-php/deoplete-padawan')
+        " call dein#add('othree/html5.vim')
+        call dein#add('csexton/snipmate.vim.git')
+        call dein#add('hail2u/vim-css3-syntax')
+
+        call dein#add('vim-scripts/vim-polyglot',{})
+        call dein#add('rust-lang/rust.vim', {})
+        call dein#add('racer-rust/vim-racer', {})
+        call dein#add('cespare/vim-toml', { 'on_ft': 'toml' })
+        call dein#add('mattn/emmet-vim', {})
+        call dein#add('othree/html5.vim', { 'on_ft': 'html' })
+        call dein#add('elzr/vim-json', { 'on_ft': 'json' })
+        call dein#add('pangloss/vim-javascript', {})
+        call dein#add('mxw/vim-jsx', {})
+        call dein#add('jaawerth/nrun.vim', {})
+
+        if OSX()
+            call dein#add('OmniSharp/omnisharp-vim', {
+                    \ 'build': 'sh -c "cd server/ && xbuild"',
+                    \ 'on_ft': 'cs'
+                    \ })
+            call dein#add('Robzz/deoplete-omnisharp',{
+                    \ 'on_ft': 'cs',
+                    \ 'depends': 'omnisharp-vim'
+                    \ })
+        endif
+
+        call dein#add('jdonaldson/vaxe', {
+                    \ 'on_ft': 'haxe'
+                    \ })
+    " }
 
     call dein#end()
 
@@ -212,15 +189,16 @@
 " General {
     set background=dark
     filetype plugin indent on               " Automatically detect file types.
-    " syntax enable
     syntax on                               " Turn syntax highlighting on
-    set mouse=a                 " Automatically enable mouse usage
-    set mousehide               " Hide the mouse cursor while typing
-    set complete-=i             " Complete only on current buffer http://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
-    set nrformats-=octal        " Ctrl A considers numbers starting with 0 octal
+    set mouse=a                             " Automatically enable mouse usage
+    set mousehide                           " Hide the mouse cursor while typing
+    set complete-=i                         " Complete only on current buffer http://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
+    set nrformats-=octal                    " Ctrl A considers numbers starting with 0 octal
     set autoread
     scriptencoding utf-8
     set clipboard=unnamed                   " Set clipboard buffer to unnamed
+    set undofile                            " turn on the feature
+    set undodir=$HOME/.vim/undo             " directory where the undo files will be stored
 
     " Ignore files {
         set wildignore+=vendor/bundle/**,
@@ -264,21 +242,16 @@
         set termguicolors
     endif
 
-    highlight clear SignColumn      " SignColumn should match background
-    highlight clear LineNr          " Current line number row will have same background color in relative mode
+    highlight clear SignColumn                      " SignColumn should match background
+    highlight clear LineNr                          " Current line number row will have same background color in relative mode
 
     if has('nvim')
         set inccommand=nosplit
     endif
 
-    colorscheme	kalisi                         " Set theme to one
-    " colorscheme	one                         " Set theme to one
-    " set background=dark                     " Set Them to dark
-    " let g:one_allow_italics = 1             " I love italic for comments
-
-    " colorscheme monokai                     " Set theme to monokai
-    " let g:monokai_italic = 1                " Enable italic
-    " let g:monokai_thick_border = 1          " Set window border
+    colorscheme	solo                                " Set theme to one
+    " set background=light
+    " colorscheme	solarized                       " Set theme to one
 
     set cursorline                                  " Highlight current line
     set ruler                                       " Shows line and column of cursor
@@ -290,22 +263,31 @@
     set noshowmode                                  " Hide the default mode text (e.g. -- INSERT -- below the statusline)
     set fillchars+=vert:┆
 
+    augroup VimCSS3Syntax
+        autocmd!
+
+        autocmd FileType scss setlocal iskeyword+=-
+    augroup END
 " }
 
 " Formatting {
+    autocmd BufWritePre * :%s/\s\+$//e              " Removes traling spaces on buffer write
     set wrap
     set linebreak
-    set nolist                              " list disables linebreak
-    set shiftwidth=4                        " Size of indent
-    set tabstop=4                           " Size of hard tbstop
+    set nolist                                      " list disables linebreak
+    set shiftwidth=4                                " Size of indent
+    set tabstop=4                                   " Size of hard tbstop
+    " :set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab "Tabs are eight columns wide. Each indentation level is one tab. (Popular with the Linux kernel.)
     " set autoindent
-    set noexpandtab
-    set shiftwidth=4
-    set splitright                          " Puts new vsplit windows to the right of the current
-    set splitbelow                          " Puts new split windows to the bottom of the current
+    set splitright                                  " Puts new vsplit windows to the right of the current
+    set splitbelow                                  " Puts new split windows below the current
+    " :set listchars=eol:¬,tab:»,trail:~,extends:>,precedes:<
+    " :set list
+    set foldmethod=syntax
 " }
 
 " Key mapping {
+    let mapleader = "\<Space>"
     noremap L g_
     noremap H ^
     noremap J 5j
@@ -316,22 +298,28 @@
     vnoremap <c-/> :TComment<cr>
     " nnoremap <leader>p :set ft=php<cr>
     " nnoremap <leader>h :set ft=html<cr>
-    nnoremap <space> za                     " Toggel folds
+    nnoremap <Enter> za                             " Toggel folds
+    map R <Nop>                                     " Unmap replace mode
+    map r <Nop>                                     " Unmap virtual replace mode
 " }
 
 " Plugins {
 
-" Vim-airline {
-let g:airline_powerline_fonts = 1       " airline uses powerline font
-let g:airline_theme = 'one'
-let g:airline#extensions#tabline#enabled = 1
-autocmd BufWritePre * :%s/\s\+$//e      " Removes traling spaces
-let g:move_key_modifier = 'C'
-let g:sonicpi_enable = 1
-set undofile
-set undodir="$HOME/.vim_unso_files"
-let g:syntastic_loc_list_height = 5
-" }
+    " sonicpi {
+        " let g:sonicpi_enable = 1
+    " }
+
+    " Vim-airline {
+        let g:airline_powerline_fonts = 1               " airline uses powerline font
+        let g:solo_airline = 1                          " airline uses powerline font
+        let g:airline_theme = 'solo'                    " set airline theme
+        let g:airline#extensions#tabline#enabled = 1    " nice buffer top bar
+
+    " }
+
+    " vimMove {
+        " let g:move_key_modifier = 'C'
+    " }
 
     " OmniSharp {
         " " OmniSharp won't work without this setting
@@ -477,11 +465,11 @@ let g:syntastic_loc_list_height = 5
             nnoremap <silent> [omnisharp]x :OmniSharpFixIssue<cr>
             nnoremap <silent> [omnisharp]X :OmniSharpFixUsings<cr>
             nnoremap <silent> [omnisharp]l :OmniSharpTypeLookup<cr>
-            nnoremap <silent> [omnisharp]r :OmniSharpRename<cr>
+            " nnoremap <silent> [omnisharp]r :OmniSharpRename<cr>
             nnoremap <silent> [omnisharp]R :OmniSharpReloadSolution<cr>
             nnoremap <silent> [omnisharp]F :OmniSharpCodeFormat<cr>
             nnoremap <silent> [omnisharp]h :OmniSharpHighlightTypes<cr>
-
+            nnoremap <silent> <leader>nm :OmniSharpRename<cr>
             " Override Vim Gotodefinition
             autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
             "navigate up by method/property/field
@@ -502,6 +490,11 @@ let g:syntastic_loc_list_height = 5
             "
             "
             "
+            "
+            " new not default
+            " autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+            " autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+            " new till here
         endif
     " }
 
@@ -513,6 +506,7 @@ let g:syntastic_loc_list_height = 5
         let g:indentLine_enabled = 1            " Enable indentLine plugin
         let g:indentLine_char = '┆'             " Line indent type ¦ ┆ ︙│
         let g:indentLine_color_term = 239       " Set lineindents to comment color
+        let g:indentLine_setColors = 0
     " }
 
     " Pathogen {
@@ -528,44 +522,27 @@ let g:syntastic_loc_list_height = 5
         "     \   'down': '40%',
         "     \   'sink': 'botright split' })<CR>
 
-        nnoremap <silent> <c-p> :FZF<CR>
+        nnoremap <silent> <c-p> :Files<CR>
+
+        function! s:find_git_root()
+          return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+        endfunction
+
+        command! ProjectFiles execute 'Files' s:find_git_root()
+
+        " let g:rooter_patterns = ['.vimroot', '.git/', '.python-version']
+        "
+        " augroup vimrc_rooter
+        "     autocmd VimEnter * :Rooter
+        " augroup END
     " }
 
     " Deoplete {
-        if dein#tap("deoplete.nvim")
-            let g:deoplete#enable_at_startup = 1
+        let g:deoplete#enable_at_startup = 1                                            "Enable deoplete autocompletion
+        let g:deoplete#file#enable_buffer_path = 1                                      "Autocomplete files relative to current buffer
             let g:deoplete#enable_smart_case = 1
-            let g:deoplete#sources = {}
-            let g:deoplete#sources._=['buffer', 'ultisnips', 'file', 'dictionary']
-            let g:deoplete#sources.cs = ['cs', 'ultisnips', 'buffer']
-            let g:deoplete#sources.python = ['jedi', 'ultisnips', 'buffer']
-            let g:deoplete#omni#input_patterns = {}
-            let g:deoplete#omni#input_patterns.cs = ['\w*']
-            let g:deoplete#omni#input_patterns.rust = '[(\.)(::)]'
-            let g:deoplete#keyword_patterns = {}
-            let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.]*'
-
-            let g:deoplete#sources#dictionary#dictionaries = {
-                \ 'default' : '',
-                \ 'vimshell' : $HOME.'/.vimshell_hist',
-                \ 'scheme' : $HOME.'/.gosh_completions'
-                    \ }
-            " Use Tab
-            " imap <silent><expr> <TAB>
-            "     \ pumvisible() ? "\<C-n>" :
-            "     \ <SID>check_back_space() ? "\<TAB>" :
-            "     \ deoplete#mappings#manual_complete()
-
-            function! s:check_back_space() abort
-                let col = col('.') - 1
-                return !col || getline('.')[col - 1]  =~ '\s'
-            endfunction
-
-            " Close window on finish
-            autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-            au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
-
+        " if dein#tap("deoplete.nvim")
+        "
             aug omnicomplete
                 au!
                 au FileType css,sass,scss,stylus,less setl omnifunc=csscomplete#CompleteCSS
@@ -573,7 +550,52 @@ let g:syntastic_loc_list_height = 5
                 au FileType python setl omnifunc=pythoncomplete#Complete
                 au FileType xml setl omnifunc=xmlcomplete#CompleteTags
             aug END
-        endif
+        "
+        "     autocmd FileType css,sass,scss setlocal omnifunc=csscomplete#CompleteCSS
+        "
+        "     let g:deoplete#enable_at_startup = 1
+        "     let g:deoplete#enable_smart_case = 1
+        "     let g:deoplete#sources = {}
+        "     let g:deoplete#sources._=['buffer', 'ultisnips', 'file', 'dictionary']
+        "     let g:deoplete#sources.cs = ['cs', 'ultisnips', 'buffer']
+        "     let g:deoplete#sources.python = ['jedi', 'ultisnips', 'buffer']
+        "     let g:deoplete#omni#input_patterns = {}
+        "     let g:deoplete#omni#input_patterns.cs = ['\w*']
+        "     let g:deoplete#omni#input_patterns.rust = '[(\.)(::)]'
+        "     let g:deoplete#keyword_patterns = {}
+        "     let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.]*'
+        "
+        "     let g:deoplete#sources#dictionary#dictionaries = {
+        "         \ 'default' : '',
+        "         \ 'vimshell' : $HOME.'/.vimshell_hist',
+        "         \ 'scheme' : $HOME.'/.gosh_completions'
+        "             \ }
+        "
+        "     let g:deoplete#omni_patterns = get(g:, 'deoplete#omni_patterns', {})
+        "     let g:deoplete#omni_patterns.html = '<[^>]*'
+        "
+        "     " let g:deoplete#omni_patterns.javascript = '[^. *\t]\.\w*'
+        "     " let g:deoplete#omni_patterns.javascript = '[^. \t]\.\%\(\h\w*\)\?'
+        "     let g:deoplete#omni_patterns.php =
+        "                 \ '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+        "
+        "     " Use Tab
+        "     " imap <silent><expr> <TAB>
+        "     "     \ pumvisible() ? "\<C-n>" :
+        "     "     \ <SID>check_back_space() ? "\<TAB>" :
+        "     "     \ deoplete#mappings#manual_complete()
+        "
+        "     function! s:check_back_space() abort
+        "         let col = col('.') - 1
+        "         return !col || getline('.')[col - 1]  =~ '\s'
+        "     endfunction
+        "
+        "     " Close window on finish
+        "     autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+        "
+        "     au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
+        "
+        " endif
     " }
 
     " Tmux Navigation {
@@ -619,33 +641,35 @@ let g:syntastic_loc_list_height = 5
         "   \ 'texthl': 'ErrorMsg',
         "   \ }
     " }
-" }
 
-" Misc {
-    " match ErrorMsg '\s\+$'
-    " let g:python_host_prog = '/path/to/python'
-    " let g:UltiSnipsUsePythonVersion = 2
-    "
-    "
-    " set nocompatible                        " be iMproved, required
-    " " filetype off                            " required
-    "
-    " " if ! has('gui_running')
-    " "     set ttimeoutlen=10
-    " "     augroup FastEscape
-    " "         autocmd!
-    " "         au InsertEnter * set timeoutlen=0
-    " "         au InsertLeave * set timeoutlen=1000
-    " "     augroup END
-    " " endif
-    "
-    " let g:user_emmet_mode='n'
-    "
-    " if has("unix")
-    "     let s:uname = system("uname")
-    "     let g:python_host_prog='/usr/bin/python'
-    "     if s:uname == "Darwin\n"
-    "         let g:python_host_prog='/usr/local/bin/python' " found via `which python`
-    "     endif
-    " endif
-" }
+    " Misc {
+        " match ErrorMsg '\s\+$'
+        " let g:python_host_prog = '/path/to/python'
+        " let g:UltiSnipsUsePythonVersion = 2
+        "
+        "
+        " set nocompatible                        " be iMproved, required
+        " " filetype off                            " required
+        "
+        " " if ! has('gui_running')
+        " "     set ttimeoutlen=10
+        " "     augroup FastEscape
+        " "         autocmd!
+        " "         au InsertEnter * set timeoutlen=0
+        " "         au InsertLeave * set timeoutlen=1000
+        " "     augroup END
+        " " endif
+        "
+        " let g:user_emmet_mode='n'
+        "
+        " if has("unix")
+        "     let s:uname = system("uname")
+        "     let g:python_host_prog='/usr/bin/python'
+        "     if s:uname == "Darwin\n"
+        "         let g:python_host_prog='/usr/local/bin/python' " found via `which python`
+        "     endif
+        " endif
+    " }
+"}
+
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:

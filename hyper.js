@@ -4,7 +4,8 @@ module.exports = {
 		fontSize: 13,
 
 		// font family with optional fallbacks
-		fontFamily: '"Meslo LG S for Powerline", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+		fontFamily: '"Roboto Mono", "Roboto Mono for Powerline", "Meslo LG S for Powerline", monospace',
+		// fontFamily: '"Roboto Mono", "Roboto Mono for Powerline", "Meslo LG S for Powerline", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 		// fontFamily: 'Hack,"Liberation Mono for Powerline", monospace',
 		// fontFamily: '"Liberation Mono for Powerline", "Meslo LG S for Powerline", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
@@ -42,7 +43,7 @@ module.exports = {
 	//   `hyperpower`
 	//   `@company/project`
 	//   `project#1.0.1`
-	plugins: ["hyperterm-lastpass"],
+	// plugins: ["hyperterm-lastpass"],
 
 	// in development, you can create a directory under
 	// `~/.hyperterm_plugins/local/` and include it here
