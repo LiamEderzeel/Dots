@@ -109,7 +109,7 @@ alias TP='mux start Typer-Frontend; mux start Typer-Backend'
 alias screeps='a /Users/liamederzeel/Library/Application\ Support/screeps/scripts/188_226_192_169___21025/default'
 plugins=(git zsh-syntax-highlighting)
 # eval "$(pyenv init -)"
-source /Users/liamederzeel/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /Users/liamederzeel/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
