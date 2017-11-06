@@ -70,7 +70,6 @@
         call dein#add('SirVer/ultisnips')                             " Snippets
         " call dein#add('honza/vim-snippets')
         " call dein#add('wellle/targets.vim')                           " Better motions
-        " call dein#add('neomake/neomake')
         " call dein#add('Raimondi/delimitMate')                        " Auto close quotes parentesis etc
         " call dein#add('mhinz/vim-grepper')                            " Multiple grep support
         " call dein#add('sjl/gundo.vim')                               " Undo tree
@@ -193,6 +192,8 @@
     set mouse=a                             " Automatically enable mouse usage
     set mousehide                           " Hide the mouse cursor while typing
     set complete-=i                         " Complete only on current buffer http://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
+    set ffs=unix,dos
+    set ff=unix                             " Change DOS line endings to unix
     set nrformats-=octal                    " Ctrl A considers numbers starting with 0 octal
     set autoread
     scriptencoding utf-8
@@ -284,6 +285,7 @@
     " :set listchars=eol:¬,tab:»,trail:~,extends:>,precedes:<
     " :set list
     set foldmethod=syntax
+    set foldlevel=10
 " }
 
 " Key mapping {
@@ -538,46 +540,40 @@
     " }
 
     " Deoplete {
-        let g:deoplete#enable_at_startup = 1                                            "Enable deoplete autocompletion
-        let g:deoplete#file#enable_buffer_path = 1                                      "Autocomplete files relative to current buffer
-            let g:deoplete#enable_smart_case = 1
+        " let g:deoplete#enable_at_startup = 1                                            "Enable deoplete autocompletion
+        " let g:deoplete#file#enable_buffer_path = 1                                      "Autocomplete files relative to current buffer
+        "     let g:deoplete#enable_smart_case = 1
         " if dein#tap("deoplete.nvim")
         "
-            aug omnicomplete
-                au!
-                au FileType css,sass,scss,stylus,less setl omnifunc=csscomplete#CompleteCSS
-                au FileType html,htmldjango,jinja,markdown setl omnifunc=emmet#completeTag
-                au FileType python setl omnifunc=pythoncomplete#Complete
-                au FileType xml setl omnifunc=xmlcomplete#CompleteTags
-            aug END
         "
         "     autocmd FileType css,sass,scss setlocal omnifunc=csscomplete#CompleteCSS
         "
-        "     let g:deoplete#enable_at_startup = 1
-        "     let g:deoplete#enable_smart_case = 1
-        "     let g:deoplete#sources = {}
-        "     let g:deoplete#sources._=['buffer', 'ultisnips', 'file', 'dictionary']
-        "     let g:deoplete#sources.cs = ['cs', 'ultisnips', 'buffer']
-        "     let g:deoplete#sources.python = ['jedi', 'ultisnips', 'buffer']
-        "     let g:deoplete#omni#input_patterns = {}
-        "     let g:deoplete#omni#input_patterns.cs = ['\w*']
-        "     let g:deoplete#omni#input_patterns.rust = '[(\.)(::)]'
-        "     let g:deoplete#keyword_patterns = {}
-        "     let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.]*'
-        "
-        "     let g:deoplete#sources#dictionary#dictionaries = {
-        "         \ 'default' : '',
-        "         \ 'vimshell' : $HOME.'/.vimshell_hist',
-        "         \ 'scheme' : $HOME.'/.gosh_completions'
-        "             \ }
-        "
-        "     let g:deoplete#omni_patterns = get(g:, 'deoplete#omni_patterns', {})
-        "     let g:deoplete#omni_patterns.html = '<[^>]*'
-        "
-        "     " let g:deoplete#omni_patterns.javascript = '[^. *\t]\.\w*'
-        "     " let g:deoplete#omni_patterns.javascript = '[^. \t]\.\%\(\h\w*\)\?'
-        "     let g:deoplete#omni_patterns.php =
-        "                 \ '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+            let g:deoplete#enable_at_startup = 1
+            let g:deoplete#enable_smart_case = 1
+            " let g:deoplete#file#enable_buffer_path = 1                                      "Autocomplete files relative to current buffer
+            let g:deoplete#sources = {}
+            let g:deoplete#sources._=['buffer', 'ultisnips', 'file', 'dictionary']
+            let g:deoplete#sources.cs = ['cs', 'ultisnips', 'buffer']
+            let g:deoplete#sources.python = ['jedi', 'ultisnips', 'buffer']
+            let g:deoplete#omni#input_patterns = {}
+            let g:deoplete#omni#input_patterns.cs = ['\w*']
+            let g:deoplete#omni#input_patterns.rust = '[(\.)(::)]'
+            let g:deoplete#keyword_patterns = {}
+            let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.]*'
+
+            let g:deoplete#sources#dictionary#dictionaries = {
+                \ 'default' : '',
+                \ 'vimshell' : $HOME.'/.vimshell_hist',
+                \ 'scheme' : $HOME.'/.gosh_completions'
+                    \ }
+
+            let g:deoplete#omni_patterns = get(g:, 'deoplete#omni_patterns', {})
+            let g:deoplete#omni_patterns.html = '<[^>]*'
+
+            let g:deoplete#omni_patterns.javascript = '[^. *\t]\.\w*'
+            let g:deoplete#omni_patterns.javascript = '[^. \t]\.\%\(\h\w*\)\?'
+            let g:deoplete#omni_patterns.php =
+                        \ '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
         "
         "     " Use Tab
         "     " imap <silent><expr> <TAB>
@@ -585,15 +581,23 @@
         "     "     \ <SID>check_back_space() ? "\<TAB>" :
         "     "     \ deoplete#mappings#manual_complete()
         "
-        "     function! s:check_back_space() abort
-        "         let col = col('.') - 1
-        "         return !col || getline('.')[col - 1]  =~ '\s'
-        "     endfunction
+            function! s:check_back_space() abort
+                let col = col('.') - 1
+                return !col || getline('.')[col - 1]  =~ '\s'
+            endfunction
         "
-        "     " Close window on finish
-        "     autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+            " Close window on finish
+            autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
         "
-        "     au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
+            au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
+        "
+        aug omnicomplete
+            au!
+            au FileType css,sass,scss,stylus,less setl omnifunc=csscomplete#CompleteCSS
+            au FileType html,htmldjango,jinja,markdown setl omnifunc=emmet#completeTag
+            au FileType python setl omnifunc=pythoncomplete#Complete
+            au FileType xml setl omnifunc=xmlcomplete#CompleteTags
+        aug END
         "
         " endif
     " }
@@ -631,7 +635,8 @@
         autocmd! BufWritePost * Neomake
         " autocmd! BufWritePost,BufEnter * Neomake
         " autocmd! BufWritePost,BufReadPost * Neomake
-        " let g:neomake_open_list = 2
+        let g:neomake_open_list = 2
+        let g:neomake_list_height = 5
         " let g:neomake_warning_sign = {
         "   \ 'text': 'W',
         "   \ 'texthl': 'WarningMsg',
@@ -640,6 +645,7 @@
         "   \ 'text': 'E',
         "   \ 'texthl': 'ErrorMsg',
         "   \ }
+
     " }
 
     " Misc {
