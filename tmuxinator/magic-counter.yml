@@ -1,0 +1,7 @@
+# ~/.tmuxinator/magic-counter.yml
+
+name: magic-counter
+root: /projects/magic-counter
+windows:
+  - editor:
+  - server: npm start

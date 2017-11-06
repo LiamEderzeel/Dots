@@ -1,0 +1,19 @@
+# ~/.tmuxinator/Typer.yml
+
+name: Deadlines
+root: /projects
+
+windows:
+  - editorFrontend:
+        - cd deadlines-frontend/
+  - frontend:
+        - cd deadlines-frontend/
+        - npm start
+  - editorBackend:
+        - cd deadlines-backend/
+  - backend:
+        - cd deadlines-backend/
+        - npm start
+  - db:
+        - cd deadlines-backend/
+        - mongod

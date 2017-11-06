@@ -1,0 +1,8 @@
+# ~/.tmuxinator/shadows-editor-frontend.yml
+
+name: shadows-editor-frontend
+root: /projects/shadows-editor-frontend
+
+windows:
+  - editor:
+  - server: npm start

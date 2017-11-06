@@ -1,0 +1,7 @@
+# ~/.tmuxinator/shadows.yml
+
+name: shadows
+root: /projects/shadows
+
+windows:
+  - editor:

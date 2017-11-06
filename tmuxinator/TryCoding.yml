@@ -1,0 +1,17 @@
+# ~/.tmuxinator/TryCoding.yml
+
+name: TryCoding
+root: /projects
+
+windows:
+  - editorFrontend:
+      - cd TryCoding-Frontend
+  - editorServer:
+        - cd TryCoding-Frontend
+        - npm start
+  - editorBackend:
+        - cd TryCoding-Backend
+  - editorServer:
+        - cd TryCoding-Backend
+        - npm start
+  - db: mongod

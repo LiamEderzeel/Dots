@@ -1,0 +1,8 @@
+# ~/.tmuxinator/chef99.yml
+
+name: chef99
+root: /projects/chef99
+
+windows:
+  - editor:
+  - server: npm start

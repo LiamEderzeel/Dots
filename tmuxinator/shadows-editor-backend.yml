@@ -1,0 +1,9 @@
+# ~/.tmuxinator/shadows-editor-backend.yml
+
+name: shadows-editor-backend
+root: /projects/shadows-editor-backend
+
+windows:
+  - editor:
+  - server: npm start
+  - database: mongod
