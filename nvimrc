@@ -44,9 +44,9 @@
 " }
 
 " Bundles {
-    set runtimepath+=~/.vim/plugin/repos/github.com/Shougo/dein.vim
-    if dein#load_state(expand('~/.vim/plugin'))
-       call dein#begin(expand('~/.vim/plugin'))
+    set runtimepath+=~/.vim/plugged/repos/github.com/Shougo/dein.vim
+    if dein#load_state(expand('~/.vim/plugged'))
+       call dein#begin(expand('~/.vim/plugged'))
        call dein#add('Shougo/dein.vim')
 
         " Unite {
@@ -89,6 +89,7 @@
             call dein#add('brooth/far.vim')
             call dein#add('christoomey/vim-tmux-navigator')
             call dein#add('tpope/vim-fugitive')                             " Git wrapper
+            " call dein#add('suan/vim-instant-markdown')                      " Live markdown preview
             " call dein#add('euclio/vim-markdown-composer', { 'build': 'cargo build --release'})                   " Markdown live previewer
 
             if OSX()
@@ -133,19 +134,19 @@
             call dein#add('OrangeT/vim-csharp')
             call dein#add('cakebaker/scss-syntax.vim')
             call dein#add('pangloss/vim-javascript')
+            call dein#add('mxw/vim-jsx')
             call dein#add('crusoexia/vim-javascript-lib')
             call dein#add('garbas/vim-snipmate')
             call dein#add('hail2u/vim-css3-syntax')
-
             call dein#add('vim-scripts/vim-polyglot',{})
             call dein#add('rust-lang/rust.vim', {})
             call dein#add('racer-rust/vim-racer', {})
             call dein#add('cespare/vim-toml', { 'on_ft': 'toml' })
             call dein#add('mattn/emmet-vim', {})
-            call dein#add('othree/html5.vim', { 'on_ft': 'html' })
+            call dein#add('shime/vim-livedown')
+            call dein#add('othree/html5.vim', { 'on_ft': ['html', 'markdown' ]})
             call dein#add('elzr/vim-json', { 'on_ft': 'json' })
             call dein#add('pangloss/vim-javascript', {})
-            call dein#add('mxw/vim-jsx', {})
             call dein#add('jaawerth/nrun.vim', {})
 
             if OSX()
@@ -172,7 +173,7 @@
 
 " General {
     set background=dark
-    filetype plugin indent on               " Automatically detect file types.
+    filetype plugin on               " Automatically detect file types.
     syntax on                               " Turn syntax highlighting on
     set mouse=a                             " Automatically enable mouse usage
     set mousehide                           " Hide the mouse cursor while typing
@@ -528,6 +529,12 @@
         "     endif
         " endif
     " }
+
+    " Livedown {
+        let g:livedown_autorun = 1
+        let g:livedown_open = 1
+    " }
+
 "}
 
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
