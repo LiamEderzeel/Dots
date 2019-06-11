@@ -1,0 +1,67 @@
+{
+    "explorer.autoReveal": false,
+    "editor.formatOnSave": true,
+    "csharp.referencesCodeLens.enabled": false,
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontFamily": "Roboto Mono for Powerline",
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.tabCloseButton": "off",
+    "workbench.action.focusPreviousGroup": "ctrl h",
+    "vssolution.trackActiveItem": false,
+    // "vim.enableNeovim": true,
+    // "vim.neovimPath": "/usr/local/Cellar/neovim/0.2.1",
+    "vim.searchHighlightColor": "rgba(255, 150, 255, 0.7)",
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.normalModeKeyBindingsNonRecursive": [],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<shift-p>",
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "commands": [
+                "workbench.action.focusPreviousGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "commands": [
+                "workbench.action.focusNextGroup"
+            ]
+        },
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "5",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "5",
+                "k"
+            ]
+        }
+    ],
+    "editor.minimap.enabled": false,
+    "zenMode.hideTabs": false,
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true,
+    "workbench.colorTheme": "Material Theme Ocean"
+}

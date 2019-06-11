@@ -55,41 +55,36 @@
         " Utilities{
             " call dein#add('Shougo/vimproc.vim', {'build': 'make'})
             call dein#add('editorconfig/editorconfig-vim')
-            " call dein#add('tpope/vim-vinegar')                              " Netrw helper
-            " call dein#add('tpope/vim-obsession')                            " Session Managment
-            " call dein#add('tpope/vim-eunuch')                               " Unix helpers
-            " call dein#add('tpope/vim-commentary')                           " Toggle comments
             call dein#add('tpope/vim-surround')                             " Sorroundings
-            " call dein#add('tpope/vim-repeat')                               " More . command
-            " call dein#add('tpope/vim-abolish')                              " Better replace
-            " call dein#add('tpope/vim-unimpaired')                           " Key mappings for [
-            " call dein#add('tommcdo/vim-exchange')                           " Exchange motion
-            " call dein#add('AndrewRadev/splitjoin.vim')                      " Split onelinners with gS
+            " call dein#add('tpope/vim-repeat')                             " More . command
+            " call dein#add('tpope/vim-abolish')                            " Better replace
+            " call dein#add('tpope/vim-unimpaired')                         " Key mappings for [
+            " call dein#add('tommcdo/vim-exchange')                         " Exchange motion
+            " call dein#add('AndrewRadev/splitjoin.vim')                    " Split onelinners with gS
             call dein#add('SirVer/ultisnips')                               " Snippets
             call dein#add('marcweber/vim-addon-mw-utils')
             " call dein#add('honza/vim-snippets')
-            " call dein#add('wellle/targets.vim')                             " Better motions
+            " call dein#add('wellle/targets.vim')                           " Better motions
             call dein#add('Raimondi/delimitMate')                           " Auto close quotes parentesis etc
             call dein#add('mhinz/vim-grepper')                              " Multiple grep support
-            " call dein#add('sjl/gundo.vim')                                  " Undo tree
+            " call dein#add('sjl/gundo.vim')                                " Undo tree
             call dein#add('godlygeek/tabular')                              " Align code
-            " call dein#add('vim-scripts/BufOnly.vim')                        " Close All other buffers
+            " call dein#add('vim-scripts/BufOnly.vim')                      " Close All other buffers
             call dein#add('airblade/vim-rooter')
             call dein#add('tpope/vim-dispatch')                             " Asynchronous build and test dispatcher
             call dein#add('tomtom/tcomment_vim')
             call dein#add('mattn/emmet-vim')
-            call dein#add('matze/vim-move')
             call dein#add('dermusikman/sonicpi.vim')
-            call dein#add('Shougo/deoplete.nvim')
+            " call dein#add('Shougo/deoplete.nvim')
             call dein#add('mhinz/vim-startify')                             " Start Screen
-            call dein#add('neomake/neomake')                                " Async Syntax check
+            " call dein#add('neomake/neomake')                                " Async Syntax check
             call dein#add('Yggdroot/indentLine')
             call dein#add('junegunn/fzf', { 'build': './install --all' })   " Fuzzy finder
             call dein#add('junegunn/fzf.vim')                               " fzf vim plugin
             call dein#add('brooth/far.vim')
             call dein#add('christoomey/vim-tmux-navigator')
             call dein#add('tpope/vim-fugitive')                             " Git wrapper
-            " call dein#add('suan/vim-instant-markdown')                      " Live markdown preview
+            " call dein#add('suan/vim-instant-markdown')                    " Live markdown preview
             " call dein#add('euclio/vim-markdown-composer', { 'build': 'cargo build --release'})                   " Markdown live previewer
 
             if OSX()
@@ -103,7 +98,6 @@
             call dein#add('dbmrq/vim-ditto', {'on_ft': ['markdown', 'text']})
             call dein#add('junegunn/goyo.vim', {'on_ft': ['markdown', 'text']})
             call dein#add('junegunn/limelight.vim', {'on_ft': ['markdown', 'text']})
-            " call dein#add('reedes/vim-textobj-sentence', {'in_ft': 'markdown'})
         " }
         " VCS {
             call dein#add('tpope/vim-fugitive')                           " Git wrapper
@@ -126,28 +120,35 @@
             " call dein#add('morhetz/gruvbox')
         " }
         " Language {
-            call dein#add('lilydjwg/colorizer')
+            call dein#add('lilydjwg/colorizer')                     " Preview colors
             call dein#add('vim-scripts/vim-polyglot')
-            call dein#add('leafgarland/typescript-vim')
-            call dein#add('vim-scripts/ShaderHighLight')
-            call dein#add('JulesWang/css.vim')
-            call dein#add('OrangeT/vim-csharp')
-            call dein#add('cakebaker/scss-syntax.vim')
-            call dein#add('pangloss/vim-javascript')
-            call dein#add('mxw/vim-jsx')
-            call dein#add('crusoexia/vim-javascript-lib')
-            call dein#add('garbas/vim-snipmate')
-            call dein#add('hail2u/vim-css3-syntax')
-            call dein#add('vim-scripts/vim-polyglot',{})
-            call dein#add('rust-lang/rust.vim', {})
-            call dein#add('racer-rust/vim-racer', {})
-            call dein#add('cespare/vim-toml', { 'on_ft': 'toml' })
-            call dein#add('mattn/emmet-vim', {})
-            call dein#add('shime/vim-livedown')
-            call dein#add('othree/html5.vim', { 'on_ft': ['html', 'markdown' ]})
-            call dein#add('elzr/vim-json', { 'on_ft': 'json' })
-            call dein#add('pangloss/vim-javascript', {})
-            call dein#add('jaawerth/nrun.vim', {})
+            " call dein#add('garbas/vim-snipmate')
+            " call dein#add('rust-lang/rust.vim', {})
+            " call dein#add('racer-rust/vim-racer', {})
+            " call dein#add('cespare/vim-toml', { 'on_ft': 'toml' })
+            " call dein#add('mattn/emmet-vim', {})
+            " call dein#add('shime/vim-livedown')
+            " call dein#add('jaawerth/nrun.vim', {})
+            " " Yaml
+            " call dein#add('mrk21/yaml-vim')
+            " " C#
+            " call dein#add('OrangeT/vim-csharp')
+            " " JS
+            " call dein#add('pangloss/vim-javascript')
+            " call dein#add('mxw/vim-jsx')
+            " call dein#add('leafgarland/typescript-vim')
+            " call dein#add('crusoexia/vim-javascript-lib')
+            " call dein#add('carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' })
+            " " JSON
+            " call dein#add('elzr/vim-json', { 'on_ft': 'json' })
+            " " Shader lab
+            " call dein#add('vim-scripts/ShaderHighLight')
+            " " HTML
+            " call dein#add('othree/html5.vim', { 'on_ft': ['html', 'markdown' ]})
+            " " CSS
+            " call dein#add('JulesWang/css.vim')
+            " call dein#add('hail2u/vim-css3-syntax')
+            " call dein#add('cakebaker/scss-syntax.vim')
 
             if OSX()
                 call dein#add('OmniSharp/omnisharp-vim', {
@@ -159,7 +160,11 @@
                         \ 'depends': 'omnisharp-vim'
                         \ })
             endif
-    " }
+        " }
+
+        " programming {
+            call dein#add('neoclide/coc.nvim', { 'build': 'yarn install' })
+        " }
 
         call dein#end()
 
@@ -173,7 +178,7 @@
 
 " General {
     set background=dark
-    filetype plugin on               " Automatically detect file types.
+    filetype plugin on                      " Automatically detect file types.
     syntax on                               " Turn syntax highlighting on
     set mouse=a                             " Automatically enable mouse usage
     set mousehide                           " Hide the mouse cursor while typing
@@ -300,11 +305,6 @@
         let g:solo_airline = 1                          " airline uses powerline font
         let g:airline_theme = 'solo'                    " set airline theme
         let g:airline#extensions#tabline#enabled = 1    " nice buffer top bar
-
-    " }
-
-    " vimMove {
-        " let g:move_key_modifier = 'C'
     " }
 
         " OmniSharp {
@@ -353,9 +353,9 @@
         endif
         " }
 
-    " Vim-javascript {
-        set rtp+=/Users/raguay/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
-    " }
+    " " Vim-javascript {
+    "     set rtp+=/Users/raguay/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+    " " }
 
     " indentLine {
         let g:indentLine_enabled = 1            " Enable indentLine plugin
@@ -364,9 +364,24 @@
         let g:indentLine_setColors = 0
     " }
 
-    " Neomake {
-        autocmd! BufWritePost,BufEnter * Neomake
-    " }
+    " " Neomake {
+    "     autocmd! BufWritePost,BufEnter * Neomake
+    "
+    "     " neomake stuff no qlu
+    "     autocmd! BufWritePost * Neomake
+    "     " autocmd! BufWritePost,BufEnter * Neomake
+    "     " autocmd! BufWritePost,BufReadPost * Neomake
+    "     let g:neomake_open_list = 2
+    "     let g:neomake_list_height = 5
+    "     " let g:neomake_warning_sign = {
+    "     "   \ 'text': 'W',
+    "     "   \ 'texthl': 'WarningMsg',
+    "     "   \ }
+    "     " let g:neomake_error_sign = {
+    "     "   \ 'text': 'E',
+    "     "   \ 'texthl': 'ErrorMsg',
+    "     "   \ }
+    " " }
 
     " fzf {
         " nnoremap <silent> <c-p> :call fzf#run({
@@ -374,6 +389,7 @@
         "     \   'sink': 'botright split' })<CR>
 
         nnoremap <silent> <c-p> :Files<CR>
+
 
         function! s:find_git_root()
           return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
@@ -383,61 +399,118 @@
         let $FZF_DEFAULT_COMMAND = 'ag --hidden -g ""'
     " }
 
-    " Deoplete {
-        " if dein#tap("deoplete.nvim")
-
-            let g:deoplete#enable_at_startup = 1                                            "Enable deoplete autocompletion
-            let g:deoplete#enable_smart_case = 1
-            " let g:deoplete#file#enable_buffer_path = 1                                      "Autocomplete files relative to current buffer
-            let g:deoplete#sources = {}
-            let g:deoplete#sources._=['buffer', 'ultisnips', 'file', 'dictionary']
-            let g:deoplete#sources.cs = ['cs', 'ultisnips', 'buffer']
-            let g:deoplete#sources.python = ['jedi', 'ultisnips', 'buffer']
-            let g:deoplete#omni#input_patterns = {}
-            let g:deoplete#omni#input_patterns.cs = ['\w*']
-            let g:deoplete#omni#input_patterns.rust = '[(\.)(::)]'
-            let g:deoplete#keyword_patterns = {}
-            let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.]*'
-
-            let g:deoplete#sources#dictionary#dictionaries = {
-                \ 'default' : '',
-                \ 'vimshell' : $HOME.'/.vimshell_hist',
-                \ 'scheme' : $HOME.'/.gosh_completions'
-                    \ }
-
-            let g:deoplete#omni_patterns = get(g:, 'deoplete#omni_patterns', {})
-            let g:deoplete#omni_patterns.html = '<[^>]*'
-
-            let g:deoplete#omni_patterns.javascript = '[^. *\t]\.\w*'
-            let g:deoplete#omni_patterns.javascript = '[^. \t]\.\%\(\h\w*\)\?'
-            let g:deoplete#omni_patterns.php = '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-        "
-        "     " Use Tab
-        "     " imap <silent><expr> <TAB>
-        "     "     \ pumvisible() ? "\<C-n>" :
-        "     "     \ <SID>check_back_space() ? "\<TAB>" :
-        "     "     \ deoplete#mappings#manual_complete()
-        "
-            function! s:check_back_space() abort
-                let col = col('.') - 1
-                return !col || getline('.')[col - 1]  =~ '\s'
-            endfunction
-        "
-            " Close window on finish
-            autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-        "
-            au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
-        "
-        aug omnicomplete
-            au!
-            au FileType css,sass,scss,stylus,less setl omnifunc=csscomplete#CompleteCSS
-            au FileType html,htmldjango,jinja,markdown setl omnifunc=emmet#completeTag
-            au FileType python setl omnifunc=pythoncomplete#Complete
-            au FileType xml setl omnifunc=xmlcomplete#CompleteTags
-        aug END
-        "
-        " endif
-    " }
+    " " Deoplete {
+    "     " if dein#tap("deoplete.nvim")
+    "
+    "         let g:deoplete#enable_at_startup = 1                                            "Enable deoplete autocompletion
+    "         let g:deoplete#enable_smart_case = 1
+    "         " let g:deoplete#file#enable_buffer_path = 1                                      "Autocomplete files relative to current buffer
+    "         let g:deoplete#sources = {}
+    "         let g:deoplete#sources._=['buffer', 'ultisnips', 'file', 'dictionary']
+    "         let g:deoplete#sources.cs = ['cs', 'ultisnips', 'buffer']
+    "         let g:deoplete#sources.python = ['jedi', 'ultisnips', 'buffer']
+    "         let g:deoplete#omni#input_patterns = {}
+    "         let g:deoplete#omni#input_patterns.cs = ['\w*']
+    "         let g:deoplete#omni#input_patterns.rust = '[(\.)(::)]'
+    "         let g:deoplete#keyword_patterns = {}
+    "         let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.]*'
+    "
+    "         let g:deoplete#sources#dictionary#dictionaries = {
+    "             \ 'default' : '',
+    "             \ 'vimshell' : $HOME.'/.vimshell_hist',
+    "             \ 'scheme' : $HOME.'/.gosh_completions'
+    "                 \ }
+    "
+    "         let g:deoplete#omni_patterns = get(g:, 'deoplete#omni_patterns', {})
+    "         let g:deoplete#omni_patterns.html = '<[^>]*'
+    "
+    "         let g:deoplete#omni_patterns.javascript = '[^. *\t]\.\w*'
+    "         let g:deoplete#omni_patterns.javascript = '[^. \t]\.\%\(\h\w*\)\?'
+    "         let g:deoplete#omni_patterns.php = '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+    "         " Set bin if you have many instalations
+    "         let g:deoplete#sources#ternjs#tern_bin = '/path/to/tern_bin'
+    "         let g:deoplete#sources#ternjs#timeout = 1
+    "
+    "         " Whether to include the types of the completions in the result data. Default: 0
+    "         let g:deoplete#sources#ternjs#types = 1
+    "
+    "         " Whether to include the distance (in scopes for variables, in prototypes for
+    "         " properties) between the completions and the origin position in the result
+    "         " data. Default: 0
+    "         let g:deoplete#sources#ternjs#depths = 1
+    "
+    "         " Whether to include documentation strings (if found) in the result data.
+    "         " Default: 0
+    "         let g:deoplete#sources#ternjs#docs = 1
+    "
+    "         " When on, only completions that match the current word at the given point will
+    "         " be returned. Turn this off to get all results, so that you can filter on the
+    "         " client side. Default: 1
+    "         let g:deoplete#sources#ternjs#filter = 0
+    "
+    "         " Whether to use a case-insensitive compare between the current word and
+    "         " potential completions. Default 0
+    "         let g:deoplete#sources#ternjs#case_insensitive = 1
+    "
+    "         " When completing a property and no completions are found, Tern will use some
+    "         " heuristics to try and return some properties anyway. Set this to 0 to
+    "         " turn that off. Default: 1
+    "         let g:deoplete#sources#ternjs#guess = 0
+    "
+    "         " Determines whether the result set will be sorted. Default: 1
+    "         let g:deoplete#sources#ternjs#sort = 0
+    "
+    "         " When disabled, only the text before the given position is considered part of
+    "         " the word. When enabled (the default), the whole variable name that the cursor
+    "         " is on will be included. Default: 1
+    "         let g:deoplete#sources#ternjs#expand_word_forward = 0
+    "
+    "         " Whether to ignore the properties of Object.prototype unless they have been
+    "         " spelled out by at least two characters. Default: 1
+    "         let g:deoplete#sources#ternjs#omit_object_prototype = 0
+    "
+    "         " Whether to include JavaScript keywords when completing something that is not
+    "         " a property. Default: 0
+    "         let g:deoplete#sources#ternjs#include_keywords = 1
+    "
+    "         " If completions should be returned when inside a literal. Default: 1
+    "         let g:deoplete#sources#ternjs#in_literal = 0
+    "
+    "
+    "         "Add extra filetypes
+    "         let g:deoplete#sources#ternjs#filetypes = [
+    "             \ 'jsx',
+    "             \ 'javascript.jsx',
+    "             \ 'vue',
+    "             \ '...'
+    "             \ ]
+    "     "
+    "     "     " Use Tab
+    "     "     " imap <silent><expr> <TAB>
+    "     "     "     \ pumvisible() ? "\<C-n>" :
+    "     "     "     \ <SID>check_back_space() ? "\<TAB>" :
+    "     "     "     \ deoplete#mappings#manual_complete()
+    "     "
+    "         function! s:check_back_space() abort
+    "             let col = col('.') - 1
+    "             return !col || getline('.')[col - 1]  =~ '\s'
+    "         endfunction
+    "     "
+    "         " Close window on finish
+    "         autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+    "     "
+    "         au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
+    "     "
+    "     aug omnicomplete
+    "         au!
+    "         au FileType css,sass,scss,stylus,less setl omnifunc=csscomplete#CompleteCSS
+    "         au FileType html,htmldjango,jinja,markdown setl omnifunc=emmet#completeTag
+    "         au FileType python setl omnifunc=pythoncomplete#Complete
+    "         au FileType xml setl omnifunc=xmlcomplete#CompleteTags
+    "     aug END
+    "     "
+    "     " endif
+    " " }
 
     " Tmux Navigation {
         nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
@@ -465,28 +538,6 @@
             \ ]
 
         let g:startify_bookmarks = [ {'c': '~/.nvimrc'}, {'cc': '~/.zshrc'} ]
-    " }
-
-    " Neomake {
-        " neomake stuff no qlu
-        autocmd! BufWritePost * Neomake
-        " autocmd! BufWritePost,BufEnter * Neomake
-        " autocmd! BufWritePost,BufReadPost * Neomake
-        let g:neomake_open_list = 2
-        let g:neomake_list_height = 5
-        " let g:neomake_warning_sign = {
-        "   \ 'text': 'W',
-        "   \ 'texthl': 'WarningMsg',
-        "   \ }
-        " let g:neomake_error_sign = {
-        "   \ 'text': 'E',
-        "   \ 'texthl': 'ErrorMsg',
-        "   \ }
-
-    " }
-
-    " Key mapping {
-        let g:instant_markdown_autostart = 1
     " }
 
     " EditorConfig {
@@ -530,11 +581,99 @@
         " endif
     " }
 
-    " Livedown {
-        let g:livedown_autorun = 1
-        let g:livedown_open = 1
+    " coc {
+        let g:coc_filetypes = []
+
+        function s:CocFormat(range, line1, line2) abort
+            if a:range == 0
+                call CocAction('format')
+            else
+                call cursor(a:line1, 1)
+                normal! V
+                call cursor(a:line2, 1)
+                call CocAction('formatSelected', 'V')
+            endif
+        endfunction
+        command! -nargs=0 -range -bar CocFormat call s:CocFormat(<range>, <line1>, <line2>)
     " }
 
 "}
+
+" Completion {
+    set keywordprg=:call\ <SID>show_documentation()     " preview function arguments in status line
+" }
+"
+" files {
+        " fix whitespace {
+            function s:FixWhitespaceOnSave()
+              let l:pos = getpos('.')
+              " remove trailing whitespace
+              %s/\s\+$//e
+              " remove trailing newlines
+              %s/\($\n\s*\)\+\%$//e
+              call setpos('.', l:pos)
+            endfunction
+        " }
+
+        " auto-format with Coc.nvim {
+            let g:coc_format_on_save_ignore = []
+            function s:FormatOnSave()
+                if index(g:coc_format_on_save_ignore, &filetype) < 0 && IsCocEnabled()
+                    silent CocFormat
+                endif
+            endfunction
+        " }
+        function s:OnSave()
+            call s:FixWhitespaceOnSave()
+            call s:FormatOnSave()
+            call s:CreateDirOnSave()
+        endfunction
+        augroup vimrc-on-save
+            autocmd!
+            autocmd BufWritePre * call s:OnSave()
+        augroup END
+  " }
+
+  " auto-format with Coc.nvim {{{
+    let g:coc_format_on_save_ignore = []
+    function s:FormatOnSave()
+      if index(g:coc_format_on_save_ignore, &filetype) < 0 && IsCocEnabled()
+        silent CocFormat
+      endif
+    endfunction
+  " }}}
+"
+
+" Language {
+    " json {
+        call coc#add_extension('coc-json')
+        let g:coc_filetypes += ['json']
+
+        augroup vimrc-languages-json
+            autocmd!
+            autocmd FileType json syntax match Comment +\/\/.\+$+
+        augroup END
+    " }
+
+    " javascript {
+        call coc#add_extension('coc-tsserver', 'coc-eslint', 'coc-prettier')
+        let g:coc_filetypes += ['javascript', 'javascript.jsx', 'typescript', 'typescript.jsx']
+        call coc#config('eslint', {
+        \ 'filetypes': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact'],
+        \ 'autoFixOnSave': v:true,
+        \ })
+        call coc#config('prettier', {
+        \ 'singleQuote': v:true,
+        \ 'trailingComma': 'all',
+        \ 'jsxBracketSameLine': v:true,
+        \ 'eslintIntegration': v:true,
+        \ })
+    " }
+
+    " markdown {
+        let g:livedown_autorun = 1
+        let g:livedown_open = 1
+    " }
+" }
 
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
