@@ -105,6 +105,8 @@ alias tmux="env TERM=xterm-256color tmux"
 alias v='nvim'
 alias a='atom'
 alias mux='tmuxinator'
+alias deadlines1='ssh root@188.226.192.169'
+alias lucy='ssh root@188.166.19.147'
 
 # alias TC='mux start TryCodingBackend; mux start TryCodingFrontend'
 alias TP='mux start Typer-Frontend; mux start Typer-Backend'
@@ -115,6 +117,7 @@ source /Users/liamederzeel/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-archey
+# archey
 
 # export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
+export PATH=$PATH:/opt/local/bin

@@ -5,4 +5,4 @@ root: /projects/chef99
 
 windows:
   - editor:
-  - server: npm start
+  - server: npm run dev
