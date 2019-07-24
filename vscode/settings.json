@@ -18,6 +18,17 @@
     "vim.normalModeKeyBindings": [
         {
             "before": [
+                "<leader>",
+                "o",
+                "r",
+            ],
+            "commands": [
+                "editor.action.rename"
+            ],
+            "when": "vim.mode == 'Normal' && editorHasRenameProvider && editorTextFocus && !editorReadonly"
+        },
+        {
+            "before": [
                 "<shift-p>",
             ],
             "commands": [
