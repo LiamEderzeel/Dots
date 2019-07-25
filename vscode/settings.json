@@ -27,6 +27,14 @@
             ],
             "when": "vim.mode == 'Normal' && editorHasRenameProvider && editorTextFocus && !editorReadonly"
         },
+	{
+		"before": ["<enter>"],
+		"commands": ["editor.unfold"]
+	},
+	{
+		"before": ["<enter>"],
+		"commands": ["editor.unfold"]
+	},
         {
             "before": [
                 "<shift-p>",
