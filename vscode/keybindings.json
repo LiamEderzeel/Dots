@@ -11,6 +11,16 @@
 // }
 [
     {
+        "key": "enter",
+        "command": "editor.fold",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "editor.unfold",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+    },
+    {
         "key": "ctrl+p",
         "command": "workbench.action.quickOpen",
         "when": "editorTextFocus && vim.active && vim.use<C-p> && vim.mode == 'Normal'"
@@ -25,4 +35,33 @@
         "command": "-editor.action.commentLine",
         "when": "editorTextFocus && !editorReadonly"
     },
+    {
+        "key": "ctrl+w",
+        "command": "-extension.vim_ctrl+w",
+        "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+shift+p",
+        "command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    }
 ]
