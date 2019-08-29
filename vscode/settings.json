@@ -11,11 +11,21 @@
     "vssolution.trackActiveItem": false,
     // "vim.enableNeovim": true,
     // "vim.neovimPath": "/usr/local/Cellar/neovim/0.2.1",
+    "vim.foldfix": true,
     "vim.searchHighlightColor": "rgba(255, 150, 255, 0.7)",
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
     "vim.normalModeKeyBindingsNonRecursive": [],
     "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<leader>",
+                "z"
+            ],
+            "commands": [
+                "workbench.action.toggleZenMode"
+            ],
+        },
         {
             "before": [
                 "<leader>",
@@ -27,14 +37,22 @@
             ],
             "when": "vim.mode == 'Normal' && editorHasRenameProvider && editorTextFocus && !editorReadonly"
         },
-	{
-		"before": ["<enter>"],
-		"commands": ["editor.unfold"]
-	},
-	{
-		"before": ["<enter>"],
-		"commands": ["editor.unfold"]
-	},
+        {
+            "before": [
+                "<enter>"
+            ],
+            "commands": [
+                "editor.unfold"
+            ]
+        },
+        {
+            "before": [
+                "<enter>"
+            ],
+            "commands": [
+                "editor.unfold"
+            ]
+        },
         {
             "before": [
                 "<shift-p>",
