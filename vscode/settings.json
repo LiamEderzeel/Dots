@@ -1,104 +1,152 @@
 {
-    "explorer.autoReveal": false,
-    "editor.formatOnSave": true,
-    "csharp.referencesCodeLens.enabled": false,
-    "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontFamily": "Roboto Mono for Powerline",
-    "window.zoomLevel": 0,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.editor.tabCloseButton": "off",
-    "workbench.action.focusPreviousGroup": "ctrl h",
-    "vssolution.trackActiveItem": false,
-    // "vim.enableNeovim": true,
-    // "vim.neovimPath": "/usr/local/Cellar/neovim/0.2.1",
-    "vim.foldfix": true,
-    "vim.searchHighlightColor": "rgba(255, 150, 255, 0.7)",
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.normalModeKeyBindingsNonRecursive": [],
-    "vim.normalModeKeyBindings": [
-        {
-            "before": [
-                "<leader>",
-                "z"
-            ],
-            "commands": [
-                "workbench.action.toggleZenMode"
-            ],
-        },
-        {
-            "before": [
-                "<leader>",
-                "o",
-                "r",
-            ],
-            "commands": [
-                "editor.action.rename"
-            ],
-            "when": "vim.mode == 'Normal' && editorHasRenameProvider && editorTextFocus && !editorReadonly"
-        },
-        {
-            "before": [
-                "<enter>"
-            ],
-            "commands": [
-                "editor.unfold"
-            ]
-        },
-        {
-            "before": [
-                "<enter>"
-            ],
-            "commands": [
-                "editor.unfold"
-            ]
-        },
-        {
-            "before": [
-                "<shift-p>",
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
-        },
-        {
-            "before": [
-                "<C-h>"
-            ],
-            "commands": [
-                "workbench.action.focusPreviousGroup"
-            ]
-        },
-        {
-            "before": [
-                "<C-l>"
-            ],
-            "commands": [
-                "workbench.action.focusNextGroup"
-            ]
-        },
-        {
-            "before": [
-                "J"
-            ],
-            "after": [
-                "5",
-                "j"
-            ]
-        },
-        {
-            "before": [
-                "K"
-            ],
-            "after": [
-                "5",
-                "k"
-            ]
-        }
-    ],
-    "editor.minimap.enabled": false,
-    "zenMode.hideTabs": false,
-    "workbench.activityBar.visible": true,
-    "workbench.statusBar.visible": true,
-    "workbench.colorTheme": "Material Theme Ocean"
+	"explorer.autoReveal": false,
+	"editor.formatOnSave": false,
+	"editor.codeLens": true,
+	"csharp.referencesCodeLens.enabled": false,
+	"terminal.external.osxExec": "iTerm.app",
+	"terminal.integrated.fontFamily": "Roboto Mono for Powerline",
+	"window.zoomLevel": 0,
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.editor.tabCloseButton": "off",
+	"workbench.action.focusPreviousGroup": "ctrl h",
+	"workbench.editor.enablePreview": false,
+	"vssolution.trackActiveItem": false,
+	// "vim.enableNeovim": true,
+	// "vim.neovimPath": "/usr/local/Cellar/neovim/0.2.1",
+	"vim.foldfix": true,
+	"vim.searchHighlightColor": "rgba(255, 150, 255, 0.7)",
+	"vim.useSystemClipboard": true,
+	"vim.useCtrlKeys": true,
+	"vim.normalModeKeyBindingsNonRecursive": [],
+	"vim.normalModeKeyBindings": [
+		{
+			"before": [
+				"<leader>",
+				"s",
+			],
+			"commands": [
+				"editor.action.showDefinitionPreviewHover"
+			],
+			"when": "vim.mode == 'Normal' && editorHasReferenceProvider"
+		},
+		{
+			"before": [
+				"<leader>",
+				"o",
+				"l",
+			],
+			"commands": [
+				"references-view.find"
+			],
+			"when": "vim.mode == 'Normal' && editorHasReferenceProvider"
+		},
+		{
+			"before": [
+				"<leader>",
+				"z"
+			],
+			"commands": [
+				"workbench.action.toggleZenMode"
+			],
+		},
+		{
+			"before": [
+				"<leader>",
+				"o",
+				"r",
+			],
+			"commands": [
+				"editor.action.rename"
+			],
+			"when": "vim.mode == 'Normal' && editorHasRenameProvider && editorTextFocus && !editorReadonly"
+		},
+		{
+			"before": [
+				"<leader>",
+				"o",
+				"d",
+			],
+			"commands": [
+				// "editor.action.goToTypeDefinition"
+				"editor.action.revealDefinition"
+			],
+			"when": "vim.mode == 'Normal' && editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+		},
+		{
+			"before": [
+				"<enter>"
+			],
+			"commands": [
+				"editor.unfold"
+			]
+		},
+		{
+			"before": [
+				"<enter>"
+			],
+			"commands": [
+				"editor.unfold"
+			]
+		},
+		{
+			"before": [
+				"<shift-p>"
+			],
+			"commands": [
+				"workbench.action.quickOpen"
+			]
+		},
+		{
+			"before": [
+				"<C-h>"
+			],
+			"commands": [
+				"workbench.action.focusPreviousGroup"
+			]
+		},
+		{
+			"before": [
+				"<C-l>"
+			],
+			"commands": [
+				"workbench.action.focusNextGroup"
+			]
+		},
+		{
+			"before": [
+				"J"
+			],
+			"after": [
+				"5",
+				"j"
+			]
+		},
+		{
+			"before": [
+				"K"
+			],
+			"after": [
+				"5",
+				"k"
+			]
+		}
+	],
+	"editor.minimap.enabled": false,
+	"zenMode.hideTabs": false,
+	"workbench.colorTheme": "Material Theme Ocean",
+	"terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
+	"workbench.view.alwaysShowHeaderActions": true,
+	"gitlens.hovers.enabled": false,
+	"gitlens.codeLens.enabled": false,
+	"gitlens.currentLine.enabled": false,
+	"gitlens.hovers.currentLine.over": "line",
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.foldingStrategy": "auto",
+	"omnisharp.enableRoslynAnalyzers": true,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"diffEditor.ignoreTrimWhitespace": true,
+	"terminal.integrated.rendererType": "experimentalWebgl"
 }
