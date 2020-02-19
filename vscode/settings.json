@@ -1,15 +1,27 @@
 {
 	"explorer.autoReveal": false,
+	"csharp.referencesCodeLens.enabled": false,
+	"window.zoomLevel": 0,
+
+	"editor.foldingStrategy": "auto",
+	"editor.minimap.enabled": false,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
 	"editor.formatOnSave": false,
 	"editor.codeLens": true,
-	"csharp.referencesCodeLens.enabled": false,
+
+	"terminal.integrated.rendererType": "experimentalWebgl",
 	"terminal.external.osxExec": "iTerm.app",
 	"terminal.integrated.fontFamily": "Roboto Mono for Powerline",
-	"window.zoomLevel": 0,
+	"terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
+
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.editor.tabCloseButton": "off",
 	"workbench.action.focusPreviousGroup": "ctrl h",
 	"workbench.editor.enablePreview": false,
+	"workbench.colorTheme": "Material Theme Ocean",
+	"workbench.view.alwaysShowHeaderActions": true,
+
 	"vssolution.trackActiveItem": false,
 	// "vim.enableNeovim": true,
 	// "vim.neovimPath": "/usr/local/Cellar/neovim/0.2.1",
@@ -19,6 +31,16 @@
 	"vim.useCtrlKeys": true,
 	"vim.normalModeKeyBindingsNonRecursive": [],
 	"vim.normalModeKeyBindings": [
+		{
+			"before": [
+				"<leader>",
+				"d",
+			],
+			"commands": [
+				"editor.action.showHover"
+			],
+			"when": "vim.mode == 'Normal' && editorHasReferenceProvider"
+		},
 		{
 			"before": [
 				"<leader>",
@@ -119,7 +141,8 @@
 			"after": [
 				"5",
 				"j"
-			]
+			],
+			"when": "vim.mode == 'Normal' || vim.mode == 'Visual '",
 		},
 		{
 			"before": [
@@ -131,11 +154,9 @@
 			]
 		}
 	],
-	"editor.minimap.enabled": false,
+
 	"zenMode.hideTabs": false,
-	"workbench.colorTheme": "Material Theme Ocean",
-	"terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
-	"workbench.view.alwaysShowHeaderActions": true,
+	
 	"gitlens.hovers.enabled": false,
 	"gitlens.codeLens.enabled": false,
 	"gitlens.currentLine.enabled": false,
@@ -143,10 +164,8 @@
 	"[json]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"editor.foldingStrategy": "auto",
+
 	"omnisharp.enableRoslynAnalyzers": true,
-	"editor.insertSpaces": false,
-	"editor.detectIndentation": false,
+
 	"diffEditor.ignoreTrimWhitespace": true,
-	"terminal.integrated.rendererType": "experimentalWebgl"
 }
