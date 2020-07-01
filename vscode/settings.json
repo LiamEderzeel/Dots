@@ -1,171 +1,134 @@
 {
-	"explorer.autoReveal": false,
-	"csharp.referencesCodeLens.enabled": false,
-	"window.zoomLevel": 0,
-
-	"editor.foldingStrategy": "auto",
-	"editor.minimap.enabled": false,
-	"editor.insertSpaces": false,
-	"editor.detectIndentation": false,
-	"editor.formatOnSave": false,
-	"editor.codeLens": true,
-
-	"terminal.integrated.rendererType": "experimentalWebgl",
-	"terminal.external.osxExec": "iTerm.app",
-	"terminal.integrated.fontFamily": "Roboto Mono for Powerline",
-	"terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
-
-	"workbench.iconTheme": "material-icon-theme",
-	"workbench.editor.tabCloseButton": "off",
-	"workbench.action.focusPreviousGroup": "ctrl h",
-	"workbench.editor.enablePreview": false,
-	"workbench.colorTheme": "Material Theme Ocean",
-	"workbench.view.alwaysShowHeaderActions": true,
-
-	"vssolution.trackActiveItem": false,
-	// "vim.enableNeovim": true,
-	// "vim.neovimPath": "/usr/local/Cellar/neovim/0.2.1",
-	"vim.foldfix": true,
-	"vim.searchHighlightColor": "rgba(255, 150, 255, 0.7)",
-	"vim.useSystemClipboard": true,
-	"vim.useCtrlKeys": true,
-	"vim.normalModeKeyBindingsNonRecursive": [],
-	"vim.normalModeKeyBindings": [
-		{
-			"before": [
-				"<leader>",
-				"d",
-			],
-			"commands": [
-				"editor.action.showHover"
-			],
-			"when": "vim.mode == 'Normal' && editorHasReferenceProvider"
-		},
-		{
-			"before": [
-				"<leader>",
-				"s",
-			],
-			"commands": [
-				"editor.action.showDefinitionPreviewHover"
-			],
-			"when": "vim.mode == 'Normal' && editorHasReferenceProvider"
-		},
-		{
-			"before": [
-				"<leader>",
-				"o",
-				"l",
-			],
-			"commands": [
-				"references-view.find"
-			],
-			"when": "vim.mode == 'Normal' && editorHasReferenceProvider"
-		},
-		{
-			"before": [
-				"<leader>",
-				"z"
-			],
-			"commands": [
-				"workbench.action.toggleZenMode"
-			],
-		},
-		{
-			"before": [
-				"<leader>",
-				"o",
-				"r",
-			],
-			"commands": [
-				"editor.action.rename"
-			],
-			"when": "vim.mode == 'Normal' && editorHasRenameProvider && editorTextFocus && !editorReadonly"
-		},
-		{
-			"before": [
-				"<leader>",
-				"o",
-				"d",
-			],
-			"commands": [
-				// "editor.action.goToTypeDefinition"
-				"editor.action.revealDefinition"
-			],
-			"when": "vim.mode == 'Normal' && editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-		},
-		{
-			"before": [
-				"<enter>"
-			],
-			"commands": [
-				"editor.unfold"
-			]
-		},
-		{
-			"before": [
-				"<enter>"
-			],
-			"commands": [
-				"editor.unfold"
-			]
-		},
-		{
-			"before": [
-				"<shift-p>"
-			],
-			"commands": [
-				"workbench.action.quickOpen"
-			]
-		},
-		{
-			"before": [
-				"<C-h>"
-			],
-			"commands": [
-				"workbench.action.focusPreviousGroup"
-			]
-		},
-		{
-			"before": [
-				"<C-l>"
-			],
-			"commands": [
-				"workbench.action.focusNextGroup"
-			]
-		},
-		{
-			"before": [
-				"J"
-			],
-			"after": [
-				"5",
-				"j"
-			],
-			"when": "vim.mode == 'Normal' || vim.mode == 'Visual '",
-		},
-		{
-			"before": [
-				"K"
-			],
-			"after": [
-				"5",
-				"k"
-			]
-		}
-	],
-
-	"zenMode.hideTabs": false,
-	
-	"gitlens.hovers.enabled": false,
-	"gitlens.codeLens.enabled": false,
-	"gitlens.currentLine.enabled": false,
-	"gitlens.hovers.currentLine.over": "line",
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-
-	"omnisharp.enableRoslynAnalyzers": true,
-
-	"diffEditor.ignoreTrimWhitespace": true,
+  "omnisharp.monoPath": "C:\\Program Files\\Mono",
+  // "workbench.editor.limit.enabled": true,
+  // "workbench.editor.limit.value": 1,
+  "workbench.editor.showTabs": false,
+  "window.title": "${rootPath} ${separator} ${activeEditorShort}",
+  "explorer.autoReveal": false,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": ["source.addMissingImports"],
+  "csharp.referencesCodeLens.enabled": false,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontFamily": "Roboto Mono for Powerline",
+  "terminal.integrated.scrollback": 1000,
+  "window.zoomLevel": 0,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.tabCloseButton": "off",
+  "workbench.action.focusPreviousGroup": "ctrl h",
+  "vssolution.trackActiveItem": false,
+  // "vim.enableNeovim": true,
+  // "vim.neovimPath": "/usr/local/Cellar/neovim/0.2.1",
+  "vim.foldfix": true,
+  "vim.searchHighlightColor": "rgba(255, 150, 255, 0.7)",
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.normalModeKeyBindingsNonRecursive": [],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "o", "d"],
+      "commands": ["editor.action.revealDefinition"],
+      "when": "vim.mode == 'Normal' && editorHasReferenceProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["editor.action.showHover"],
+      "when": "vim.mode == 'Normal' && editorHasReferenceProvider"
+    },
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["editor.action.showHover"],
+      "when": "vim.mode == 'Normal' && editorHasReferenceProvider"
+    },
+    {
+      "before": ["<leader>", "o", "l"],
+      "commands": ["references-view.find"],
+      "when": "vim.mode == 'Normal' && editorHasReferenceProvider"
+    },
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    {
+      "before": ["<leader>", "o", "r"],
+      "commands": ["editor.action.rename"],
+      "when": "vim.mode == 'Normal' && editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+      "before": ["<leader>", "r", "r"],
+      "commands": ["editor.action.onTypeRename"],
+      "when": "vim.mode == 'Normal' && editorTextFocus && !editorReadonly"
+    },
+    {
+      "before": ["<leader>", "o", "t"],
+      "commands": ["editor.action.goToTypeDefinition"],
+      "when": "vim.mode == 'Normal' && editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+      "before": ["<enter>"],
+      "commands": ["editor.unfold"]
+    },
+    {
+      "before": ["<enter>"],
+      "commands": ["editor.unfold"]
+    },
+    {
+      "before": ["<shift-p>"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.focusPreviousGroup"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.focusNextGroup"]
+    },
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    }
+  ],
+  "editor.minimap.enabled": false,
+  "zenMode.hideTabs": false,
+  "workbench.colorTheme": "Community Material Theme Palenight",
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
+  "workbench.view.alwaysShowHeaderActions": true,
+  "gitlens.hovers.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.foldingStrategy": "auto",
+  "omnisharp.enableRoslynAnalyzers": true,
+  "glsl-linter.validatorPath": "C:/ProgramData/glslang/bin/glslangValidator.exe",
+  "glsl-linter.fileExtensions": {
+    ".fs.glsl": "frag",
+    ".vs.glsl": "vert",
+    ".tes.glsl": "tese",
+    ".tcs.glsl": "tesc",
+    ".gs.glsl": "geom"
+  },
+  "git.autofetch": true,
+  "git.suggestSmartCommit": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.colorCustomizations": {},
+  "materialTheme.accent": "Remove accents",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.jediEnabled": false
 }
+// {
+//   "key": "ctrl+p",
+//   "command": "workbench.action.quickOpen"
+// }
