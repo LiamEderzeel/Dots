@@ -12,6 +12,31 @@ scriptencoding utf-8
 set clipboard=unnamed                   " Set clipboard buffer to unnamed
 set undofile                            " turn on the feature
 set undodir=$HOME/.vim/undo             " directory where the undo files will be stored
+set guicursor=a:blinkon0
+set cursorline                          " Highlight current line
+set ruler                               " Shows line and column of cursor
+set relativenumber number               " Line numbers
+set backspace=2                         " Backspace beyond insert point
+set cmdheight=1
+set laststatus=2                        " Always display the statusline in all windows
+set noshowmode                          " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set guifont=Inconsolata\ for\ Powerline:h14
+set fillchars+=vert:┆
+
+if (has('nvim'))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+endif
+if (has('termguicolors'))
+  set termguicolors
+endif
+
+let g:material_theme_style  = 'ocean'
+colorscheme material                        " Set theme to one
+
+
+
+highlight clear SignColumn                      " SignColumn should match background
+highlight clear LineNr                          " Current line number row will have same background color in relative mode
 
 " Ignore files {
 	set wildignore+=node_modules/**,
