@@ -7,4 +7,4 @@ let g:startify_custom_header = [
             \ '     \/_/\/_/\/__/    \/_/\/_/\/_/\/_/   ',
             \ ]
 
-let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'cc': '~/.zshrc'} ]
+let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.lua'}, {'cc': '~/.zshrc'} ]

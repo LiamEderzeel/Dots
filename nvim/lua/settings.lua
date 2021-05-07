@@ -1,3 +1,8 @@
+vim.cmd('syntax on') -- syntax highlighting
+vim.o.mouse = "a" -- enable mouse
+vim.cmd('colorscheme one')
+
+vim.cmd([[
 syntax on                               " Turn syntax highlighting on
 " set background=dark
 filetype plugin on                      " Automatically detect file types.
@@ -8,7 +13,7 @@ set ffs=unix,dos
 set ff=unix                             " Change DOS line endings to unix
 set nrformats-=octal                    " Ctrl A considers numbers starting with 0 octal
 set autoread
-scriptencoding utf-8
+" scriptencoding utf-8
 " set clipboard=unnamed                   " Set clipboard buffer to unnamed
 set clipboard^=unnamed
 set undofile                            " turn on the feature
@@ -31,45 +36,37 @@ if (has('termguicolors'))
   set termguicolors
 endif
 
-let g:material_theme_style  = 'ocean'
-" colorscheme material                        " Set theme to one
-
-
-
 highlight clear SignColumn                      " SignColumn should match background
 highlight clear LineNr                          " Current line number row will have same background color in relative mode
 
-" Ignore files {
-	set wildignore+=node_modules/**,
-	set wildignore+=bower_components/**,
-	set wildignore+=.git/**,
-	set wildignore+=*.meta,
-	set wildignore+=*.prefab,
-	set wildignore+=*.sample,
-	set wildignore+=*.asset,
-	set wildignore+=*.unity,
-	set wildignore+=*.anim,
-	set wildignore+=*.controller,
-	set wildignore+=*.jpg,
-	set wildignore+=*.png,
-	set wildignore+=*.mp3,
-	set wildignore+=*.wav,
-	set wildignore+=*.ttf,
-	set wildignore+=*.pdf,
-	set wildignore+=*.psd,
-	set wildignore+=*.shader,
-	set wildignore+=*.dll,
-	set wildignore+=*.mat,
-	set wildignore+=*.file,
-	set wildignore+=*.unitypackage,
-	set wildignore+=debug/,
-	set wildignore+=Debug/,
-	set wildignore+=temp/,
-	set wildignore+=Temp/,
-	set wildignore+=temp/,
-" }
+set wildignore+=node_modules/**,
+set wildignore+=bower_components/**,
+set wildignore+=.git/**,
+set wildignore+=*.meta,
+set wildignore+=*.prefab,
+set wildignore+=*.sample,
+set wildignore+=*.asset,
+set wildignore+=*.unity,
+set wildignore+=*.anim,
+set wildignore+=*.controller,
+set wildignore+=*.jpg,
+set wildignore+=*.png,
+set wildignore+=*.mp3,
+set wildignore+=*.wav,
+set wildignore+=*.ttf,
+set wildignore+=*.pdf,
+set wildignore+=*.psd,
+set wildignore+=*.shader,
+set wildignore+=*.dll,
+set wildignore+=*.mat,
+set wildignore+=*.file,
+set wildignore+=*.unitypackage,
+set wildignore+=debug/,
+set wildignore+=Debug/,
+set wildignore+=temp/,
+set wildignore+=Temp/,
+set wildignore+=temp/,
 
-" Formatting {
 	autocmd BufWritePre * :%s/\s\+$//e              " Removes traling spaces on buffer write
 	set wrap
 	set linebreak
@@ -80,30 +77,26 @@ highlight clear LineNr                          " Current line number row will h
 	set splitbelow                                  " Puts new split windows below the current
 	set foldmethod=syntax
 	set foldlevel=10
-" }
 
 
 	set clipboard^=unnamed
 	" WSL yank support
-	let s:clip = '/mnt/c/Windows/System32/clip.exe'  " default location
-	if executable(s:clip)
-		augroup WSLYank
-		autocmd!
-		autocmd TextYankPost * call system(s:clip, join(v:event.regcontents, "\<CR>"))
-		augroup END
-	end
+	" let s:clip = '/mnt/c/Windows/System32/clip.exe'  " default location
+	" if executable(s:clip)
+		" augroup WSLYank
+		" autocmd!
+		" autocmd TextYankPost * call system(s:clip, join(v:event.regcontents, "\<CR>"))
+		" augroup END
+	" end
 
-" Files {
-" fix whitespace {
-function s:FixWhitespaceOnSave()
-    let l:pos = getpos('.')
+" function s:FixWhitespaceOnSave()
+    " let l:pos = getpos('.')
     " remove trailing whitespace
-    %s/\s\+$//e
+    " %s/\s\+$//e
     " remove trailing newlines
-    %s/\($\n\s*\)\+\%$//e
-    call setpos('.', l:pos)
-endfunction
-" }
+    " %s/\($\n\s*\)\+\%$//e
+    " call setpos('.', l:pos)
+" endfunction
 
 " auto-format with Coc.nvim {
 " let g:coc_format_on_save_ignore = []
@@ -114,14 +107,14 @@ endfunction
 " endfunction
 " }
 
-function s:OnSave()
-    call s:FixWhitespaceOnSave()
+" function s:OnSave()
+    " call s:FixWhitespaceOnSave()
     " call s:FormatOnSave()
     " call s:CreateDirOnSave()
-endfunction
+" endfunction
 
-augroup vimrc-on-save
-    autocmd!
-    autocmd BufWritePre * call s:OnSave()
-augroup END
-" }
+" augroup vimrc-on-save
+    " autocmd!
+    " autocmd BufWritePre * call s:OnSave()
+" augroup END
+]])

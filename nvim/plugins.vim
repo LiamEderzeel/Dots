@@ -21,4 +21,9 @@ Plug 'tpope/vim-surround'                             " Surround
 Plug 'nvim-lua/plenary.nvim'                            " gitsigns dependancy
 Plug 'lewis6991/gitsigns.nvim'                          " git gutter signs
 
+if exists('g:vscode')
+Plug 'liuchengxu/vim-which-key'
+Plug 'AckslD/nvim-whichkey-setup.lua'
+endif
+
 call plug#end()
