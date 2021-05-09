@@ -43,6 +43,7 @@ return require('packer').startup(
 
 		use 'TimUntersberger/neogit'
 		use 'liuchengxu/vim-which-key'
+		use 'folke/which-key.nvim'
 		use 'tpope/vim-surround'
 
 		use {

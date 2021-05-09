@@ -47,8 +47,8 @@ local function save_profiles(threshold)
 end
 
 time("Luarocks path setup", true)
-local package_path_str = "/home/liamederzeel/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/liamederzeel/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/liamederzeel/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/liamederzeel/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/liamederzeel/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/Users/liamederzeel/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/liamederzeel/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/liamederzeel/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/liamederzeel/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/liamederzeel/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -73,95 +73,99 @@ time("Defining packer_plugins", true)
 _G.packer_plugins = {
   colorizer = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/colorizer"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/colorizer"
   },
   ["diffview.nvim"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/diffview.nvim"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/diffview.nvim"
   },
   ["galaxyline.nvim"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["material.vim"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/material.vim"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/material.vim"
   },
   neogit = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/neogit"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/neogit"
   },
   ["nvim-comment"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/nvim-comment"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/nvim-comment"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
   ["telescope-media-files.nvim"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["vim-devicons"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/vim-devicons"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/vim-devicons"
+  },
+  ["vim-one"] = {
+    loaded = true,
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/vim-one"
   },
   ["vim-rooter"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/vim-rooter"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/vim-rooter"
   },
   ["vim-startify"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/vim-startify"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/vim-startify"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/vim-surround"
   },
   ["vim-which-key"] = {
     loaded = true,
-    path = "/home/liamederzeel/.local/share/nvim/site/pack/packer/start/vim-which-key"
+    path = "/Users/liamederzeel/.local/share/nvim/site/pack/packer/start/vim-which-key"
   }
 }
 

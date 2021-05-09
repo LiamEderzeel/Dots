@@ -1,9 +1,27 @@
 vim.cmd('syntax on') -- syntax highlighting
+vim.o.title = true
+vim.o.titlestring="%<%F%=%l/%L - nvim"
+vim.o.pumheight = 10 -- Makes popup menu smaller
+vim.o.fileencoding = "utf-8" -- The encoding written to file
 vim.o.mouse = "a" -- enable mouse
 vim.cmd('colorscheme one')
+vim.cmd('let $NVIM_TUI_ENABLE_TRUE_COLOR = 1')
+vim.cmd('highlight clear SignColumn')
+vim.o.t_Co = "256" -- Support 256 colors
+vim.o.clipboard = "unnamed" -- Copy paste between vim and everything else
+vim.o.termguicolors = true -- set term gui colors most terminals support this
+vim.o.splitright = true -- Vertical splits will automatically be to the right
+vim.o.splitbelow = true -- Horizontal splits will automatically be below
+vim.bo.smartindent = true -- Makes indenting smart
+vim.wo.cursorline = true -- Enable highlighting of the current line
+vim.wo.number = true -- set numbered lines
+vim.wo.relativenumber = true -- set relative number
+vim.o.guifont = "RobotoMono Nerd Font Mono:h17"
+vim.o.updatetime = 300 -- Faster completion
+vim.o.conceallevel = 0 -- So that I can see `` in markdown files
 
 vim.cmd([[
-syntax on                               " Turn syntax highlighting on
+" syntax on                               " Turn syntax highlighting on
 " set background=dark
 filetype plugin on                      " Automatically detect file types.
 set mouse=a                             " Automatically enable mouse usage
@@ -25,47 +43,46 @@ set relativenumber number               " Line numbers
 set backspace=2                         " Backspace beyond insert point
 set cmdheight=1
 set laststatus=2                        " Always display the statusline in all windows
-set noshowmode                          " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set guifont=Inconsolata\ for\ Powerline:h14
 set fillchars+=vert:┆
 
 if (has('nvim'))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-endif
-if (has('termguicolors'))
-  set termguicolors
-endif
+	let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+	endif
+	" if (has('termguicolors'))
+	"  set termguicolors
+	" endif
 
-highlight clear SignColumn                      " SignColumn should match background
-highlight clear LineNr                          " Current line number row will have same background color in relative mode
+	highlight clear SignColumn                      " SignColumn should match background
+	highlight clear LineNr                          " Current line number row will have same background color in relative mode
 
-set wildignore+=node_modules/**,
-set wildignore+=bower_components/**,
-set wildignore+=.git/**,
-set wildignore+=*.meta,
-set wildignore+=*.prefab,
-set wildignore+=*.sample,
-set wildignore+=*.asset,
-set wildignore+=*.unity,
-set wildignore+=*.anim,
-set wildignore+=*.controller,
-set wildignore+=*.jpg,
-set wildignore+=*.png,
-set wildignore+=*.mp3,
-set wildignore+=*.wav,
-set wildignore+=*.ttf,
-set wildignore+=*.pdf,
-set wildignore+=*.psd,
-set wildignore+=*.shader,
-set wildignore+=*.dll,
-set wildignore+=*.mat,
-set wildignore+=*.file,
-set wildignore+=*.unitypackage,
-set wildignore+=debug/,
-set wildignore+=Debug/,
-set wildignore+=temp/,
-set wildignore+=Temp/,
-set wildignore+=temp/,
+	set wildignore+=node_modules/**,
+	set wildignore+=bower_components/**,
+	set wildignore+=.git/**,
+	set wildignore+=*.meta,
+	set wildignore+=*.prefab,
+	set wildignore+=*.sample,
+	set wildignore+=*.asset,
+	set wildignore+=*.unity,
+	set wildignore+=*.anim,
+	set wildignore+=*.controller,
+	set wildignore+=*.jpg,
+	set wildignore+=*.png,
+	set wildignore+=*.mp3,
+	set wildignore+=*.wav,
+	set wildignore+=*.ttf,
+	set wildignore+=*.pdf,
+	set wildignore+=*.psd,
+	set wildignore+=*.shader,
+	set wildignore+=*.dll,
+	set wildignore+=*.mat,
+	set wildignore+=*.file,
+	set wildignore+=*.unitypackage,
+	set wildignore+=debug/,
+	set wildignore+=Debug/,
+	set wildignore+=temp/,
+	set wildignore+=Temp/,
+	set wildignore+=temp/,
 
 	autocmd BufWritePre * :%s/\s\+$//e              " Removes traling spaces on buffer write
 	set wrap
@@ -79,42 +96,41 @@ set wildignore+=temp/,
 	set foldlevel=10
 
 
-	set clipboard^=unnamed
 	" WSL yank support
 	" let s:clip = '/mnt/c/Windows/System32/clip.exe'  " default location
 	" if executable(s:clip)
-		" augroup WSLYank
-		" autocmd!
-		" autocmd TextYankPost * call system(s:clip, join(v:event.regcontents, "\<CR>"))
-		" augroup END
+	" augroup WSLYank
+	" autocmd!
+	" autocmd TextYankPost * call system(s:clip, join(v:event.regcontents, "\<CR>"))
+	" augroup END
 	" end
 
-" function s:FixWhitespaceOnSave()
-    " let l:pos = getpos('.')
-    " remove trailing whitespace
-    " %s/\s\+$//e
-    " remove trailing newlines
-    " %s/\($\n\s*\)\+\%$//e
-    " call setpos('.', l:pos)
-" endfunction
+	" function s:FixWhitespaceOnSave()
+		" let l:pos = getpos('.')
+		" remove trailing whitespace
+		" %s/\s\+$//e
+		" remove trailing newlines
+		" %s/\($\n\s*\)\+\%$//e
+		" call setpos('.', l:pos)
+		" endfunction
 
-" auto-format with Coc.nvim {
-" let g:coc_format_on_save_ignore = []
-" function s:FormatOnSave()
-" if index(g:coc_format_on_save_ignore, &filetype) < 0 && IsCocEnabled()
-" silent CocFormat
-" endif
-" endfunction
-" }
+		" auto-format with Coc.nvim {
+			" let g:coc_format_on_save_ignore = []
+			" function s:FormatOnSave()
+				" if index(g:coc_format_on_save_ignore, &filetype) < 0 && IsCocEnabled()
+				" silent CocFormat
+				" endif
+				" endfunction
+				" }
 
-" function s:OnSave()
-    " call s:FixWhitespaceOnSave()
-    " call s:FormatOnSave()
-    " call s:CreateDirOnSave()
-" endfunction
+				" function s:OnSave()
+					" call s:FixWhitespaceOnSave()
+					" call s:FormatOnSave()
+					" call s:CreateDirOnSave()
+					" endfunction
 
-" augroup vimrc-on-save
-    " autocmd!
-    " autocmd BufWritePre * call s:OnSave()
-" augroup END
-]])
+					" augroup vimrc-on-save
+					" autocmd!
+					" autocmd BufWritePre * call s:OnSave()
+					" augroup END
+					]])

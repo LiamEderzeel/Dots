@@ -1,5 +1,5 @@
  --[[
-				   __
+                   __
     __          __/\ \__               __
    /\_\    ___ /\_\ \ ,_\      __  __ /\_\    ___ ___
    \/\ \ /' _ `\/\ \ \ \/     /\ \/\ \\/\ \ /' __` __`\
@@ -15,7 +15,6 @@ require('keymappings')
 require('settings')
 require('variables')
 
-
 require('lsp')
 require('p-lspinstall')
 require('p-galaxyline')
@@ -26,6 +25,7 @@ require('p-diffview')
 require('p-nvimtree')
 
 require('lsp.js-ts-ls')
+require('lsp.lua-ls')
 
 vim.cmd('source ~/.config/nvim/vimscript/p-startify/init.vim')
 vim.cmd('source ~/.config/nvim/vimscript/p-whichkey/init.vim')
