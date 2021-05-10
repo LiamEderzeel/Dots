@@ -18,9 +18,11 @@ require('packer').init({display = {auto_clean = false}})
 
 return require('packer').startup(
 	function(use)
+		-- LSP and Treesitter
 		use 'neovim/nvim-lspconfig'
 		use 'glepnir/lspsaga.nvim'
 		use 'kabouzeid/nvim-lspinstall'
+		use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
 		-- Packer can manage itself as an optional plugin
 		use 'wbthomason/packer.nvim'
@@ -32,28 +34,46 @@ return require('packer').startup(
 		use 'kyazdani42/nvim-web-devicons'
 		use 'ryanoasis/vim-devicons'
 
+		-- start screen
 		use 'mhinz/vim-startify'
-		use 'lilydjwg/colorizer'
-
-		use 'kaicataldo/material.vim'
 
 		--fzf searchers from project root
 		use 'airblade/vim-rooter'
-		use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
 
+		-- git utilitys
 		use 'TimUntersberger/neogit'
-		use 'liuchengxu/vim-which-key'
-		use 'folke/which-key.nvim'
+		use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+		use 'sindrets/diffview.nvim'
+		use 'kdheepak/lazygit.nvim'
+
 		use 'tpope/vim-surround'
 
 		use {
 			'nvim-telescope/telescope.nvim',
 			requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-media-files.nvim'}}
 		}
+
+		-- commnet utility
 		use 'terrortylor/nvim-comment'
+
+
+		-- file tree
 		use {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}}
-		use 'sindrets/diffview.nvim'
-		use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+
+		-- color theme
 		use 'rakr/vim-one'
-end
+		use 'kaicataldo/material.vim'
+
+		-- color theme creator
+		use 'rktjmp/lush.nvim'
+
+		-- whichkey
+		use 'folke/which-key.nvim'
+
+		-- color previews
+		use 'lilydjwg/colorizer'
+
+		--floating terminal
+		use "numtostr/FTerm.nvim"
+	end
 )

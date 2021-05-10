@@ -23,9 +23,11 @@ require('p-telescope')
 require('p-comment')
 require('p-diffview')
 require('p-nvimtree')
+require('p-fterm')
+require('p-whichkey')
 
 require('lsp.js-ts-ls')
 require('lsp.lua-ls')
 
 vim.cmd('source ~/.config/nvim/vimscript/p-startify/init.vim')
-vim.cmd('source ~/.config/nvim/vimscript/p-whichkey/init.vim')
+-- vim.cmd('source ~/.config/nvim/vimscript/p-whichkey/init.vim')
