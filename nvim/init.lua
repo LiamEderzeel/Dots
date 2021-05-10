@@ -30,4 +30,3 @@ require('lsp.js-ts-ls')
 require('lsp.lua-ls')
 
 vim.cmd('source ~/.config/nvim/vimscript/p-startify/init.vim')
--- vim.cmd('source ~/.config/nvim/vimscript/p-whichkey/init.vim')
