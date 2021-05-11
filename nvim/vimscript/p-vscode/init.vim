@@ -1,5 +1,7 @@
-
+" if exists('g:vscode')
     " VSCode extension
+    "
+	let mapleader = "\<Space>"
 
     function! s:split(...) abort
         let direction = a:1
@@ -91,6 +93,7 @@
     nmap <leader>z :call VSCodeNotify('workbench.action.toggleZenMode')<CR>
     nmap <leader>or :call VSCodeNotify('editor.action.rename')<CR>
     nmap <leader>ot :call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
+    nmap <leader>/ :call VSCodeNotify('editor.action.commentLine')<CR>
 
     nnoremap gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
     " Bind C-/ to vscode commentary since calling from vscode produces double comments due to multiple cursors
@@ -108,3 +111,4 @@
     nmap gc  <Plug>VSCodeCommentary
     omap gc  <Plug>VSCodeCommentary
     nmap gcc <Plug>VSCodeCommentaryLine
+" endif

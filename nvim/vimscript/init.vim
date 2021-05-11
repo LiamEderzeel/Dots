@@ -1,5 +1,8 @@
+
+lua require('plugins')
+
 syntax on                               " Turn syntax highlighting on
-set background=dark
+" set background=dark
 filetype plugin on                      " Automatically detect file types.
 set mouse=a                             " Automatically enable mouse usage
 set mousehide                           " Hide the mouse cursor while typing
@@ -9,7 +12,8 @@ set ff=unix                             " Change DOS line endings to unix
 set nrformats-=octal                    " Ctrl A considers numbers starting with 0 octal
 set autoread
 scriptencoding utf-8
-set clipboard=unnamed                   " Set clipboard buffer to unnamed
+" set clipboard=unnamed                   " Set clipboard buffer to unnamed
+set clipboard^=unnamed
 set undofile                            " turn on the feature
 set undodir=$HOME/.vim/undo             " directory where the undo files will be stored
 set guicursor=a:blinkon0
@@ -30,8 +34,8 @@ if (has('termguicolors'))
   set termguicolors
 endif
 
-let g:material_theme_style  = 'ocean'
-colorscheme material                        " Set theme to one
+" let g:material_theme_style  = 'ocean'
+" colorscheme material                        " Set theme to one
 
 
 
@@ -80,3 +84,72 @@ highlight clear LineNr                          " Current line number row will h
 	set foldmethod=syntax
 	set foldlevel=10
 " }
+
+
+	set clipboard^=unnamed
+	" WSL yank support
+	let s:clip = '/mnt/c/Windows/System32/clip.exe'  " default location
+	if executable(s:clip)
+		augroup WSLYank
+		autocmd!
+		autocmd TextYankPost * call system(s:clip, join(v:event.regcontents, "\<CR>"))
+		augroup END
+	end
+
+" Files {
+" fix whitespace {
+function s:FixWhitespaceOnSave()
+    let l:pos = getpos('.')
+    " remove trailing whitespace
+    %s/\s\+$//e
+    " remove trailing newlines
+    %s/\($\n\s*\)\+\%$//e
+    call setpos('.', l:pos)
+endfunction
+" }
+
+" auto-format with Coc.nvim {
+" let g:coc_format_on_save_ignore = []
+" function s:FormatOnSave()
+" if index(g:coc_format_on_save_ignore, &filetype) < 0 && IsCocEnabled()
+" silent CocFormat
+" endif
+" endfunction
+" }
+
+function s:OnSave()
+    call s:FixWhitespaceOnSave()
+    " call s:FormatOnSave()
+    " call s:CreateDirOnSave()
+endfunction
+
+augroup vimrc-on-save
+    autocmd!
+    autocmd BufWritePre * call s:OnSave()
+augroup END
+" }
+
+" Key mapping {
+	" let mapleader = "\<Space>"
+	noremap L g_
+	noremap H ^
+	noremap J 5j
+	noremap K 5k
+	nnoremap ; :
+	nnoremap <silent> <c-p> :Files<CR>
+	vmap < <gv
+	vmap > >gv
+	nnoremap <Enter> za                             " Toggel folds
+	map R <Nop>                                     " Unmap replace mode
+	map r <Nop>                                     " Unmap virtual replace mode
+"
+
+
+" lua require('p-galaxyline')
+" lua require('p-gitsigns')
+" lua require('p-telescope')
+lua require('p-comment')
+" source ~/.config/nvim/vimscript/p-startify/init.vim
+source ~/.config/nvim/vimscript/p-whichkey/init.vim
+
+source ~/.config/nvim/vimscript/p-vscode/init.vim
