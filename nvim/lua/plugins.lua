@@ -26,6 +26,10 @@ return require('packer').startup(
 
 		-- Packer can manage itself as an optional plugin
 		use 'wbthomason/packer.nvim'
+		-- Autocomplete
+		use 'hrsh7th/nvim-compe'
+        use 'hrsh7th/vim-vsnip'
+        use 'rafamadriz/friendly-snippets'
 
 		--Status Line
 		use 'glepnir/galaxyline.nvim'
