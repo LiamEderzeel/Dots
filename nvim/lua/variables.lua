@@ -48,7 +48,7 @@ O = {
         -- @usage can be 'eslint'
         linter = '',
         -- @usage can be 'prettier'
-        formatter = '',
+        formatter = 'prettier',
         autoformat = false,
         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
     },
