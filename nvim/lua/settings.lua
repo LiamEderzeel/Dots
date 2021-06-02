@@ -7,7 +7,7 @@ vim.o.mouse = "a" -- enable mouse
 vim.cmd('colorscheme one')
 vim.cmd('let $NVIM_TUI_ENABLE_TRUE_COLOR = 1')
 vim.cmd('highlight clear SignColumn')
-vim.o.t_Co = "256" -- Support 256 colors
+-- vim.o.t_Co = "256" -- Support 256 colors
 vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 vim.o.termguicolors = true -- set term gui colors most terminals support this
 vim.o.splitright = true -- Vertical splits will automatically be to the right
