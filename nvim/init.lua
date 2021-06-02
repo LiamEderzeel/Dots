@@ -27,6 +27,7 @@ require('p-fterm')
 require('p-whichkey')
 require('p-compe')
 
+require('lsp.efm-general-ls')
 require('lsp.js-ts-ls')
 require('lsp.lua-ls')
 
