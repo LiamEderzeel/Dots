@@ -16,16 +16,18 @@ vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when th
 -- require('packer').init({display = {non_interactive = true}})
 require('packer').init({display = {auto_clean = false}})
 
+
 return require('packer').startup(
 	function(use)
+		-- Packer can manage itself as an optional plugin
+		use 'wbthomason/packer.nvim'
+
 		-- LSP and Treesitter
 		use 'neovim/nvim-lspconfig'
 		use 'glepnir/lspsaga.nvim'
 		use 'kabouzeid/nvim-lspinstall'
 		use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
-		-- Packer can manage itself as an optional plugin
-		use 'wbthomason/packer.nvim'
 		-- Autocomplete
 		use 'hrsh7th/nvim-compe'
         use 'hrsh7th/vim-vsnip'
