@@ -20,3 +20,5 @@ vim.api.nvim_set_keymap('n', '<Enter>', 'za', {})
 
 vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<Leader><Esc>', '<C-\\><C-n>', {noremap = true})
+
