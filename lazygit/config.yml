@@ -1,3 +1,6 @@
 git:
     merging:
       args: "--no-ff"
+    pull:
+      mode: 'ff-only' # one of 'merge' | 'rebase' | 'ff-only'
+
