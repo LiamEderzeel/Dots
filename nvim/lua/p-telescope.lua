@@ -17,7 +17,7 @@ require('telescope').setup {
 		file_sorter = require'telescope.sorters'.get_fuzzy_file,
 		file_ignore_patterns = {"node_modules", "dist"},
 		generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
-		shorten_path = true,
+		path_display = true,
 		winblend = 0,
 		-- results_height = 1,
 		-- results_width = 0.8,
