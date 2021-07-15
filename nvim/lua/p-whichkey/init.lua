@@ -131,6 +131,9 @@ local mappings = {
     S = {name = "+Session", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}}
 }
 
+vim.api.nvim_set_keymap("n", "<leader>z", ":ZenMode<CR>", { noremap = true, silent = true })
+mappings["z"] = "Zen"
+
 -- for k, v in pairs(O.user_which_key) do
 --   mappings[k] = v
 -- end

@@ -9,16 +9,31 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	execute 'packadd packer.nvim'
 end
 
-local my = function(file) require(file) end
+--- Check if a file or directory exists in this path
+local function require_plugin(plugin)
+    local plugin_prefix = fn.stdpath("data") .. "/site/pack/packer/opt/"
 
-vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when there are changes in plugins.lua
+    local plugin_path = plugin_prefix .. plugin .. "/"
+    --	print('test '..plugin_path)
+    local ok, err, code = os.rename(plugin_path, plugin_path)
+    if not ok then
+        if code == 13 then
+            -- Permission denied, but it exists
+            return true
+        end
+    end
+    --	print(ok, err, code)
+    if ok then vim.cmd("packadd " .. plugin) end
+    return ok, err, code
+end
+
+-- vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when there are changes in plugins.lua
 
 -- require('packer').init({display = {non_interactive = true}})
-require('packer').init({display = {auto_clean = false}})
+-- require('packer').init({display = {auto_clean = false}})
 
 
-return require('packer').startup(
-	function(use)
+return require("packer").startup(function(use)
 		-- Packer can manage itself as an optional plugin
 		use 'wbthomason/packer.nvim'
 
@@ -26,7 +41,12 @@ return require('packer').startup(
 		use 'neovim/nvim-lspconfig'
 		use 'glepnir/lspsaga.nvim'
 		use 'kabouzeid/nvim-lspinstall'
+  		use {"folke/trouble.nvim"}
+
+ 		-- Treesitter
 		use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+		use {"windwp/nvim-ts-autotag"}
+ 		use {'andymass/vim-matchup'}
 
 		-- Autocomplete
 		use 'hrsh7th/nvim-compe'
@@ -52,6 +72,8 @@ return require('packer').startup(
 		use 'sindrets/diffview.nvim'
 		use 'kdheepak/lazygit.nvim'
 
+		-- commnet utility
+		use {"windwp/nvim-autopairs"}
 		use 'tpope/vim-surround'
 
 		use {
@@ -59,12 +81,13 @@ return require('packer').startup(
 			requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-media-files.nvim'}}
 		}
 
-		-- commnet utility
+		-- comment
 		use 'terrortylor/nvim-comment'
-
+		use {'JoosepAlviste/nvim-ts-context-commentstring', opt = true}
 
 		-- file tree
 		use {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}}
+ 		use {"ahmedkhalf/lsp-rooter.nvim"} -- with this nvim-tree will follow you
 
 		-- color theme
 		use 'rakr/vim-one'
@@ -81,6 +104,7 @@ return require('packer').startup(
 
 		--floating terminal
 		use "numtostr/FTerm.nvim"
+
 		-- -- Debugging
 		-- use {
 		-- 	"mfussenegger/nvim-dap",
@@ -89,5 +113,18 @@ return require('packer').startup(
 		-- 	end,
 		-- }
 		--
+		use {
+			"folke/zen-mode.nvim",
+			cmd = "ZenMode",
+			event = "BufRead",
+			config = function()
+				require("core.zen").setup()
+			end,
+			-- disable = not O.plugin.zen.active,
+		}
+
+		require_plugin("nvim-ts-context-commentstring")
+
 	end
 )
+

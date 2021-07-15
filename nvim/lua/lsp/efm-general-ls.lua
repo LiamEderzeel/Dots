@@ -103,6 +103,7 @@ require"lspconfig".efm.setup {
             javascriptreact = tsserver_args,
 			typescript = tsserver_args,
 			typescriptreact = tsserver_args,
+			omnisharp_args = omnisharp_args,
             html = {prettier},
             css = {prettier},
             json = {prettier},
