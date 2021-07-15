@@ -25,6 +25,7 @@ require('p-comment')
 require('p-diffview')
 require('p-nvimtree')
 require('p-fterm')
+-- require('p-dap')
 require('p-whichkey')
 require('p-compe')
 

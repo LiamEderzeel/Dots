@@ -81,5 +81,13 @@ return require('packer').startup(
 
 		--floating terminal
 		use "numtostr/FTerm.nvim"
+		-- -- Debugging
+		-- use {
+		-- 	"mfussenegger/nvim-dap",
+		-- 	config = function()
+		-- 		require "lv-dap"
+		-- 	end,
+		-- }
+		--
 	end
 )
