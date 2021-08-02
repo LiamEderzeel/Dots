@@ -71,15 +71,15 @@ local mappings = {
     ["f"] = "Find File",
     ["h"] = "No Highlight",
     ["d"] = {"<cmd>:lua __fterm_lazydocker()<cr>", "Docker"},
-    D = {
-        name = "+Debug",
-        b = {"<cmd>DebugToggleBreakpoint<cr>", "Toggle Breakpoint"},
-        c = {"<cmd>DebugContinue<cr>", "Continue"},
-        i = {"<cmd>DebugStepInto<cr>", "Step Into"},
-        o = {"<cmd>DebugStepOver<cr>", "Step Over"},
-        r = {"<cmd>DebugToggleRepl<cr>", "Toggle Repl"},
-        s = {"<cmd>DebugStart<cr>", "Start"}
-    },
+    -- D = {
+    --     name = "+Debug",
+    --     b = {"<cmd>DebugToggleBreakpoint<cr>", "Toggle Breakpoint"},
+    --     c = {"<cmd>DebugContinue<cr>", "Continue"},
+    --     i = {"<cmd>DebugStepInto<cr>", "Step Into"},
+    --     o = {"<cmd>DebugStepOver<cr>", "Step Over"},
+    --     r = {"<cmd>DebugToggleRepl<cr>", "Toggle Repl"},
+    --     s = {"<cmd>DebugStart<cr>", "Start"}
+    -- },
     g = {"<cmd>:lua __fterm_lazygit()<cr>", "Git"},
     -- g = {
     --     name = "+Git",
