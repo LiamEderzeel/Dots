@@ -10,10 +10,11 @@
        author: Liam Ederzeel
 ]]--
 
+require('variables')
+require('config')
 require('plugins')
 require('keymappings')
 require('settings')
-require('variables')
 require('functions')
 
 require('lsp')
@@ -25,8 +26,6 @@ require('p-comment')
 require('p-diffview')
 require('p-nvimtree')
 require('p-fterm')
--- require('p-dap')
-require('p-whichkey')
 require('p-compe')
 require('p-lsp-rooter')
 require('p-autopairs')

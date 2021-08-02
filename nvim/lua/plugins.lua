@@ -32,7 +32,6 @@ end
 -- require('packer').init({display = {non_interactive = true}})
 -- require('packer').init({display = {auto_clean = false}})
 
-
 return require("packer").startup(function(use)
 		-- Packer can manage itself as an optional plugin
 		use 'wbthomason/packer.nvim'
@@ -97,7 +96,19 @@ return require("packer").startup(function(use)
 		use 'rktjmp/lush.nvim'
 
 		-- whichkey
-		use 'folke/which-key.nvim'
+		use {
+			"folke/which-key.nvim",
+			config = function()
+			end
+		}
+
+		-- use ({
+		-- 	'folke/which-key.nvim',
+		--  			config = function()
+		-- 		print("test")
+		-- 		require("which-key").setup()
+		-- 	end,
+		-- })
 
 		-- color previews
 		use 'lilydjwg/colorizer'
@@ -124,7 +135,9 @@ return require("packer").startup(function(use)
 		}
 
 		require_plugin("nvim-ts-context-commentstring")
+		require('p-whichkey').setup()
 
+		require_plugin("nvim-ts-context-commentstring")
 	end
 )
 
