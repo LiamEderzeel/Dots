@@ -116,25 +116,24 @@ return require("packer").startup(function(use)
 		--floating terminal
 		use "numtostr/FTerm.nvim"
 
-		-- -- Debugging
-		-- use {
-		-- 	"mfussenegger/nvim-dap",
-		-- 	config = function()
-		-- 		require "lv-dap"
-		-- 	end,
-		-- }
-		--
-		use {
-			"folke/zen-mode.nvim",
-			cmd = "ZenMode",
-			event = "BufRead",
-			config = function()
-				require("core.zen").setup()
-			end,
-			-- disable = not O.plugin.zen.active,
-		}
+		-- Debugging
+		use ({
+			"mfussenegger/nvim-dap",
+ 			config = function()
+			end
+		})
 
-		require_plugin("nvim-ts-context-commentstring")
+		-- Debugger management
+		use "Pocco81/DAPInstall.nvim"
+
+		use ({
+			"folke/zen-mode.nvim",
+			config = function()
+				require("p-zen.init").setup()
+			end
+		})
+
+		require('p-dap').setup()
 		require('p-whichkey').setup()
 
 		require_plugin("nvim-ts-context-commentstring")
