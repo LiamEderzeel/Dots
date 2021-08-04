@@ -122,7 +122,12 @@ return require("packer").startup(function(use)
 		use 'lilydjwg/colorizer'
 
 		--floating terminal
-		use "numtostr/FTerm.nvim"
+		use {
+			"numtostr/FTerm.nvim",
+			config = function ()
+				require('p-fterm').setup()
+			end
+		}
 
 		-- Debugging
 		use ({

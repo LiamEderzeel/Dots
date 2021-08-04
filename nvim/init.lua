@@ -15,7 +15,6 @@ require('p-telescope')
 require('p-comment')
 require('p-diffview')
 require('p-nvimtree')
-require('p-fterm')
 require('p-compe')
 require('p-lsp-rooter')
 
