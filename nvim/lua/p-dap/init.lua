@@ -37,7 +37,14 @@ M.setup = function()
 		r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
 		s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
 		q = { "<cmd>lua require'dap'.stop()<cr>", "Quit" },
+		h = { "<cmd>lua require'dap.ui.widgets'.hover()<cr>", "Quit" },
+		H = { "<cmd>lua require'dap.ui.variables'.visual_hover()<cr>", "Quit" },
 	}
+
+	local dap_install = require("dap-install")
+	dap_install.setup()
+
+	require('dbg.typescript')
 end
 
 -- TODO put this up there ^^^ call in ftplugin
