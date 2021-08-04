@@ -135,6 +135,7 @@ return require("packer").startup(function(use)
 
 		require('p-dap').setup()
 		require('p-whichkey').setup()
+		require('p-gitsigns').setup()
 
 		require_plugin("nvim-ts-context-commentstring")
 	end
