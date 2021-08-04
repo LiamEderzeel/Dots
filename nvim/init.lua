@@ -29,6 +29,7 @@ require('lsp.yaml-ls')
 require('lsp.csharp-ls')
 
 local autocmds = require('autocmds')
+
 autocmds.define_augroups(O.autocommands)
+
 utils.toggle_autoformat()
-vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
