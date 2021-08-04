@@ -5,7 +5,7 @@ local actions = require('telescope.actions')
 require('telescope').load_extension('media_files')
 require('telescope').setup {
 	defaults = {
-		find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
+		-- find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
 		prompt_prefix = " ",
 		selection_caret = " ",
 		entry_prefix = "  ",
@@ -17,7 +17,7 @@ require('telescope').setup {
 		file_sorter = require'telescope.sorters'.get_fuzzy_file,
 		file_ignore_patterns = {"node_modules", "dist"},
 		generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
-		path_display = true,
+		path_display = { shorten = 5 },
 		winblend = 0,
 		-- results_height = 1,
 		-- results_width = 0.8,
