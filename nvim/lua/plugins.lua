@@ -131,6 +131,7 @@ return require("packer").startup(function(use)
 			end
 		})
 
+		require('p-dashboard').setup()
 		require('p-dap').setup()
 		require('p-whichkey').setup()
 		require('p-gitsigns').setup()
