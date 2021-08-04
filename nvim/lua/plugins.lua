@@ -40,6 +40,9 @@ return require("packer").startup(function(use)
 		use 'neovim/nvim-lspconfig'
 		use { 'ChristianChiarulli/dashboard-nvim',
 			event = "BufWinEnter",
+			config = function()
+				require('p-dashboard').setup()
+			end
 		}
 		use 'glepnir/lspsaga.nvim'
 		use 'kabouzeid/nvim-lspinstall'
@@ -65,7 +68,13 @@ return require("packer").startup(function(use)
 
 		-- git utilitys
 		use 'TimUntersberger/neogit'
-		use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+		use {
+			'lewis6991/gitsigns.nvim',
+			requires = {'nvim-lua/plenary.nvim'},
+			config = function()
+				require('p-gitsigns').setup()
+			end
+		}
 		use 'sindrets/diffview.nvim'
 		use 'kdheepak/lazygit.nvim'
 
@@ -107,16 +116,9 @@ return require("packer").startup(function(use)
 		use {
 			"folke/which-key.nvim",
 			config = function()
+				require('p-whichkey').setup()
 			end
 		}
-
-		-- use ({
-		-- 	'folke/which-key.nvim',
-		--  			config = function()
-		-- 		print("test")
-		-- 		require("which-key").setup()
-		-- 	end,
-		-- })
 
 		-- color previews
 		use 'lilydjwg/colorizer'
@@ -133,6 +135,7 @@ return require("packer").startup(function(use)
 		use ({
 			"mfussenegger/nvim-dap",
  			config = function()
+				require('p-dap').setup()
 			end
 		})
 
@@ -145,11 +148,6 @@ return require("packer").startup(function(use)
 				require("p-zen").setup()
 			end
 		})
-
-		require('p-dashboard').setup()
-		require('p-dap').setup()
-		require('p-whichkey').setup()
-		require('p-gitsigns').setup()
 
 		require_plugin("nvim-ts-context-commentstring")
 	end
