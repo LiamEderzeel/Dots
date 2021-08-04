@@ -59,7 +59,7 @@ M.config = function()
 		mappings = {
 			["/"] = { ":CommentToggle<CR>", "Comment" },
 			["c"] = { "<cmd>BufferClose!<CR>", "Close Buffer" },
-			["e"] = { "<cmd>lua require'core.nvimtree'.toggle_tree()<CR>", "Explorer" },
+			["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
 			["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
 			["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },
 			["d"] = {"<cmd>:lua __fterm_lazydocker()<cr>", "Docker"},
