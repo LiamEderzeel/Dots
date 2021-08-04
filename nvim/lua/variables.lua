@@ -1,6 +1,7 @@
 DATA_PATH = vim.fn.stdpath('data')
 
 O = {
+	format_on_save = true,
     auto_close_tree = 0,
     auto_complete = true,
     colorscheme = 'lunar',
