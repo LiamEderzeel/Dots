@@ -21,8 +21,6 @@ dap.configurations.javascript = {
 	},
 }
 
-print(vim.fn.getcwd())
-
 dap.configurations.typescript = {
 	{
 		type = 'node',
