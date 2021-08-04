@@ -46,6 +46,8 @@ return require("packer").startup(function(use)
 		}
 		use 'glepnir/lspsaga.nvim'
 		use 'kabouzeid/nvim-lspinstall'
+
+ 		-- diagnostics visualization
   		use {"folke/trouble.nvim"}
 
  		-- Treesitter
