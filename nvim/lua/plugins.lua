@@ -73,6 +73,16 @@ return require("packer").startup(function(use)
 		use {"windwp/nvim-autopairs"}
 		use 'tpope/vim-surround'
 
+		-- Autopairs
+		use {
+			"windwp/nvim-autopairs",
+			-- event = "InsertEnter",
+			after = "nvim-compe",
+			config = function()
+				require ("autopairs")
+			end
+		}
+
 		use {
 			'nvim-telescope/telescope.nvim',
 			requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-media-files.nvim'}}
