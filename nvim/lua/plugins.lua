@@ -63,9 +63,6 @@ return require("packer").startup(function(use)
 		use 'kyazdani42/nvim-web-devicons'
 		use 'ryanoasis/vim-devicons'
 
-		--fzf searchers from project root
-		use 'airblade/vim-rooter'
-
 		-- git utilitys
 		use 'TimUntersberger/neogit'
 		use {
