@@ -6,6 +6,7 @@
     \ \ \/\ \/\ \ \ \ \ \_  __\ \ \_/ |\ \ \/\ \/\ \/\ \
      \ \_\ \_\ \_\ \_\ \__\/\_\\ \___/  \ \_\ \_\ \_\ \_\
       \/_/\/_/\/_/\/_/\/__/\/_/ \/__/    \/_/\/_/\/_/\/_/
+local utils = require('utils')
 
        author: Liam Ederzeel
 ]]--
@@ -40,4 +41,7 @@ require('lsp.yaml-ls')
 require('lsp.csharp-ls')
 
 vim.cmd('source ~/.config/nvim/vimscript/p-startify/init.vim')
+local autocmds = require('autocmds')
+autocmds.define_augroups(O.autocommands)
+utils.toggle_autoformat()
 vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
