@@ -78,8 +78,6 @@ return require("packer").startup(function(use)
 		use 'sindrets/diffview.nvim'
 		use 'kdheepak/lazygit.nvim'
 
-		-- commnet utility
-		use {"windwp/nvim-autopairs"}
 		use 'tpope/vim-surround'
 
 		-- Autopairs
