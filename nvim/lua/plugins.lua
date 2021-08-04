@@ -38,6 +38,9 @@ return require("packer").startup(function(use)
 
 		-- LSP and Treesitter
 		use 'neovim/nvim-lspconfig'
+		use { 'ChristianChiarulli/dashboard-nvim',
+			event = "BufWinEnter",
+		}
 		use 'glepnir/lspsaga.nvim'
 		use 'kabouzeid/nvim-lspinstall'
   		use {"folke/trouble.nvim"}
@@ -129,7 +132,7 @@ return require("packer").startup(function(use)
 		use ({
 			"folke/zen-mode.nvim",
 			config = function()
-				require("p-zen.init").setup()
+				require("p-zen").setup()
 			end
 		})
 

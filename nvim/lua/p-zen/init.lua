@@ -1,6 +1,6 @@
 local M = {}
 M.config = function()
-  O.plugin["zen"] = {
+  O.p.zen = {
     window = {
       backdrop = 1,
       height = 0.85, -- height of the Zen window
@@ -28,7 +28,7 @@ M.setup = function()
   if not status_ok then
     return
   end
-  zen_mode.setup(O.plugin.zen)
+  zen_mode.setup(O.p.zen)
 end
 
 return M
