@@ -108,7 +108,7 @@ return require("packer").startup(function(use)
 		use 'kaicataldo/material.vim'
 
 		-- color theme creator
-		use 'rktjmp/lush.nvim'
+		-- use 'rktjmp/lush.nvim'
 
 		-- whichkey
 		use {
