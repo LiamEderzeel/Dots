@@ -47,8 +47,6 @@ return require("packer").startup(function(use)
 
  		-- Treesitter
 		use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-		use {"windwp/nvim-ts-autotag"}
- 		use {'andymass/vim-matchup'}
 
 		-- Autocomplete
 		use 'hrsh7th/nvim-compe'
@@ -61,9 +59,6 @@ return require("packer").startup(function(use)
 		-- Icons
 		use 'kyazdani42/nvim-web-devicons'
 		use 'ryanoasis/vim-devicons'
-
-		-- start screen
-		use 'mhinz/vim-startify'
 
 		--fzf searchers from project root
 		use 'airblade/vim-rooter'

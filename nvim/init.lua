@@ -28,7 +28,7 @@ require('p-nvimtree')
 require('p-fterm')
 require('p-compe')
 require('p-lsp-rooter')
-require('p-autopairs')
+ require('p-autopairs')
 
 require('lsp.efm-general-ls')
 require('lsp.js-ts-ls')
