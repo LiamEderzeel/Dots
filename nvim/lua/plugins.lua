@@ -101,7 +101,7 @@ return require("packer").startup(function(use)
 			-- event = "InsertEnter",
 			after = "nvim-compe",
 			config = function()
-				require ("autopairs")
+				require ("p-autopairs")
 			end
 		}
 
