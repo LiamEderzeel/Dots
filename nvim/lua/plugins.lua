@@ -94,9 +94,18 @@ return require("packer").startup(function(use)
 			requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-media-files.nvim'}}
 		}
 
-		-- comment
-		use 'terrortylor/nvim-comment'
-		use {'JoosepAlviste/nvim-ts-context-commentstring', opt = true}
+		-- Comments
+		use {
+			"terrortylor/nvim-comment",
+			event = "BufRead",
+			config = function()
+				local status_ok, nvim_comment = pcall(require, "nvim_comment")
+				if not status_ok then
+					return
+				end
+				nvim_comment.setup()
+			end
+		}
 
 		-- file tree
 		use {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}}
@@ -145,8 +154,6 @@ return require("packer").startup(function(use)
 				require("p-zen").setup()
 			end
 		})
-
-		require_plugin("nvim-ts-context-commentstring")
 	end
 )
 
