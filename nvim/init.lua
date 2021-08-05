@@ -9,7 +9,6 @@ require('functions')
 
 require('lsp')
 require('p-diffview')
-require('p-lsp-rooter')
 
 require('lsp.efm-general-ls')
 require('lsp.js-ts-ls')
