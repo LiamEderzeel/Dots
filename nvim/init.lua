@@ -5,7 +5,6 @@ require('config')
 require('plugins')
 require('keymappings')
 require('settings')
-require('functions')
 
 require('lsp')
 require('p-diffview')
