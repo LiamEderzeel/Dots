@@ -20,6 +20,7 @@ vim.wo.fillchars = 'eob: ' -- set ~ mark as end of file filler to nothing
 vim.o.guifont = "RobotoMono Nerd Font Mono:h17"
 vim.o.updatetime = 300 -- Faster completion
 vim.o.conceallevel = 0 -- So that I can see `` in markdown files
+vim.o.completeopt = "menuone,noselect"
 
 vim.cmd([[
 " syntax on                               " Turn syntax highlighting on

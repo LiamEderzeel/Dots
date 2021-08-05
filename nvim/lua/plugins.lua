@@ -60,9 +60,19 @@ return require("packer").startup(function(use)
 		}
 
 		-- Autocomplete
-		use 'hrsh7th/nvim-compe'
-        use 'hrsh7th/vim-vsnip'
-        use 'rafamadriz/friendly-snippets'
+		use {
+			'hrsh7th/nvim-compe',
+			config = function()
+				local status_ok, p_compe = pcall(require, "p-compe")
+				if not status_ok then
+					return
+				end
+				p_compe.setup()
+			end
+		}
+
+		use 'hrsh7th/vim-vsnip'
+		use 'rafamadriz/friendly-snippets'
 
 		--Status Line
 		use 'glepnir/galaxyline.nvim'

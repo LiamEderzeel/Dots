@@ -13,7 +13,6 @@ require('p-galaxyline')
 require('p-gitsigns')
 require('p-telescope')
 require('p-diffview')
-require('p-compe')
 require('p-lsp-rooter')
 
 require('lsp.efm-general-ls')
