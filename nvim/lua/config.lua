@@ -9,4 +9,5 @@ require('p-zen').config()
 require('p-fterm').config()
 require('p-compe').config()
 require('p-nvimtree').config()
+require('p-telescope').config()
 

@@ -9,7 +9,6 @@ require('functions')
 
 require('lsp')
 require('p-lspinstall')
-require('p-telescope')
 require('p-diffview')
 require('p-lsp-rooter')
 

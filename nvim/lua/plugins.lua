@@ -113,8 +113,12 @@ return require("packer").startup(function(use)
 		end
 	}
 
+	-- Telescope
 	use {
-		'nvim-telescope/telescope.nvim',
+		"nvim-telescope/telescope.nvim",
+		config = function()
+			require("p-telescope").setup()
+		end,
 		requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-media-files.nvim'}}
 	}
 
