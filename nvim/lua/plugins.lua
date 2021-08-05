@@ -46,7 +46,12 @@ return require("packer").startup(function(use)
 		end
 	}
 	use 'glepnir/lspsaga.nvim'
-	use 'kabouzeid/nvim-lspinstall'
+	use {
+		'kabouzeid/nvim-lspinstall',
+		config = function ()
+			require("p-lspinstall").setup()
+		end
+	}
 
 	-- diagnostics visualization
 	use {"folke/trouble.nvim"}

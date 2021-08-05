@@ -8,7 +8,6 @@ require('settings')
 require('functions')
 
 require('lsp')
-require('p-lspinstall')
 require('p-diffview')
 require('p-lsp-rooter')
 
