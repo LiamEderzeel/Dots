@@ -75,8 +75,14 @@ return require("packer").startup(function(use)
 	use 'hrsh7th/vim-vsnip'
 	use 'rafamadriz/friendly-snippets'
 
-	--Status Line
-	use 'glepnir/galaxyline.nvim'
+	-- Status Line and Bufferline
+	use {
+		"glepnir/galaxyline.nvim",
+		config = function()
+			require "p-galaxyline"
+		end,
+		event = "BufWinEnter",
+	}
 
 	-- Icons
 	use 'kyazdani42/nvim-web-devicons'
