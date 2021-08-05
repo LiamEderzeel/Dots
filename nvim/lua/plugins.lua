@@ -50,8 +50,14 @@ return require("packer").startup(function(use)
  		-- diagnostics visualization
   		use {"folke/trouble.nvim"}
 
- 		-- Treesitter
-		use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+		-- Treesitter
+		use {
+			'nvim-treesitter/nvim-treesitter',
+			run = ':TSUpdate',
+			condig = function ()
+				require("p-treesitter").setup()
+			end
+		}
 
 		-- Autocomplete
 		use 'hrsh7th/nvim-compe'

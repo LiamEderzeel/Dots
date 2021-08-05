@@ -7,4 +7,5 @@ require('p-whichkey').config()
 require('p-gitsigns').config()
 require('p-zen').config()
 require('p-fterm').config()
+require('p-nvimtree').config()
 
