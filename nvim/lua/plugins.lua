@@ -80,6 +80,7 @@ return require("packer").startup(function(use)
 		-- Icons
 		use 'kyazdani42/nvim-web-devicons'
 		use 'ryanoasis/vim-devicons'
+		use 'nvim-lua/plenary.nvim'
 
 		-- git utilitys
 		use 'TimUntersberger/neogit'
