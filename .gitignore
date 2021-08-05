@@ -9,6 +9,8 @@
 .Spotlight-V100
 .Trashes
 lazygit/state.yml
+lazygit/*
+!lazygit/config.yml
 Icon?
 ehthumbs.db
 [Tt]humbs.db
@@ -22,4 +24,3 @@ atom/recovery/
 atom/storage/
 
 plugin/
-
