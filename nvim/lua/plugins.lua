@@ -33,144 +33,144 @@ end
 -- require('packer').init({display = {auto_clean = false}})
 
 return require("packer").startup(function(use)
-		-- Packer can manage itself as an optional plugin
-		use 'wbthomason/packer.nvim'
+	-- Packer can manage itself as an optional plugin
+	use 'wbthomason/packer.nvim'
 
-		-- LSP and Treesitter
-		use 'neovim/nvim-lspconfig'
-		use { 'ChristianChiarulli/dashboard-nvim',
-			event = "BufWinEnter",
-			config = function()
-				require('p-dashboard').setup()
+	-- LSP and Treesitter
+	use 'neovim/nvim-lspconfig'
+	use {
+		'ChristianChiarulli/dashboard-nvim',
+		event = "BufWinEnter",
+		config = function()
+			require('p-dashboard').setup()
+		end
+	}
+	use 'glepnir/lspsaga.nvim'
+	use 'kabouzeid/nvim-lspinstall'
+
+	-- diagnostics visualization
+	use {"folke/trouble.nvim"}
+
+	-- Treesitter
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate',
+		condig = function ()
+			require("p-treesitter").setup()
+		end
+	}
+
+	-- Autocomplete
+	use {
+		'hrsh7th/nvim-compe',
+		config = function()
+			local status_ok, p_compe = pcall(require, "p-compe")
+			if not status_ok then
+				return
 			end
-		}
-		use 'glepnir/lspsaga.nvim'
-		use 'kabouzeid/nvim-lspinstall'
+			p_compe.setup()
+		end
+	}
 
- 		-- diagnostics visualization
-  		use {"folke/trouble.nvim"}
+	use 'hrsh7th/vim-vsnip'
+	use 'rafamadriz/friendly-snippets'
 
-		-- Treesitter
-		use {
-			'nvim-treesitter/nvim-treesitter',
-			run = ':TSUpdate',
-			condig = function ()
-				require("p-treesitter").setup()
+	--Status Line
+	use 'glepnir/galaxyline.nvim'
+
+	-- Icons
+	use 'kyazdani42/nvim-web-devicons'
+	use 'ryanoasis/vim-devicons'
+	use 'nvim-lua/plenary.nvim'
+
+	-- git utilitys
+	use 'TimUntersberger/neogit'
+	use {
+		'lewis6991/gitsigns.nvim',
+		requires = {'nvim-lua/plenary.nvim'},
+		config = function()
+			require('p-gitsigns').setup()
+		end
+	}
+	use 'sindrets/diffview.nvim'
+	use 'kdheepak/lazygit.nvim'
+
+	use 'tpope/vim-surround'
+
+	-- Autopairs
+	use {
+		"windwp/nvim-autopairs",
+		-- event = "InsertEnter",
+		after = "nvim-compe",
+		config = function()
+			require ("p-autopairs")
+		end
+	}
+
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-media-files.nvim'}}
+	}
+
+	-- Comments
+	use {
+		"terrortylor/nvim-comment",
+		event = "BufRead",
+		config = function()
+			local status_ok, nvim_comment = pcall(require, "nvim_comment")
+			if not status_ok then
+				return
 			end
-		}
+			nvim_comment.setup()
+		end
+	}
 
-		-- Autocomplete
-		use {
-			'hrsh7th/nvim-compe',
-			config = function()
-				local status_ok, p_compe = pcall(require, "p-compe")
-				if not status_ok then
-					return
-				end
-				p_compe.setup()
-			end
-		}
+	-- file tree
+	use {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}}
+	use {"ahmedkhalf/lsp-rooter.nvim"} -- with this nvim-tree will follow you
 
-		use 'hrsh7th/vim-vsnip'
-		use 'rafamadriz/friendly-snippets'
+	-- color theme
+	use 'rakr/vim-one'
+	use 'kaicataldo/material.vim'
 
-		--Status Line
-		use 'glepnir/galaxyline.nvim'
+	-- color theme creator
+	-- use 'rktjmp/lush.nvim'
 
-		-- Icons
-		use 'kyazdani42/nvim-web-devicons'
-		use 'ryanoasis/vim-devicons'
-		use 'nvim-lua/plenary.nvim'
+	-- whichkey
+	use {
+		"folke/which-key.nvim",
+		config = function()
+			require('p-whichkey').setup()
+		end
+	}
 
-		-- git utilitys
-		use 'TimUntersberger/neogit'
-		use {
-			'lewis6991/gitsigns.nvim',
-			requires = {'nvim-lua/plenary.nvim'},
-			config = function()
-				require('p-gitsigns').setup()
-			end
-		}
-		use 'sindrets/diffview.nvim'
-		use 'kdheepak/lazygit.nvim'
+	-- color previews
+	use 'lilydjwg/colorizer'
 
-		use 'tpope/vim-surround'
+	--floating terminal
+	use {
+		"numtostr/FTerm.nvim",
+		config = function ()
+			require('p-fterm').setup()
+		end
+	}
 
-		-- Autopairs
-		use {
-			"windwp/nvim-autopairs",
-			-- event = "InsertEnter",
-			after = "nvim-compe",
-			config = function()
-				require ("p-autopairs")
-			end
-		}
+	-- Debugging
+	use ({
+		"mfussenegger/nvim-dap",
+		config = function()
+			require('p-dap').setup()
+		end
+	})
 
-		use {
-			'nvim-telescope/telescope.nvim',
-			requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-media-files.nvim'}}
-		}
+	-- Debugger management
+	use "Pocco81/DAPInstall.nvim"
 
-		-- Comments
-		use {
-			"terrortylor/nvim-comment",
-			event = "BufRead",
-			config = function()
-				local status_ok, nvim_comment = pcall(require, "nvim_comment")
-				if not status_ok then
-					return
-				end
-				nvim_comment.setup()
-			end
-		}
-
-		-- file tree
-		use {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}}
- 		use {"ahmedkhalf/lsp-rooter.nvim"} -- with this nvim-tree will follow you
-
-		-- color theme
-		use 'rakr/vim-one'
-		use 'kaicataldo/material.vim'
-
-		-- color theme creator
-		-- use 'rktjmp/lush.nvim'
-
-		-- whichkey
-		use {
-			"folke/which-key.nvim",
-			config = function()
-				require('p-whichkey').setup()
-			end
-		}
-
-		-- color previews
-		use 'lilydjwg/colorizer'
-
-		--floating terminal
-		use {
-			"numtostr/FTerm.nvim",
-			config = function ()
-				require('p-fterm').setup()
-			end
-		}
-
-		-- Debugging
-		use ({
-			"mfussenegger/nvim-dap",
- 			config = function()
-				require('p-dap').setup()
-			end
-		})
-
-		-- Debugger management
-		use "Pocco81/DAPInstall.nvim"
-
-		use ({
-			"folke/zen-mode.nvim",
-			config = function()
-				require("p-zen").setup()
-			end
-		})
-	end
-)
+	use ({
+		"folke/zen-mode.nvim",
+		config = function()
+			require("p-zen").setup()
+		end
+	})
+end)
 
