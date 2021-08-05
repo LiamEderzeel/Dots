@@ -16,6 +16,7 @@ vim.bo.smartindent = true -- Makes indenting smart
 vim.wo.cursorline = true -- Enable highlighting of the current line
 vim.wo.number = true -- set numbered lines
 vim.wo.relativenumber = true -- set relative number
+vim.wo.fillchars = 'eob: ' -- set ~ mark as end of file filler to nothing
 vim.o.guifont = "RobotoMono Nerd Font Mono:h17"
 vim.o.updatetime = 300 -- Faster completion
 vim.o.conceallevel = 0 -- So that I can see `` in markdown files
