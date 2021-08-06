@@ -158,14 +158,6 @@ return require("packer").startup(function(use)
 	-- color theme creator
 	-- use 'rktjmp/lush.nvim'
 
-	-- whichkey
-	use {
-		"folke/which-key.nvim",
-		config = function()
-			require('p-whichkey').setup()
-		end
-	}
-
 	-- color previews
 	use 'lilydjwg/colorizer'
 
@@ -194,5 +186,14 @@ return require("packer").startup(function(use)
 			require("p-zen").setup()
 		end
 	})
+
+	-- whichkey
+	use {
+		"folke/which-key.nvim",
+		config = function()
+			require('p-whichkey').setup()
+		end
+	}
+
 end)
 
