@@ -103,7 +103,14 @@ return require("packer").startup(function(use)
 			require('p-gitsigns').setup()
 		end
 	}
-	use 'sindrets/diffview.nvim'
+
+	use {
+		'sindrets/diffview.nvim',
+		config = function()
+			require('p-diffview')
+		end
+	}
+
 	use 'kdheepak/lazygit.nvim'
 
 	use 'tpope/vim-surround'

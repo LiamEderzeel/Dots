@@ -7,7 +7,6 @@ require('keymappings')
 require('settings')
 
 require('lsp')
-require('p-diffview')
 
 require('lsp.efm-general-ls')
 require('lsp.js-ts-ls')
