@@ -11,20 +11,20 @@ end
 
 --- Check if a file or directory exists in this path
 local function require_plugin(plugin)
-    local plugin_prefix = fn.stdpath("data") .. "/site/pack/packer/opt/"
+	local plugin_prefix = fn.stdpath("data") .. "/site/pack/packer/opt/"
 
-    local plugin_path = plugin_prefix .. plugin .. "/"
-    --	print('test '..plugin_path)
-    local ok, err, code = os.rename(plugin_path, plugin_path)
-    if not ok then
-        if code == 13 then
-            -- Permission denied, but it exists
-            return true
-        end
-    end
-    --	print(ok, err, code)
-    if ok then vim.cmd("packadd " .. plugin) end
-    return ok, err, code
+	local plugin_path = plugin_prefix .. plugin .. "/"
+	--	print('test '..plugin_path)
+	local ok, err, code = os.rename(plugin_path, plugin_path)
+	if not ok then
+		if code == 13 then
+			-- Permission denied, but it exists
+			return true
+		end
+	end
+	--	print(ok, err, code)
+	if ok then vim.cmd("packadd " .. plugin) end
+	return ok, err, code
 end
 
 -- vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when there are changes in plugins.lua
