@@ -159,6 +159,7 @@ return require("packer").startup(function(use)
 	}
 
 	-- color theme
+	use 'folke/tokyonight.nvim'
 	use 'rakr/vim-one'
 	use 'kaicataldo/material.vim'
 

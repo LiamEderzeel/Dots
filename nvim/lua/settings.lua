@@ -4,7 +4,8 @@ vim.o.title = true
 vim.o.pumheight = 10 -- Makes popup menu smaller
 vim.o.fileencoding = "utf-8" -- The encoding written to file
 vim.o.mouse = "a" -- enable mouse
-vim.cmd('colorscheme one')
+vim.cmd[[colorscheme tokyonight]]
+vim.g.tokyonight_style = "night"
 vim.cmd('let $NVIM_TUI_ENABLE_TRUE_COLOR = 1')
 vim.cmd('highlight clear SignColumn')
 vim.o.cmdheight = 2 -- more space in the neovim command line for displaying messages
