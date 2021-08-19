@@ -123,7 +123,8 @@ return require("packer").startup(function(use)
 		-- event = "InsertEnter",
 		after = "nvim-compe",
 		config = function()
-			require ("p-autopairs")
+			require('nvim-autopairs')
+			require('p-autopairs').setup()
 		end
 	}
 
