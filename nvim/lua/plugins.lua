@@ -152,13 +152,15 @@ return require("packer").startup(function(use)
 	-- file tree
 	use {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}}
 
-	-- with this nvim-tree will follow you
-	use {
-		"ahmedkhalf/lsp-rooter.nvim",
-		config = function ()
-			require("lsp-rooter").setup()
-		end
-	}
+	-- project.nvim
+  use {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project").setup()
+    end,
+  }
+
+  -- Icons
 
 	-- color theme
 	use 'folke/tokyonight.nvim'

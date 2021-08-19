@@ -11,4 +11,5 @@ require('p-compe').config()
 require('p-nvimtree').config()
 require('p-telescope').config()
 require('p-diffview').config()
+require('p-project').config()
 

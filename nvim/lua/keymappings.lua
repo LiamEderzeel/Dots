@@ -11,8 +11,8 @@ vim.api.nvim_set_keymap('n', '<A-j>', ':resize +2<CR>', {silent = true})
 vim.api.nvim_set_keymap('n', '<A-k>', ':resize -2<CR>', {silent = true})
 vim.api.nvim_set_keymap('n', '<A-l>', ':vertical resize +2<CR>', {silent = true})
 
-vim.api.nvim_set_keymap('n', 'J', '5j', {})
-vim.api.nvim_set_keymap('n', 'K', '5k', {})
+-- vim.api.nvim_set_keymap('n', 'J', '5j', {})
+-- vim.api.nvim_set_keymap('n', 'K', '5k', {})
 vim.api.nvim_set_keymap('n', 'R', '<Nop>', {})
 vim.api.nvim_set_keymap('n', 'r', '<Nop>', {})
 

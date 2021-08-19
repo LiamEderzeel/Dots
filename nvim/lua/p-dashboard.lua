@@ -26,23 +26,19 @@ M.config = function()
         description = { "  Find File          " },
         command = "Telescope find_files",
       },
-      b = {
+      -- b is reserved for the core.project module
+      c = {
         description = { "  Recently Used Files" },
         command = "Telescope oldfiles",
       },
-      -- c = {
-      --   description = { "  Load Last Session  " },
-      --   command = "SessionLoad",
-      -- },
-      c = {
+      d = {
         description = { "  Find Word          " },
         command = "Telescope live_grep",
       },
-      d = {
-        description = { "  Settings           " },
-        -- command = ":e " .. CONFIG_PATH .. "/lv-config.lua",
-        command = ":e ~/.config/lvim/lv-config.lua",
-      },
+      -- e = {
+      --   description = { "  Configuration      " },
+      --   command = ":e " .. USER_CONFIG_PATH,
+      -- },
     },
 
     footer = { "chrisatmachine.com" },
