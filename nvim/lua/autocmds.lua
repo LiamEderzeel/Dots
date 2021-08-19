@@ -2,6 +2,11 @@ local autocommands = {}
 
 O.autocommands = {
   _general_settings = {
+ 		{
+      "Filetype",
+      "*",
+      "lua require('utils.ft').do_filetype(vim.fn.expand(\"<amatch>\"))",
+    },
     {
       "TextYankPost",
       "*",

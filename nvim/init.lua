@@ -8,17 +8,23 @@ require('settings')
 
 require('lsp')
 
-require('lsp.efm-general-ls')
-require('lsp.js-ts-ls')
-require('lsp.lua-ls')
-require('lsp.vue-ls')
-require('lsp.docker-ls')
-require('lsp.json-ls')
-require('lsp.yaml-ls')
-require('lsp.csharp-ls')
-
 local autocmds = require('autocmds')
 
 autocmds.define_augroups(O.autocommands)
+
+require("lsp").config()
+
+local null_status_ok, null_ls = pcall(require, "null-ls")
+if null_status_ok then
+  null_ls.config {}
+  require("lspconfig")["null-ls"].setup {}
+end
+
+local lsp_settings_status_ok, lsp_settings = pcall(require, "nlspsettings")
+if lsp_settings_status_ok then
+  lsp_settings.setup {
+    config_home = os.getenv "HOME" .. "/.config/lvim/lsp-settings",
+  }
+end
 
 utils.toggle_autoformat()

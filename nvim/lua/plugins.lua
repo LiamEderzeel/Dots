@@ -34,10 +34,12 @@ end
 
 return require("packer").startup(function(use)
 	-- Packer can manage itself as an optional plugin
+ 	use 'jose-elias-alvarez/null-ls.nvim'
 	use 'wbthomason/packer.nvim'
 
 	-- LSP and Treesitter
 	use 'neovim/nvim-lspconfig'
+ 	use 'tamago324/nlsp-settings.nvim'
 	use {
 		'ChristianChiarulli/dashboard-nvim',
 		event = "BufWinEnter",
