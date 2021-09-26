@@ -4,8 +4,7 @@ export ZSH=/Users/liamederzeel/.oh-my-zsh
 DEFAULT_USER='liamederzeel'
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Optionally, if you set this to "random", it'll load a random theme each time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="liamederzeel"
 
@@ -62,9 +61,11 @@ export PATH="/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/mysql/bin:/usr
 export PATH=/Library/Frameworks/Mono.framework/Versions/Current/bin/:${PATH}
 
 export PATH=/System/Library/CoreServices/Applications/Network\ Utility.app/Contents/Resources:${PATH}
+export PATH=/run/current-system/sw/bin:${PATH}
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -99,7 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys 'C-\\') || tmux select-pane -l"
 
 # Tmuxinator
-source ~/.bin/tmuxinator.zsh
+# source ~/.bin/tmuxinator.zsh
+
 export EDITOR='nvim'
 alias tmux="env TERM=xterm-256color tmux"
 alias v='nvim'
@@ -111,6 +113,11 @@ alias lucy='ssh root@188.166.19.147'
 # alias TC='mux start TryCodingBackend; mux start TryCodingFrontend'
 alias TP='mux start Typer-Frontend; mux start Typer-Backend'
 alias screeps='a /Users/liamederzeel/Library/Application\ Support/screeps/scripts/188_226_192_169___21025/default'
+alias work='~/projects/whas'
+alias lg='lazygit'
+alias ld='lazydocker'
+alias d='docker'
+alias sudo='sudo '
 plugins=(git zsh-syntax-highlighting)
 # eval "$(pyenv init -)"
 source /Users/liamederzeel/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -121,3 +128,17 @@ source /Users/liamederzeel/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 export PATH=$PATH:/opt/local/bin
+
+# . /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh
+
+. $HOME/.nix-profile/etc/profile.d/nix.sh
+if [ -e /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+autoload -U up-line-or-beginning-search
+zle -N up-line-or-beginning-search
+
+autoload -U down-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+bindkey '^n' up-line-or-beginning-search
+bindkey '^p' down-line-or-beginning-search
