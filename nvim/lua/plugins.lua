@@ -37,7 +37,7 @@ return require("packer").startup(function(use)
  	use 'jose-elias-alvarez/null-ls.nvim'
 	use 'wbthomason/packer.nvim'
 
-	-- LSP and Treesitter
+	-- LSP 
 	use 'neovim/nvim-lspconfig'
  	use 'tamago324/nlsp-settings.nvim'
 	use {
@@ -151,15 +151,13 @@ return require("packer").startup(function(use)
 	}
 
 	-- file tree
-	use {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}}
-
-	-- project.nvim
-  use {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project").setup()
-    end,
-  }
+	use {
+		'kyazdani42/nvim-tree.lua',
+		requires = {'kyazdani42/nvim-web-devicons'},
+		config = function ()
+			require('p-nvimtree').setup()
+		end
+	}
 
   -- Icons
 
@@ -180,6 +178,14 @@ return require("packer").startup(function(use)
 		config = function ()
 			require('p-fterm').setup()
 		end
+	}
+
+	-- project.nvim
+	use {
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project").setup()
+		end,
 	}
 
 	-- Debugging
