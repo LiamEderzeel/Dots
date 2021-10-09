@@ -1127,7 +1127,11 @@ O.lang = {
       --   args = {},
       -- },
 		},
-		linters = {},
+		linters = {
+			{
+				exe = "eslint"
+			}
+		},
 		lsp = {
 			provider = "tsserver",
 			setup = {
