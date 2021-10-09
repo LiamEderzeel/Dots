@@ -116,6 +116,7 @@ alias screeps='a /Users/liamederzeel/Library/Application\ Support/screeps/script
 alias work='~/projects/whas'
 alias lg='lazygit'
 alias ld='lazydocker'
+alias k="minikube kubectl --"
 alias d='docker'
 alias sudo='sudo '
 plugins=(git zsh-syntax-highlighting)
