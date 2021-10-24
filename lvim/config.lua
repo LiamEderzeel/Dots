@@ -3,7 +3,6 @@
 -- general
 lvim.format_on_save = true
 lvim.lint_on_save = true
-
 -- vim.g.tokyonight_style = "night"
 lvim.colorscheme = "tokyonight"
 -- keymappings [view all the defaults by pressing <leader>Lk]
@@ -82,6 +81,8 @@ lvim.builtin.telescope.defaults.prompt_prefix = " "
 lvim.builtin.telescope.defaults.sorting_strategy = "ascending"
 lvim.builtin.telescope.defaults.layout_config  = { width = 0.75, prompt_position = "top", preview_cutoff = 120, horizontal = {mirror = false}, vertical = {mirror = false}}
 
+lvim.builtin.dap.active = true
+
 
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers
@@ -110,20 +111,27 @@ lvim.builtin.telescope.defaults.layout_config  = { width = 0.75, prompt_position
 -- end
 
 -- set a formatter if you want to override the default lsp one (if it exists)
-lvim.lang.typescript.formatters = {
-  {
-    exe = "prettier",
-    args = {}
+lvim.lang.typescript.formatters = { {
+    exe = "prettier"
   }
 }
+-- 
+-- lvim.lang.vue.formatters = { {
+--     exe = "prettier"
+--   }
+-- }
 
-lvim.lang.vue.formatters = lvim.lang.typescript.formatters
-lvim.lang.javascript.formatters = lvim.lang.typescript.formatters
+-- lvim.lang.javascript.formatters = { {
+--     exe = "prettier"
+--   }
+-- }
+
+-- lvim.lang.vue.formatters = lvim.lang.typescript.formatters
+-- lvim.lang.javascript.formatters = lvim.lang.typescript.formatters
 
 -- set an additional linter
 lvim.lang.typescript.linters = { {
-    exe = "eslint",
-    args = {}
+    exe = "eslint"
   }
 }
 
@@ -143,4 +151,5 @@ lvim.plugins = {
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
+
 
