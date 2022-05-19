@@ -1,142 +1,41 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/liamederzeel/.oh-my-zsh
-
-DEFAULT_USER='liamederzeel'
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="liamederzeel"
-
-# Sould display true colors (added bij me)
+export DOTDIR=~/.config
+export ZDOTDIR=$DOTDIR/zsh
+export EDITOR='nvim'
 export TERM=xterm-256color
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-# User configuration
+DEFAULT_USER='liamederzeel'
 
 export PATH="/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/liamederzeel/.rvm/bin:$HOME/npm/bin:$HOME/.cargo/bin"
 export PATH=/Library/Frameworks/Mono.framework/Versions/Current/bin/:${PATH}
 export PATH=~/.local/bin:${PATH}
-
+export PATH=/usr/local/share/dotnet:${PATH}
+export PATH=/Library/Frameworks/Mono.framework/Versions/Current/bin:${PATH}
 export PATH=/System/Library/CoreServices/Applications/Network\ Utility.app/Contents/Resources:${PATH}
 export PATH=/run/current-system/sw/bin:${PATH}
-# export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "$ZDOTDIR/zsh-functions"
+# autosurgestions
+source_git "zsh-users/zsh-autosuggestions"
+# syntax highlighting
+source_git "zsh-users/zsh-syntax-highlighting"
+# prompt
+source_save $ZDOTDIR/zsh-prompt
+# fzf history completion
+source_save ~/.fzf.zsh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# smart pane switching with awareness of vim splits
-# bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-h) || tmux select-pane -L"
-# bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-j) || tmux select-pane -D"
-# bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-k) || tmux select-pane -U"
-# bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-l) || tmux select-pane -R"
-# bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys 'C-\\') || tmux select-pane -l"
-
-# Tmuxinator
-# source ~/.bin/tmuxinator.zsh
-
-export EDITOR='nvim'
 alias tmux="env TERM=xterm-256color tmux"
-# alias v='nvim'
 alias v='~/.local/bin/lvim '
 alias lvim='~/.local/bin/lvim '
-alias a='atom'
-alias mux='tmuxinator'
-alias deadlines1='ssh root@188.226.192.169'
-alias lucy='ssh root@188.166.19.147'
-
-# alias TC='mux start TryCodingBackend; mux start TryCodingFrontend'
-alias TP='mux start Typer-Frontend; mux start Typer-Backend'
-alias screeps='a /Users/liamederzeel/Library/Application\ Support/screeps/scripts/188_226_192_169___21025/default'
 alias work='~/projects/whas'
 alias lg='lazygit'
 alias ld='lazydocker'
 alias k="minikube kubectl --"
 alias d='docker'
 alias sudo='sudo '
-plugins=(git zsh-syntax-highlighting)
-# eval "$(pyenv init -)"
-source /Users/liamederzeel/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# archey
-
-# export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
-export PATH=$PATH:/opt/local/bin
 
 # . /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh
 
-. $HOME/.nix-profile/etc/profile.d/nix.sh
-if [ -e /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# . $HOME/.nix-profile/etc/profile.d/nix.sh
+# if [ -e /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 autoload -U up-line-or-beginning-search
 zle -N up-line-or-beginning-search
@@ -146,3 +45,8 @@ zle -N down-line-or-beginning-search
 
 bindkey '^n' up-line-or-beginning-search
 bindkey '^p' down-line-or-beginning-search
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
