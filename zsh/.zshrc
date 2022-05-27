@@ -26,7 +26,7 @@ source_save ~/.fzf.zsh
 alias tmux="env TERM=xterm-256color tmux"
 alias v='~/.local/bin/lvim '
 alias lvim='~/.local/bin/lvim '
-alias work='~/projects/whas'
+alias work='cd ~/projects/whas'
 alias lg='lazygit'
 alias ld='lazydocker'
 alias k="minikube kubectl --"
