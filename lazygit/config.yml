@@ -1,3 +1,16 @@
+gui:
+  showIcons: true
+  showFileTree: false
+  theme:
+    optionsTextColor:
+      - '#3b4261'
+    selectedLineBgColor:
+      - '#3b4261' # set to `default` to have no background colour
+    activeBorderColor:
+      - blue
+    inactiveBorderColor:
+      - '#3b4261'
+
 git:
   merging:
     args: "--no-ff"
