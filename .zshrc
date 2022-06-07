@@ -3,6 +3,10 @@ export ZDOTDIR=$DOTDIR/zsh
 export EDITOR='nvim'
 export TERM=xterm-256color
 DEFAULT_USER='liamederzeel'
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
 
 export PATH="/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/liamederzeel/.rvm/bin:$HOME/npm/bin:$HOME/.cargo/bin"
 export PATH=/Library/Frameworks/Mono.framework/Versions/Current/bin/:${PATH}
@@ -21,8 +25,9 @@ source_git "zsh-users/zsh-syntax-highlighting"
 source_save $ZDOTDIR/zsh-prompt
 source_save $ZDOTDIR/zsh-completion
 # fzf history completion
-source_save ~/.fzf.zsh
-
+source ~/.fzf.zsh
+alias config='lazygit --work-tree ~ --git-dir ~/Dots.git'
+# alias config='/usr/bin/git --git-dir=$HOME/Dots.git/ --work-tree=$HOME'
 alias tmux="env TERM=xterm-256color tmux"
 alias v='~/.local/bin/lvim '
 alias lvim='~/.local/bin/lvim '
@@ -53,4 +58,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 bindkey '^ ' autosuggest-accept
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
