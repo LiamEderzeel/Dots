@@ -23,6 +23,7 @@ source_git "zsh-users/zsh-autosuggestions"
 source_git "zsh-users/zsh-syntax-highlighting"
 # prompt
 source_save $ZDOTDIR/zsh-prompt
+# completion
 source_save $ZDOTDIR/zsh-completion
 # fzf history completion
 source ~/.fzf.zsh
