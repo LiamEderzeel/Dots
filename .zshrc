@@ -3,6 +3,9 @@ export ZDOTDIR=$DOTDIR/zsh
 export EDITOR='nvim'
 export TERM=xterm-256color
 DEFAULT_USER='liamederzeel'
+
+export EXA_ICON_SPACING=2
+
 HISTFILE=~/.histfile
 HISTSIZE=50000
 SAVEHIST=10000
@@ -41,6 +44,8 @@ alias m='minikube'
 alias d='docker'
 alias dc='docker-compose'
 alias sudo='sudo '
+
+if exists_in_path exa; then alias ls='exa --icons -a'; fi
 
 if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
