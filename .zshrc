@@ -43,8 +43,8 @@ alias dc='docker-compose'
 alias sudo='sudo '
 
 if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
-+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-+fi
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 # . /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh
 
@@ -65,4 +65,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 bindkey '^ ' autosuggest-accept
-
