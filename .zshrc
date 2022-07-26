@@ -38,6 +38,7 @@ alias ld='lazydocker'
 alias k="minikube kubectl --"
 alias m='minikube'
 alias d='docker'
+alias dc='docker-compose'
 alias sudo='sudo '
 
 # . /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh
