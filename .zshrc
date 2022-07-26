@@ -26,7 +26,7 @@ source_save $ZDOTDIR/zsh-prompt
 # completion
 source_save $ZDOTDIR/zsh-completion
 # fzf history completion
-source ~/.fzf.zsh
+source_save ~/.fzf.zsh
 alias configlg='lazygit --work-tree ~ --git-dir ~/.dots'
 alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 alias tmux="env TERM=xterm-256color tmux"
