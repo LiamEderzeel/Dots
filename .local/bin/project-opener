@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(find ~/projects/personal ~/projects/whas -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+selected_name=$(basename "$selected" | tr . _)
+tmux_running=$(pgrep tmux)
+
+if [[ -z $TMUX ]]; then
+    if [[ -z $tmux_running ]]; then
+      # new session from outside tmux
+      tmux new-session -s $selected_name -c $selected
+      exit 0
+    fi
+
+    if tmux has-session -t=$selected_name 2> /dev/null; then
+      # attach to session from outside tmux"
+      tmux attach-session -t $selected_name
+      exit 0
+    fi
+fi
+
+if ! tmux has-session -t=$selected_name 2> /dev/null; then
+    # new session inside tmux
+    tmux new-session -ds $selected_name -c $selected
+fi
+
+# switch session
+tmux switch-client -t $selected_name
+

@@ -44,6 +44,7 @@ alias m='minikube'
 alias d='docker'
 alias dc='docker-compose'
 alias sudo='sudo '
+alias p='project-opener '
 
 if exists_in_path exa; then alias ls='exa --icons'; fi
 
