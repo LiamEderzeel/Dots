@@ -45,7 +45,7 @@ alias d='docker'
 alias dc='docker-compose'
 alias sudo='sudo '
 
-if exists_in_path exa; then alias ls='exa --icons -a'; fi
+if exists_in_path exa; then alias ls='exa --icons'; fi
 
 if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
