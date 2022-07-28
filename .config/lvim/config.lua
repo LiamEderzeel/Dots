@@ -142,7 +142,7 @@ local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   {
     exe = "eslint",
-    filetypes = { "javascript", "typescript", "typescriptreact", "json" },
+    filetypes = { "javascript", "typescript", "typescriptreact", "json", "vue" },
   },
 }
 
