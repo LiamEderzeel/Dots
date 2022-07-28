@@ -42,7 +42,7 @@ alias ld='lazydocker'
 alias k="minikube kubectl --"
 alias m='minikube'
 alias d='docker'
-alias dc='docker-compose'
+alias dc='docker compose'
 alias sudo='sudo '
 alias p='project-launcher -d ~/projects/personal -d ~/projects/whas'
 
