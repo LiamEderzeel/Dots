@@ -11,6 +11,7 @@ lvim.colorscheme = 'tokyonight'
 -- edit a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 -- lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["J"] = "" -- fix deleting line ending on capital J
 
 lvim.builtin.alpha.dashboard.section.header.val = {
      "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣤⣴⣦⣤⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ",
