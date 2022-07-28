@@ -204,4 +204,3 @@ lvim.plugins = {
     { "alexghergh/nvim-tmux-navigation" }
 }
 
-require'colorizer'.setup()
