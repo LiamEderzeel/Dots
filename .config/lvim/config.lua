@@ -186,7 +186,12 @@ lvim.plugins = {
       "folke/trouble.nvim",
       cmd = "TroubleToggle",
     },
-    {"norcalli/nvim-colorizer.lua"},
+    {
+      "norcalli/nvim-colorizer.lua",
+      config = function ()
+        require'colorizer'.setup()
+      end
+    },
     {"tpope/vim-surround"},
 }
 
