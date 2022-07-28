@@ -193,6 +193,7 @@ lvim.plugins = {
       end
     },
     {"tpope/vim-surround"},
+    {"ggandor/lightspeed.nvim"},
 }
 
 require'colorizer'.setup()
