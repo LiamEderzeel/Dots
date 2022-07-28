@@ -60,7 +60,7 @@ if [[ -z $TMUX ]]; then
 
     if tmux has-session -t=$selected_name 2> /dev/null; then
       # attach to session from outside tmux"
-      tmux attach-session -t $selected_name
+      tmux attach-session -t=$selected_name
       exit 0
     fi
     # if [[ -z $tmux_running ]]; then
