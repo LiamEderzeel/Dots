@@ -17,7 +17,7 @@ export PATH=~/.local/bin:${PATH}
 export PATH=/usr/local/share/dotnet:${PATH}
 export PATH=/Library/Frameworks/Mono.framework/Versions/Current/bin:${PATH}
 export PATH=/System/Library/CoreServices/Applications/Network\ Utility.app/Contents/Resources:${PATH}
-export PATH=/run/current-system/sw/bin:${PATH}
+# export PATH=/run/current-system/sw/bin:${PATH}
 
 source "$ZDOTDIR/zsh-functions"
 # autosurgestions
