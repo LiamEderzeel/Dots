@@ -8,7 +8,7 @@ an executable ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 vim.o.ls = 0;
-vim.o.ch = 0;
+
 
 -- general
 lvim.log.level = "warn"
@@ -49,6 +49,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- Change theme settings
 -- lvim.builtin.theme.options.dim_inactive = true
 lvim.builtin.theme.options.style = "storm"
+lvim.builtin.dap.active = true
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -221,6 +222,7 @@ lvim.plugins = {
       require 'colorizer'.setup()
     end
   },
+  { "mxsdev/nvim-dap-vscode-js" },
   { "tpope/vim-surround" },
   { 'fgheng/winbar.nvim',
     config = function()
@@ -255,6 +257,9 @@ lvim.plugins = {
   }
 
 }
+
+require("user.lsp")
+
 
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
