@@ -4,7 +4,6 @@ export EDITOR='nvim'
 export TERM=xterm-256color
 DEFAULT_USER='liamederzeel'
 
-export EXA_ICON_SPACING=2
 
 HISTFILE=~/.histfile
 HISTSIZE=50000
@@ -31,6 +30,7 @@ source_save $ZDOTDIR/zsh-completion
 # fzf history completion
 source_save ~/.fzf.zsh
 
+# Aliases
 alias git-clean="git remote prune origin && git branch --merged | grep -i -v -E 'master|dev'| xargs git branch -d"
 alias configlg='lazygit --work-tree ~ --git-dir ~/.dots'
 alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
@@ -47,17 +47,12 @@ alias dc='docker compose'
 alias sudo='sudo '
 alias p='project-launcher -d ~/projects/personal -d ~/projects/whas'
 
-if exists_in_path exa; then alias ls='exa --icons'; fi
-
-if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if exists_in_path exa; then 
+  alias ls='exa --icons'
+  export EXA_ICON_SPACING=2; 
 fi
 
-# . /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh
-
-# . $HOME/.nix-profile/etc/profile.d/nix.sh
-# if [ -e /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/liamederzeel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
+# Key-bindings
 autoload -U up-line-or-beginning-search
 zle -N up-line-or-beginning-search
 
@@ -67,9 +62,14 @@ zle -N down-line-or-beginning-search
 bindkey '^n' up-line-or-beginning-search
 bindkey '^p' down-line-or-beginning-search
 bindkey -s '^x' '^usource ~/.zshrc\n'
+bindkey '^ ' autosuggest-accept
+
+
+if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-bindkey '^ ' autosuggest-accept
