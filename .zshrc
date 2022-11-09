@@ -66,6 +66,7 @@ zle -N down-line-or-beginning-search
 
 bindkey '^n' up-line-or-beginning-search
 bindkey '^p' down-line-or-beginning-search
+bindkey -s '^x' '^usource ~/.zshrc\n'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
