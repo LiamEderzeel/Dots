@@ -1,15 +1,42 @@
-function source_save () {
- [ -f $1 ] && source $1
-} 
+#!/bin/sh
 
-function source_git () {
-  PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
-  if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then
-    source_save "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh"
-    source_save "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
-  else
-    git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
-  fi
+export ZDOTDIR_PLUGINS="$ZDOTDIR/plugins"
+
+# Function to source files if they exist
+function source_save() {
+    # shellcheck disable=SC1090
+    [ -f "$1" ] && source "$1"
+}
+
+# For plugins
+function sourceplug() {
+    local full_plugin_name="$1"
+    local plugin_name=$(echo "$full_plugin_name" | cut -d "/" -f 2)
+    if [ ! -d "$ZDOTDIR_PLUGINS/$plugin_name" ]; then
+      echo "Installing $plugin_name ..." && git clone "https://github.com/${full_plugin_name}.git" \
+        "$ZDOTDIR_PLUGINS/$plugin_name" > /dev/null 2>&1 && echo "Installed $plugin_name " || echo "Failed to install : $plugin_name"
+    fi
+    source_save "$ZDOTDIR_PLUGINS/$plugin_name/$plugin_name.plugin.zsh" || \
+    source_save "$ZDOTDIR_PLUGINS/$plugin_name/$plugin_name.zsh" || \
+    source_save "$ZDOTDIR_PLUGINS/$plugin_name/$plugin_name.zsh-theme"
+}
+
+# For completions
+function sourcecmp() {
+    local full_plugin_name="$1"
+    local initialize_completion="$2"
+    local plugin_name=$(echo "$full_plugin_name" | cut -d "/" -f 2)
+    if [ ! -d "$ZDOTDIR_PLUGINS/$plugin_name" ]; then
+        git clone "https://github.com/${full_plugin_name}.git" "$ZDOTDIR_PLUGINS/$plugin_name" \
+          > /dev/null 2>&1 && echo "Installed $plugin_name " || echo "Failed to install : $plugin_name"
+        fpath+=$(ls $ZDOTDIR_PLUGINS/$plugin_name/_*)
+        [ -f $ZDOTDIR/.zccompdump ] && $ZDOTDIR/.zccompdump
+    fi
+    local completion_file_path=$(ls $ZDOTDIR_PLUGINS/$plugin_name/_*)
+    fpath+="$(dirname "${completion_file_path}")"
+    source_save $ZDOTDIR_PLUGINS/$plugin_name/$plugin_name.plugin.zsh
+    local completion_file="$(basename "${completion_file_path}")"
+    [ "$initialize_completion" = true ] && compinit "${completion_file:1}"
 }
 
 function exists_in_path () {
@@ -20,3 +47,4 @@ function exists_in_path () {
     return 1
   fi
 }
+

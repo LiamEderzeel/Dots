@@ -21,9 +21,9 @@ export PATH=/System/Library/CoreServices/Applications/Network\ Utility.app/Conte
 
 source "$ZDOTDIR/zsh-functions"
 # autosurgestions
-source_git "zsh-users/zsh-autosuggestions"
+sourceplug "zsh-users/zsh-autosuggestions"
 # syntax highlighting
-source_git "zsh-users/zsh-syntax-highlighting"
+sourceplug "zsh-users/zsh-syntax-highlighting"
 # prompt
 source_save $ZDOTDIR/zsh-prompt
 # completion
