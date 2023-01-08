@@ -386,6 +386,7 @@ myStartupHook = do
 --
 main = do
   xmproc0 <- spawnPipe ("xmobar -x 0 $HOME/.config/xmobar/xmobar.config")
+  xmproc1 <- spawnPipe ("xmobar -x 1 $HOME/.config/xmobar/xmobar1.config")
   xmonad $ docks $ def {
       -- simple stuff
         terminal           = myTerminal,
@@ -409,7 +410,7 @@ main = do
         logHook            = dynamicLogWithPP $ namedScratchpadFilterOutWorkspacePP $ xmobarPP
             -- XMOBAR SETTINGS
             { 
-              ppOutput = hPutStrLn xmproc0    -- xmobar on monitor 1
+              ppOutput = \x -> hPutStrLn xmproc0 x >> hPutStrLn xmproc1 x    -- xmobar on monitor 1
               -- Current workspace
             , ppCurrent = xmobarColor color06 "" . wrap
                           ("<box type=Bottom width=2 mb=2 color=" ++ color06 ++ ">") "</box>"
