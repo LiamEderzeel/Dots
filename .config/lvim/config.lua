@@ -223,6 +223,7 @@ lvim.plugins = {
     end
   },
   { "mxsdev/nvim-dap-vscode-js" },
+  { "christoomey/vim-tmux-navigator" },
   { "tpope/vim-surround" },
   { 'fgheng/winbar.nvim',
     config = function()
