@@ -37,15 +37,16 @@ alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 alias tmux="env TERM=xterm-256color tmux"
 alias v='~/.local/bin/lvim '
 alias lvim='~/.local/bin/lvim '
-alias work='cd ~/projects/whas'
+alias work='cd ~/projects'
 alias lg='lazygit'
 alias ld='lazydocker'
-alias k="minikube kubectl --"
+alias mk="minikube kubectl --"
+alias k="kubectl"
 alias m='minikube'
 alias d='docker'
 alias dc='docker compose'
 alias sudo='sudo '
-alias p='project-launcher -d ~/projects/personal -d ~/projects/whas'
+alias p='tmux-booster -d ~/projects/personal -d ~/projects/whas -d ~/projects/hot'
 
 if exists_in_path exa; then 
   alias ls='exa --icons'
