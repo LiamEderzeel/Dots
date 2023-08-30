@@ -8,7 +8,7 @@ function usage {
   echo ""
   echo "Usage: $(basename $0) [-d <arg>...] [--] [DIRECTORY...]" 2>&1
   echo ""
-  echo "Options:"
+  echo "projectPaths:"
   echo '   -d           add directory for fuzzy search'
   echo '   -h|--help    show usage'
   exit 1
@@ -42,39 +42,71 @@ while getopts ${optstring} arg; do
 done
 shift $(expr $OPTIND - 1 )
 
+function contains () {
+  local value=$1
+  shift
+  local elements=("$@")
+
+  for el in ${elements[@]}; do
+    if [[ "${el}" = "${value}" ]]; then
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+function indexOf () {
+  local value=$1
+  shift
+  local elements=("$@")
+
+  for i in "${!elements[@]}"; do
+    if [[ "${elements[$i]}" = "${value}" ]]; then
+      echo "${i}";
+      break;
+    fi
+  done
+}
 
 if [[ $# -eq 1 ]]; then
-    selected=$1
+    selectedProjectName=$1
 else
-    selected=$(find ${multi[@]} -mindepth 1 -maxdepth 1 -type d | fzf)
+  projectPaths=($(find ${multi[@]} -mindepth 1 -maxdepth 1 -type d))
+
+    attachedSessionName=$(tmux display-message -p \#S)
+    sessions=$(tmux list-session -F \#S)
+    projectDisplayNames=()
+    projectNames=()
+
+    for key in ${projectPaths[@]}; do
+      value=$(basename "$(dirname "${key}")")"/"$(basename "${key}")
+        projectNames+=($value)
+      if [[ $value == $attachedSessionName ]]; then 
+        projectDisplayNames+=("[33m$value[0m")
+      elif $(contains ${value} ${sessions[@]}); then 
+        projectDisplayNames+=("[34m$value[0m")
+      else
+        projectDisplayNames+=($value)
+      fi
+    done
+
+    selectedProjectName=$(printf "%s\n" "${projectDisplayNames[@]}" | fzf --ansi)
+
+    index=$(indexOf ${selectedProjectName} ${projectNames[@]})
+    selectedPath="${projectPaths[$index]}"
 fi
 
-if [[ -z $selected ]]; then
+if [[ -z $selectedProjectName ]]; then
     exit 0
 fi
 
-selected_name=$(basename "$selected" | tr . _)
-tmux_running=$(pgrep tmux)
-
-if [[ -z $TMUX ]]; then
-
-    if tmux has-session -t=$selected_name 2> /dev/null; then
-      # attach to session from outside tmux"
-      tmux attach-session -t=$selected_name
-      exit 0
-    fi
-    # if [[ -z $tmux_running ]]; then
-      # new session from outside tmux
-      tmux new-session -s $selected_name -c $selected
-      exit 0
-    # fi
+if ! $(contains ${selectedProjectName} ${sessions[@]} ); then
+  tmux new-session -ds $selectedProjectName -c $selectedPath
 fi
 
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    # new session inside tmux
-    tmux new-session -ds $selected_name -c $selected
+if ! [[ -z $TMUX ]]; then
+  tmux switch-client -t $selectedProjectName
+else
+  tmux attach-session -t=$selectedProjectName
 fi
-
-# switch session
-tmux switch-client -t $selected_name
-
