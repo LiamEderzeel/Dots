@@ -9,6 +9,7 @@ an executable ]]
 
 vim.o.ls = 0;
 
+vim.wo.relativenumber = true
 
 -- general
 lvim.log.level = "warn"
