@@ -4,6 +4,9 @@ export EDITOR='nvim'
 export TERM=xterm-256color
 DEFAULT_USER='liamederzeel'
 
+# Completion init
+autoload -Uz compinit
+compinit
 
 HISTFILE=~/.histfile
 HISTSIZE=50000
@@ -23,6 +26,8 @@ source "$ZDOTDIR/zsh-functions"
 sourceplug "zsh-users/zsh-autosuggestions"
 # syntax highlighting
 sourceplug "zsh-users/zsh-syntax-highlighting"
+sourceplug "zsh-users/zsh-syntax-highlighting"
+source_save $ZDOTDIR/plugins/kubectl-autocompletion.plugin.zsh
 # prompt
 source_save $ZDOTDIR/zsh-prompt
 # completion
