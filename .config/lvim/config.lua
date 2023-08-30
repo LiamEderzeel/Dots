@@ -8,13 +8,13 @@ an executable ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 vim.o.ls = 0;
-
 vim.wo.relativenumber = true
 
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "tokyonight"
+
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -218,7 +218,8 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
-  { "norcalli/nvim-colorizer.lua",
+  {
+    "norcalli/nvim-colorizer.lua",
     config = function()
       require 'colorizer'.setup()
     end
@@ -226,7 +227,8 @@ lvim.plugins = {
   { "mxsdev/nvim-dap-vscode-js" },
   { "christoomey/vim-tmux-navigator" },
   { "tpope/vim-surround" },
-  { 'fgheng/winbar.nvim',
+  {
+    'fgheng/winbar.nvim',
     config = function()
       require('winbar').setup({
         enable = true,
