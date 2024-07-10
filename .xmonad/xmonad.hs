@@ -377,7 +377,7 @@ myStartupHook = do
   spawnOnce "nitrogen --restore &"
   spawnOnce "comption &"
   spawnOnce "nm-applet &"
-  spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x24283b --height 22")
+  spawn ("sleep 2 && trayer --edge top --align left --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 --tint 0x24283b --height 22")
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -385,8 +385,8 @@ myStartupHook = do
 -- Run xmonad with the settings you specify. No need to modify this.
 --
 main = do
-  xmproc0 <- spawnPipe ("xmobar -x 0 $HOME/.config/xmobar/xmobar.config")
-  xmproc1 <- spawnPipe ("xmobar -x 1 $HOME/.config/xmobar/xmobar1.config")
+  xmproc0 <- spawnPipe ("xmobar -x 0 $HOME/.config/xmobar/xmobar1.config")
+  xmproc1 <- spawnPipe ("xmobar -x 1 $HOME/.config/xmobar/xmobar.config")
   xmonad $ docks $ def {
       -- simple stuff
         terminal           = myTerminal,
@@ -410,7 +410,7 @@ main = do
         logHook            = dynamicLogWithPP $ namedScratchpadFilterOutWorkspacePP $ xmobarPP
             -- XMOBAR SETTINGS
             { 
-              ppOutput = \x -> hPutStrLn xmproc0 x >> hPutStrLn xmproc1 x    -- xmobar on monitor 1
+              ppOutput = \x -> hPutStrLn xmproc1 x >> hPutStrLn xmproc0 x    -- xmobar on monitor 1
               -- Current workspace
             , ppCurrent = xmobarColor color06 "" . wrap
                           ("<box type=Bottom width=2 mb=2 color=" ++ color06 ++ ">") "</box>"
