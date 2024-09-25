@@ -269,6 +269,24 @@ lvim.plugins = {
 
 require("user.lsp")
 
+local lspconfig = require('lspconfig')
+
+lspconfig.typos_lsp.setup({
+  -- Logging level of the language server. Logs appear in :LspLog. Defaults to error.
+  cmd_env = { RUST_LOG = "error" },
+  init_options = {
+    -- Custom config. Used together with a config file found in the workspace or its parents,
+    -- taking precedence for settings declared in both.
+    -- Equivalent to the typos `--config` cli argument.
+    -- config = '~/code/typos-lsp/crates/typos-lsp/tests/typos.toml',
+    diagnosticSeverity = "Warning"
+  }
+})
+
+
+-- Enable debug logs for the LSP client. Recommended for debugging only.
+vim.lsp.set_log_level("debug")
+
 
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
