@@ -283,6 +283,25 @@ lspconfig.typos_lsp.setup({
   }
 })
 
+lspconfig.tsserver.setup {
+  init_options = {
+    plugins = {
+      {
+        name = '@vue/typescript-plugin',
+        location = '/path/to/@vue/language-server',
+        languages = { 'vue' },
+      },
+    },
+  },
+}
+
+lspconfig.volar.setup {
+  init_options = {
+    vue = {
+      hybridMode = false,
+    },
+  },
+}
 
 -- Enable debug logs for the LSP client. Recommended for debugging only.
 vim.lsp.set_log_level("debug")
