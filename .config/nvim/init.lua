@@ -1,32 +1,19 @@
-vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
+-- This file simply bootstraps the installation of Lazy.nvim and then calls other files for execution
+-- This file doesn't necessarily need to be touched, BE CAUTIOUS editing this file and proceed at your own risk.
+local lazypath = vim.env.LAZY or vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
+  -- stylua: ignore
+  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
+end
+vim.opt.rtp:prepend(lazypath)
 
--- local utils = require('utils')
+-- validate that lazy is available
+if not pcall(require, "lazy") then
+  -- stylua: ignore
+  vim.api.nvim_echo({ { ("Unable to load lazy from: %s\n"):format(lazypath), "ErrorMsg" }, { "Press any key to exit...", "MoreMsg" } }, true, {})
+  vim.fn.getchar()
+  vim.cmd.quit()
+end
 
--- require('variables')
--- require('config')
--- require('plugins')
--- require('keymappings')
--- require('settings')
-
--- require('lsp')
-
--- local autocmds = require('autocmds')
-
--- autocmds.define_augroups(O.autocommands)
-
--- require("lsp").config()
-
--- local null_status_ok, null_ls = pcall(require, "null-ls")
--- if null_status_ok then
---   null_ls.config {}
---   require("lspconfig")["null-ls"].setup {}
--- end
-
--- local lsp_settings_status_ok, lsp_settings = pcall(require, "nlspsettings")
--- if lsp_settings_status_ok then
---   lsp_settings.setup {
---     config_home = os.getenv "HOME" .. "/.config/lvim/lsp-settings",
---   }
--- end
-
--- utils.toggle_autoformat()
+require "lazy_setup"
+require "polish"
