@@ -38,7 +38,7 @@ source_save ~/.fzf.zsh
 # Aliases
 alias git-clean="git remote prune origin && git branch --merged | grep -i -v -E 'master|dev'| xargs git branch -d"
 alias configlg='lazygit --work-tree ~ --git-dir ~/.dots'
-alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 alias tmux="env TERM=xterm-256color tmux"
 alias v='~/.local/bin/lvim '
 alias lv='(){(export NVIM_APPNAME=lv;export MYVIMRC=~/.config/lazyvim/init.lua;nvim)}'
