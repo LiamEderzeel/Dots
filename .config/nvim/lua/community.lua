@@ -11,5 +11,7 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.github-nvim-theme" },
+
   -- import/override with your plugins folder
 }

@@ -11,6 +11,7 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
+    -- colorscheme = "github_dark",
     colorscheme = "catppuccin",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
