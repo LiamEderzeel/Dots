@@ -12,7 +12,7 @@ HISTFILE=~/.histfile
 HISTSIZE=50000
 SAVEHIST=10000
 setopt appendhistory
-export PATH="/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/liamederzeel/.rvm/bin:$HOME/npm/bin:$HOME/.cargo/bin:$HOME/go/bin/"
+export PATH="$PATH:/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/liamederzeel/.rvm/bin:$HOME/npm/bin:$HOME/.cargo/bin:$HOME/go/bin/"
 export PATH=/Library/Frameworks/Mono.framework/Versions/Current/bin/:${PATH}
 export PATH=~/.local/bin:${PATH}
 export PATH=/usr/local/share/dotnet:${PATH}
