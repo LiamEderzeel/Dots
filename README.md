@@ -5,7 +5,7 @@
 - `git clone --bare git@github.com:LiamEderzeel/Dots.git ~/.dots`
 - `source ~/.zshrc`
 - `config remote remove origin`
-- `config remote add git@github.com:LiamEderzeel/Dots.git`
+- `config remote add origin git@github.com:LiamEderzeel/Dots.git`
 
 ## usage
 
