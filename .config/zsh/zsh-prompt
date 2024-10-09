@@ -29,6 +29,38 @@ function parse_git_dirty() {
   fi
 }
 
+# Show Shell Level
+function prompt_shell_level() {
+  if [[ $SHLVL -gt 1 ]]; then
+    # p10k segment -i '⚡' -f yellow -t "$SHLVL"
+    prompt_segment NONE blue "$((SHLVL - 1))"
+  fi
+}
+
+# Show If In Nix Shell
+function prompt_in_nix_shell() {
+  if echo "$PATH" | grep -qc '/nix/store'; then
+    # p10k segment -i '📦' -f yellow -t "nix"
+    prompt_segment NONE blue "󱄅"
+  fi
+}
+
+# Show Nix Development Shell Name
+function prompt_nix_dev_shell_name() {
+  if [[ -n $IN_NIX_SHELL ]]; then
+    # p10k segment -i '📦' -f yellow -t $name
+    prompt_segment NONE yellow "$name"
+  fi
+}
+
+# Show if Direnv Active
+function prompt_in_direnv() {
+  if [[ -n $DIRENV_ACTIVE ]]; then
+    # p10k segment -i '📂' -f yellow -t "direnv"
+    prompt_segment NONE yellow "direnv"
+  fi
+}
+
 prompt_segment() {
   local bg fg
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
@@ -196,6 +228,9 @@ prompt_status() {
 build_prompt() {
   RETVAL=$?
   # prompt_segment NONE NONE '%{%f%b%k%}'
+  prompt_in_nix_shell
+  prompt_shell_level
+  prompt_nix_dev_shell_name
   prompt_status
   prompt_virtualenv
   prompt_context
