@@ -35,6 +35,11 @@ source_save $ZDOTDIR/zsh-completion
 # fzf history completion
 source_save ~/.fzf.zsh
 
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+  source "$(fzf-share)/completion.zsh"
+fi
+
 # Aliases
 alias git-clean="git remote prune origin && git branch --merged | grep -i -v -E 'master|dev'| xargs git branch -d"
 alias configlg='lazygit --work-tree ~ --git-dir ~/.dots'
