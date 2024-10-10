@@ -317,13 +317,13 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{icon}",
-        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
-        "tooltip-format": "{ifname} via {gwaddr}  ",
+        "format-ethernet": "󰈀",
+        "tooltip-format": "address:\t{ipaddr}/{cidr}/{cidr}\ninterface:\t{ifname}\ngateway:\t{gwaddr}\ninterface:{ifname}",
         "tooltip-format-wifi": "ssid:\t\t{essid}\nsignal:\t\t{signalStrength}%\naddress:\t{ipaddr}/{cidr}\ninterface:\t{ifname}",
         "tooltip-format-ethernet": "{ifname} via {gwaddr}  ",
         "format-linked": "{ifname} (No IP) 󱚵",
         "format-disconnected": "󰤭",
-        "format-alt": "{essid} {icon}",
+        "format-alt": "{essid} ",
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
     },
     "pulseaudio": {
