@@ -26,7 +26,7 @@ source "$ZDOTDIR/zsh-functions"
 sourceplug "zsh-users/zsh-autosuggestions"
 # syntax highlighting
 sourceplug "zsh-users/zsh-syntax-highlighting"
-sourceplug "zsh-users/zsh-syntax-highlighting"
+
 source_save $ZDOTDIR/plugins/kubectl-autocompletion.plugin.zsh
 # prompt
 source_save $ZDOTDIR/zsh-prompt
@@ -45,7 +45,7 @@ alias git-clean="git remote prune origin && git branch --merged | grep -i -v -E 
 alias configlg='lazygit --work-tree ~ --git-dir ~/.dots'
 alias config='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 alias tmux="env TERM=xterm-256color tmux"
-alias v='~/.local/bin/lvim '
+alias v='nvim'
 alias lv='(){(export NVIM_APPNAME=lv;export MYVIMRC=~/.config/lazyvim/init.lua;nvim)}'
 alias lvim='~/.local/bin/lvim '
 alias work='cd ~/projects'
