@@ -135,6 +135,11 @@ show-icons: true;
 /*	me-select-entry: "MousePrimary";*/
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
+  display-drun: "   Apps ";
+  display-run: "   Run ";
+  display-window: "   Window";
+  display-Network: " 󰤨  Network";
+  terminal: "kitty";
   timeout {
       action: "kb-cancel";
       delay:  0;
@@ -145,17 +150,32 @@ show-icons: true;
   }
 }
 
+
 @theme "tokyo-night"
 
 * {
-    backgroundcolor: #24283b;
+
+//     bg-col:  #1e1e2e;
+//     bg-col-light: #1e1e2e;
+//     border-col: #1e1e2e;
+//     selected-col: #1e1e2e;
+//     blue: #c0caf5;
+//     fg-col: #cdd6f4;
+//     fg-col2: #f38ba8;
+//     grey: #6c7086;
+
+    backgroundcolor: #1e1e2e;
+    backgroundcoloralternate: #1e1e2e;
+    // backgroundcolor: #24283b;
+    // backgroundcoloralternate: #24283b;
     bg1: #3b4252;
-    backgroundcoloralternate: #24283b;
+    separatorcolor1: #33ccff;
+    separatorcolor2: #00ff99;
     separatorcolor: #1D202F;
     scrollbarcolor: #3b4252;
-    foregroundcolor: #c0caf5;
+    foregroundcolor: #cdd6f4;
     foregroundcolorinverse: #f7768e;
-    selectioncolor: #1D202F;
+    selectioncolor: #313244;
 
 
     font-size: 1px;
@@ -168,101 +188,223 @@ show-icons: true;
     spacing: 0;
 }
 
-#listview {
-    spacing: 0;
-    scrollbar: false;
-    margin: 0;
-    dynamic: true;
+ #listview {
+     spacing: 0;
+     scrollbar: false;
+     margin: 0;
+     dynamic: true;
+ 
+ }
+ 
+ #window {
+     background-color: #74c7ec;
+     // background-image: linear-gradient(45deg, #33ccff, #00ff99);
+     border: 1;
+     border-radius: 6px;
+     padding: 1;
+ }
+// window { background-image: linear-gradient(45deg,pink,lightgreen); padding: 2em; } mainbox { background-color: blue; }
+ 
+ #mainbox {
+     border: 0;
+     padding: 0;
+     background-color: @backgroundcoloralternate;
+     border-radius: 6px;
+ }
+ 
+ #element {
+     padding: 8 16;
+     border: 0 0 0 0;
+     border-color: @separatorcolor;
+     background-color: @backgroundcoloralternate;
+ }
+ 
+ #element-icon {
+   margin:0 16 0 0;
+ }
+ 
+ #element-text.selected {
+     background-color: @selectioncolor;
+ }
+ 
+ #element.selected.normal {
+     background-color: @selectioncolor;
+     text-color: @foregroundcolorinverse;
+     border-radius: 0px;
+ 
+     border: 0 0 0 0;
+     border-color: @separatorcolor;
+ }
+ 
+ #element.alternate.normal {
+     background-color: @backgroundcoloralternate;
+ }
+ 
+ #element.normal.active {
+     background-color: #434c5e;
+ }
+ 
+ #element.alternate.active {
+     background-color: #434c5e;
+ }
+ 
+ #element.selected.active {
+     background-color: @selectioncolor;
+     text-color: @foregroundcolorinverse;
+     border-radius: 0px;
+ 
+     border: 0 0 0 0;
+     border-color: @separatorcolor;
+ }
+ 
+ #inputbar {
+     border: 0 solid 0 solid 0 solid 0 solid;
+     margin: 0;
+     spacing: 0;
+     border-color: @separatorcolor;
+ }
+ 
+ #prompt {
+     padding: 16;
+     background-color: @backgroundcoloralternate;
+     border: 0 0 0 0;
+ }
+ 
+ #entry {
+     padding: 16;
+ }
+ 
+ #scrollbar {
+     background-color: #f7768e;
+     background-color: #f7768e;
+     border: 0;
+     width: 8px;
+     handle-color: @scrollbarcolor;
+     handle-width: 8px;
+     background-color: @backgroundcoloralternate;
+ }
+ 
+ #scrollbar handle {
+     border: 1px;
+     border-color: #ff0000;
+ }
 
-}
-
-#window {
-    background-color: @backgroundcolor;
-    border-color: @separatorcolor;
-    border: 1;
-    border-radius: 0px;
-}
-
-#mainbox {
-    border: 0;
-    padding: 0;
-    background-color: @backgroundcoloralternate;
-}
-
-#element {
-    padding: 16;
-    border: 0 0 0 0;
-    border-color: @separatorcolor;
-    background-color: @backgroundcoloralternate;
-}
-
-#element-icon {
-  margin:0 16 0 0;
-}
-
-#element-text.selected {
-    background-color: @selectioncolor;
-}
-
-#element.selected.normal {
-    background-color: @selectioncolor;
-    text-color: @foregroundcolorinverse;
-    border-radius: 0px;
-
-    border: 0 0 0 0;
-    border-color: @separatorcolor;
-}
-
-#element.alternate.normal {
-    background-color: @backgroundcoloralternate;
-}
-
-#element.normal.active {
-    background-color: #434c5e;
-}
-
-#element.alternate.active {
-    background-color: #434c5e;
-}
-
-#element.selected.active {
-    background-color: @selectioncolor;
-    text-color: @foregroundcolorinverse;
-    border-radius: 0px;
-
-    border: 0 0 0 0;
-    border-color: @separatorcolor;
-}
-
-#inputbar {
-    border: 0 solid 0 solid 0 solid 0 solid;
-    margin: 0;
-    spacing: 0;
-    border-color: @separatorcolor;
-}
-
-#prompt {
-    padding: 16;
-    background-color: @backgroundcoloralternate;
-    border: 0 0 0 0;
-}
-
-#entry {
-    padding: 16;
-}
-
-#scrollbar {
-    background-color: #f7768e;
-    background-color: #f7768e;
-    border: 0;
-    width: 8px;
-    handle-color: @scrollbarcolor;
-    handle-width: 8px;
-    background-color: @backgroundcoloralternate;
-}
-
-#scrollbar handle {
-    border: 1px;
-    border-color: #ff0000;
-}
-
+// * {
+//     bg-col:  #1e1e2e;
+//     bg-col-light: #1e1e2e;
+//     border-col: #1e1e2e;
+//     selected-col: #1e1e2e;
+//     blue: #89b4fa;
+//     fg-col: #cdd6f4;
+//     fg-col2: #f38ba8;
+//     grey: #6c7086;
+// 
+//     width: 600;
+//     font: "JetBrainsMono Nerd Font 14";
+// }
+// 
+// element-text, element-icon , mode-switcher {
+//     background-color: inherit;
+//     text-color:       inherit;
+// }
+// 
+// window {
+//     height: 360px;
+//     border: 3px;
+//     border-color: @border-col;
+//     background-color: @bg-col;
+// }
+// 
+// mainbox {
+//     background-color: @bg-col;
+// }
+// 
+// inputbar {
+//     children: [prompt,entry];
+//     background-color: @bg-col;
+//     border-radius: 5px;
+//     padding: 2px;
+// }
+// 
+// prompt {
+//     background-color: @blue;
+//     padding: 6px;
+//     text-color: @bg-col;
+//     border-radius: 3px;
+//     margin: 20px 0px 0px 20px;
+// }
+// 
+// textbox-prompt-colon {
+//     expand: false;
+//     str: ":";
+// }
+// 
+// entry {
+//     padding: 6px;
+//     margin: 20px 0px 0px 10px;
+//     text-color: @fg-col;
+//     background-color: @bg-col;
+// }
+// 
+// listview {
+//     border: 0px 0px 0px;
+//     padding: 6px 0px 0px;
+//     margin: 10px 0px 0px 20px;
+//     columns: 1;
+//     lines: 5;
+//     background-color: @bg-col;
+// }
+// 
+// element {
+//     padding: 5px;
+//     background-color: @bg-col;
+//     text-color: @fg-col  ;
+// }
+// 
+// element.alternate.normal {
+//     background-color: @backgroundcoloralternate;
+// }
+// 
+// element.alternate {
+//     background-color: @bg-col;
+// }
+// 
+// element-icon {
+//     size: 25px;
+// }
+// 
+// element selected {
+//     background-color:  @selected-col ;
+//     text-color: @fg-col2  ;
+// }
+// 
+// mode-switcher {
+//     spacing: 0;
+//   }
+// 
+// button {
+//     padding: 10px;
+//     background-color: @bg-col-light;
+//     text-color: @grey;
+//     vertical-align: 0.5; 
+//     horizontal-align: 0.5;
+// }
+// 
+// button selected {
+//   background-color: @bg-col;
+//   text-color: @blue;
+// }
+// 
+// message {
+//     background-color: @bg-col-light;
+//     margin: 2px;
+//     padding: 2px;
+//     border-radius: 5px;
+// }
+// 
+// textbox {
+//     padding: 6px;
+//     margin: 20px 0px 0px 20px;
+//     text-color: @blue;
+//     background-color: @bg-col-light;
+// }
