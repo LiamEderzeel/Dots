@@ -215,7 +215,7 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 8, // Waybar height (to be removed for auto height)
+    "height": 32, // Waybar height (to be removed for auto height)
     "width": "auto", // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -226,6 +226,7 @@
       "cpu", 
       "memory", 
       "temperature", 
+      "custom/media"
     ],
     "modules-right": [
       "tray", 
@@ -234,8 +235,9 @@
       "backlight",  
       "battery", 
       "custom/hyprlock", 
+      "idle_inhibitor",
       "clock", 
-      "idle_inhibitor"
+      "custom/power",
     ],
     // Modules configuration
      // "hyprland/workspaces": {
@@ -274,7 +276,8 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%a %d %b  %H:%M}",
+        "format-alt": "{:%H:%M}"
     },
     "cpu": {
         "format": "   {usage}%",
@@ -351,10 +354,39 @@
         "max-length": 40,
         "format-icons": {
             "spotify": "",
-            "default": "🎜"
+            "default": "🎜",
+            "Playing": "<span>󰏥 </span>",
+            "Paused": "<span> </span>",
+            "Stopped": "<span> </span>",
         },
+
+        "on-click": "playerctl --player=spotify,%any play-pause",
+        // "on-click": "playerctl play-pause",
+        // "on-scroll-up": "playerctl volume .05+",
+        // "on-scroll-down": "playerctl volume .05-",
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        // "exec-if": "pgrep spotify",
+        // "exec": "~/.config/waybar/media.sh",
+        "exec": "playerctl --player=spotify,%any -a metadata --format '{\"text\": \" {{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+		"menu": "on-click",
+		"menu-file": "~/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+    },
+    "custom/power": {
+        "format" : "⏻ ",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "~/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
     }
 }
