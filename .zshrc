@@ -101,3 +101,4 @@ docker_remove_unamed_volumes () {
   docker volume ls -q | grep -E '^[0-9a-f]{64}$' | xargs docker volume rm
 }
 
+source_save ~/.zshenv
