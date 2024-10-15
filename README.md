@@ -3,7 +3,9 @@
 ## install
 
 - `git clone --bare git@github.com:LiamEderzeel/Dots.git ~/.dots`
-- `source ~/.zshrc`
+- `alias config='git --git-dir=$HOME/.dots/ --work-tree=$HOME'`
+- `config config --local status.showUntrackedFiles no `
+- `config checkout`
 - `config remote remove origin`
 - `config remote add origin git@github.com:LiamEderzeel/Dots.git`
 
