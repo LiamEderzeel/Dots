@@ -3,20 +3,23 @@
 # export PATH=/run/wrappers/bin /home/r/.nix-profile/bin /etc/profiles/per-user/r/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-let
-  themes = pkgs.callPackage  ./common/configs/sddm-themes.nix {};
-in
+{ 
+  pkgs,
+  hostname,
+  username,
+  ...
+ }:
+
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-  # Bootloader.
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../common/pkgs.nix
+    ../common/wayland.nix
+    ../common/configs/fonts.nix
+  ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.supportedFilesystems = [ "ntfs" ];
 
   sound.enable = true;
   hardware.pulseaudio = {
@@ -26,7 +29,7 @@ in
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "machine"; # Define your hostname.
+  networking.hostName = "${hostname}";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.wireless = {
   #   enable = true;  # Enables wireless support via wpa_supplicant.
@@ -67,41 +70,6 @@ in
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
-  services.xserver.videoDrivers = ["nvidia"];
-
-   hardware.nvidia = {
-
-    # Modesetting is required.
-    modesetting.enable = true;
-
-    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
-    # of just the bare essentials.
-    powerManagement.enable = false;
-
-    # Fine-grained power management. Turns off GPU when not in use.
-    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = false;
-
-    # Use the NVidia open source kernel module (not to be confused with the
-    # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of 
-    # supported GPUs is at: 
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
-    # Only available from driver 515.43.04+
-    # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = false;
-
-    # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
-    nvidiaSettings = true;
-
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-
-
   # Configure keymap in X11
   services.xserver = {
     enable = true;
@@ -114,7 +82,7 @@ in
   services.displayManager.sddm = {
     enable = true;
     package = pkgs.libsForQt5.sddm;
-    theme = "where-is-my-sddm-theme";
+    theme = "where-is-my-sddm-theme.nix";
     wayland.enable = true;
   };
 
@@ -131,9 +99,10 @@ in
   virtualisation.docker.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.liamederzeel = {
+  users.users.${username} = {
+    shell = pkgs.zsh;
     isNormalUser = true;
-    description = "liamederzeel";
+    description = "${username}";
     extraGroups = [ "networkmanager" "wheel" "audio" "docker" ];
     packages = with pkgs; [];
   };
@@ -142,92 +111,16 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.variables = {
-    GDK_SCALE = 2;
-    GTK_THEME = "Adwaita:dark";
-    QT_THEME = "Adwaita:dark"; # not sure if real
+  environment = {
+    sessionVariables = {
+      FLAKE = "/home/${username}/.nixos";
+    };
+    variables = {
+      GDK_SCALE = 2;
+      GTK_THEME = "Adwaita:dark";
+      QT_THEME = "Adwaita:dark"; # not sure if real
+    };
   };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.shells = with pkgs; [
-    zsh
-  ];
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-    neovim
-    tmux
-    git
-    openssh
-    hyprland 
-    hyprpaper
-    waybar
-    waypaper
-    firefox-wayland 
-    alacritty 
-    rofi-wayland
-    keyd
-    dolphin
-    gnome.nautilus
-    xwayland
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-gtk
-    neofetch
-    nix-prefetch-git
-    libsForQt5.qt5.qtquickcontrols2
-    libsForQt5.qt5.qtgraphicaleffects
-    fzf
-    ripgrep
-    wl-clipboard
-    lazygit
-    lazydocker
-    killall
-    pulseaudio
-    hyprlock
-    pavucontrol
-    wev # xevents to see keyboard and mouse events
-    brightnessctl
-    ferdium
-    eza
-    networkmanagerapplet
-    btop
-    spotify
-    slurp
-    grim
-    cinnamon.nemo-with-extensions   
-    vlc
-    mpv
-    kitty
-    ranger
-    lf
-    gwenview
-    gcc
-    node2nix
-    nixd
-    docker
-    kubectl
-    kubeseal
-    doctl
-    transmission
-    transmission-gtk
-    python3
-    nodejs_22
-    playerctl
-    inkscape
-    themes.where-is-my-sddm-theme
-  ];
-
-
-  fonts = {
-    fontDir.enable = true;
-    packages = with pkgs; [
-      nerdfonts
-      font-awesome
-      google-fonts
-    ];
-  };
-
 
   programs.zsh = {
     enable = true;
@@ -235,13 +128,6 @@ in
 
   programs.waybar = {
     enable = true;
-  };
-
-   programs.hyprland = {
-     enable = true;
-     xwayland = {
-    	enable = true;
-     };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
