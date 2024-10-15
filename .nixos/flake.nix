@@ -6,12 +6,14 @@
     # configuration.nix. You can also use latter versions if you wish to
     # upgrade.
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
   };
   outputs = {
     self,
-  nixpkgs,
+    nixpkgs,
+    proxmox-nixos,
   # nixos-boot,
-  ...
+    ...
   } @ inputs: let
     pkgs = import nixpkgs {
     inherit system;
@@ -29,6 +31,7 @@
     username = "liamederzeel"; 
     desktop = "machine"; 
     laptop = "lisa"; 
+    lab1 = "lab1"; 
     system = "x86_64-linux"; # Rarely, change system architecture
     email = "liamederzeel@gmail.com"; # your email for Git and such 
     # discord = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTI1NDEyMDE3ODA3NDEyODQ5Ni9jdklWWVlfZURGMXRLcmR1aHJRW"; # Change/ remove
@@ -48,8 +51,7 @@
                 email
                 # discord
                 hostname;
-            };
-          # Our main nixos configuration file <
+          };
           modules = [./${desktop}/configuration.nix];
           # modules = [./nixos/${desktop}/configuration.nix nixos-boot.nixosModules.default];
         };
@@ -65,9 +67,21 @@
               # discord
               hostname;
           };
-          # Our main nixos configuration file <
           modules = [./${laptop}/configuration.nix];
           # modules = [./nixos/${laptop}/configuration.nix nixos-boot.nixosModules.default];
+        };
+        ${lab1} = nixpkgs.lib.nixosSystem { 
+          specialArgs = let hostname = "${lab1}";  in {
+            inherit
+              inputs
+              self
+              username
+              system
+              stateVersion
+              hostname;
+              overylays = [proxmox-nixos.overlays.${system}];
+          };
+          modules = [./${lab1}/configuration.nix proxmox-nixos.nixosModules.proxmox-ve];
         };
       };
   };
