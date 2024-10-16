@@ -79,9 +79,21 @@
               system
               stateVersion
               hostname;
-              overylays = [proxmox-nixos.overlays.${system}];
           };
-          modules = [./${lab1}/configuration.nix proxmox-nixos.nixosModules.proxmox-ve];
+          # modules = [./${lab1}/configuration.nix ];
+          modules = [
+            ./${lab1}/configuration.nix 
+
+            ({ pkgs, lib, ... }: {
+              services.proxmox-ve.enable = true;
+              nixpkgs.overlays = [
+                proxmox-nixos.overlays.${system}
+              ];
+
+            })
+
+            proxmox-nixos.nixosModules.proxmox-ve 
+            ];
         };
       };
   };
