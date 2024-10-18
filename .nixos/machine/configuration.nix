@@ -27,6 +27,15 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "${hostname}"; 
+  networking.extraHosts = ''
+    127.0.0.1 whas.test
+    127.0.0.1 portal.whas.test
+
+    127.0.0.1 hot.test
+    127.0.0.1 academy.hot.test
+
+    192.168.1.181 lab1.home
+  '';
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.wireless = {
   #   enable = true;  # Enables wireless support via wpa_supplicant.

@@ -57,7 +57,9 @@ alias m='minikube'
 alias d='docker'
 alias dc='docker compose'
 alias sudo='sudo '
-alias p='tmux-booster -d ~/projects/personal -d ~/projects/whas -d ~/projects/hot -d ~/projects/personal/valideer'
+# alias p='tmux-booster -d ~/projects/personal -d ~/projects/whas -d ~/projects/hot -d ~/projects/personal/valideer'
+
+alias p='tmux-booster -d ~/projects/personal -d ~/projects/whas -d ~/projects/hot'
 
 
 if exists_in_path exa; then 
