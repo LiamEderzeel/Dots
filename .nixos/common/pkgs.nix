@@ -69,5 +69,6 @@ in
     inkscape
     themes.where-is-my-sddm-theme
     lua-language-server
+    xz
   ];
 }
