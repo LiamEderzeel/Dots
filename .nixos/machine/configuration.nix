@@ -3,7 +3,7 @@
 # export PATH=/run/wrappers/bin /home/r/.nix-profile/bin /etc/profiles/per-user/r/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, hostname, username, ... }:
+{ config, pkgs, pkgs-unstable, hostname, username, ... }:
 {
   imports = [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -33,8 +33,6 @@
 
     127.0.0.1 hot.test
     127.0.0.1 academy.hot.test
-
-    192.168.1.181 lab1.home
   '';
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.wireless = {
@@ -161,6 +159,10 @@
       GTK_THEME = "Adwaita:dark";
       QT_THEME = "Adwaita:dark"; # not sure if real
     };
+    systemPackages = [
+      pkgs.vscode
+      pkgs-unstable.dbgate
+    ];
   };
 
   programs.zsh = {

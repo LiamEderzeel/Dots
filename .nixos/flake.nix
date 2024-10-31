@@ -6,26 +6,39 @@
     # configuration.nix. You can also use latter versions if you wish to
     # upgrade.
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
   };
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     proxmox-nixos,
   # nixos-boot,
     ...
   } @ inputs: let
-    pkgs = import nixpkgs {
-    inherit system;
-    overlays = [
-      # inputs.nur.overlay
-    ];
+  # pkgs-unstable = import nixpkgs-unstable {
+  #   inherit system;
+  #
+  #   config = {
+  #     allowUnfree = true;
+  #     # allowUnfreePredicate = _: true;
+  #   };
+  # };
 
-    config = {
-      allowUnfree = true;
-      # allowUnfreePredicate = _: true;
-    };
-  };
+  # pkgs = import nixpkgs {
+  #   inherit system;
+  #   overlays = [
+  #     # inputs.nur.overlay
+  #   ];
+  #
+  #
+  #   config = {
+  #     allowUnfree = true;
+  #     # allowUnfreePredicate = _: true;
+  #   };
+  # };
+
 
   stateVersion = "24.05"; 
     username = "liamederzeel"; 
@@ -51,7 +64,17 @@
                 email
                 # discord
                 hostname;
+
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+
+            config = {
+              allowUnfree = true;
+              # allowUnfreePredicate = _: true;
+            };
           };
+          };
+
           modules = [./${desktop}/configuration.nix];
           # modules = [./nixos/${desktop}/configuration.nix nixos-boot.nixosModules.default];
         };

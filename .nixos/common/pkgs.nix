@@ -70,5 +70,7 @@ in
     themes.where-is-my-sddm-theme
     lua-language-server
     xz
+    exfat
+    gnome.gnome-disk-utility
   ];
 }
