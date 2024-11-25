@@ -162,6 +162,7 @@
     systemPackages = [
       pkgs.vscode
       pkgs-unstable.dbgate
+      pkgs.kubernetes-helm
     ];
   };
 
