@@ -59,7 +59,8 @@ alias dc='docker compose'
 alias sudo='sudo '
 # alias p='tmux-booster -d ~/projects/personal -d ~/projects/whas -d ~/projects/hot -d ~/projects/personal/valideer'
 
-alias p='tmux-booster -d ~/projects/personal -d ~/projects/whas -d ~/projects/hot'
+alias p='tmux-booster -d ~/projects/personal -d ~/projects/whas -d ~/projects/hot -d ~/projects/hoph'
+
 
 
 if exists_in_path exa; then 
