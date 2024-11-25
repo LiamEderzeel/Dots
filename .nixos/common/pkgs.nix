@@ -1,11 +1,18 @@
 { pkgs,
+  pkgs-unstable,
   username,
  ...}:
 let
   themes = pkgs.callPackage  ./configs/sddm-themes.nix {};
-in
-{
-  environment.systemPackages = with pkgs; [
+  unstable = with pkgs-unstable; [
+    ferdium
+    spotify
+    lazygit
+    lazydocker
+    nodePackages."@antfu/ni"
+    nodejs_22
+  ];
+  stable = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     neovim
@@ -32,19 +39,15 @@ in
     fzf
     ripgrep
     wl-clipboard
-    lazygit
-    lazydocker
     killall
     pulseaudio
     hyprlock
     pavucontrol
     wev # xevents to see keyboard and mouse events
     brightnessctl
-    ferdium
     eza
     networkmanagerapplet
     btop
-    spotify
     slurp
     grim
     cinnamon.nemo-with-extensions   
@@ -64,7 +67,6 @@ in
     transmission
     transmission-gtk
     python3
-    nodejs_22
     playerctl
     inkscape
     themes.where-is-my-sddm-theme
@@ -73,4 +75,7 @@ in
     exfat
     gnome.gnome-disk-utility
   ];
+in
+{
+  environment.systemPackages = stable ++ unstable;
 }

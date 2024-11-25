@@ -68,17 +68,18 @@
                 # discord
                 hostname;
 
-          pkgs-unstable = import nixpkgs-unstable {
-            inherit system;
+            pkgs-unstable = import nixpkgs-unstable {
+              inherit system;
 
-            config = {
-              allowUnfree = true;
-              # allowUnfreePredicate = _: true;
+              config = {
+                allowUnfree = true;
+                # allowUnfreePredicate = _: true;
+              };
             };
-          };
           };
 
           modules = [./${desktop}/configuration.nix nix-ld.nixosModules.nix-ld];
+
           # modules = [./nixos/${desktop}/configuration.nix nixos-boot.nixosModules.default];
         };
         ${laptop} = nixpkgs.lib.nixosSystem { 
