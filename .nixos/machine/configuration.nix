@@ -116,13 +116,36 @@
       variant = "mac";
     };
     videoDrivers = ["nvidia"];
+    xrandrHeads=[
+      {
+        output="DP-2";
+        primary=true;
+      }
+      {
+        output = "DP-1";
+        monitorConfig = ''Option "Enable" "false"'';
+      }
+    ];
+    exportConfiguration=true;
   };
 
   services.displayManager.sddm = {
     enable = true;
     package = pkgs.libsForQt5.sddm;
     theme = "where-is-my-sddm-theme";
-    wayland.enable = true;
+    wayland = {
+      enable = true;
+      # Proposal
+      # setupScript = ''
+      #   wlr-randr --output DP-1 --off
+      #   wlr-randr --output DP-2 --mode 3840x2160
+      # '';
+    };
+    # setupScript = ''
+    #   #!/bin/sh
+    #   xrandr --output DP-1 --off
+    #   xrandr --output DP-2 --mode 3840x2160
+    # '';
   };
 
   services.keyd.enable = true;
