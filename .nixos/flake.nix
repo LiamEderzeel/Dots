@@ -8,12 +8,15 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
+    nix-ld.url = "github:Mic92/nix-ld";
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = {
     self,
     nixpkgs,
     nixpkgs-unstable,
     proxmox-nixos,
+    nix-ld,
   # nixos-boot,
     ...
   } @ inputs: let
@@ -75,7 +78,7 @@
           };
           };
 
-          modules = [./${desktop}/configuration.nix];
+          modules = [./${desktop}/configuration.nix nix-ld.nixosModules.nix-ld];
           # modules = [./nixos/${desktop}/configuration.nix nixos-boot.nixosModules.default];
         };
         ${laptop} = nixpkgs.lib.nixosSystem { 
