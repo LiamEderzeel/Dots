@@ -181,6 +181,9 @@
       GDK_SCALE = 2;
       GTK_THEME = "Adwaita:dark";
       QT_THEME = "Adwaita:dark"; # not sure if real
+      XDG_CURRENT_DESKTOP = "Hyprland";
+      XDG_SESSION_TYPE = "wayland";
+      XDG_SESSION_DESKTOP = "Hyprland";
     };
     systemPackages = [
       pkgs.vscode
