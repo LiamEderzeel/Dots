@@ -288,7 +288,8 @@
     },
     "temperature": {
         // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/device/local_cpus",
         "critical-threshold": 70,
         "format-critical": "{icon} {temperatureC}°C 🔥",
         "format": "{icon} {temperatureC}°C",
