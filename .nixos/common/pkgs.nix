@@ -10,7 +10,7 @@ let
     lazygit
     lazydocker
     nodePackages."@antfu/ni"
-    nodejs_22
+    nodejs_20
   ];
   stable = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -79,6 +79,7 @@ let
     unzip
     jq
     weston
+    lm_sensors
   ];
 in
 {
