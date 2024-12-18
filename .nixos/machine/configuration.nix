@@ -186,11 +186,16 @@
       XDG_SESSION_DESKTOP = "Hyprland";
     };
     systemPackages = [
+      pkgs-unstable.coolercontrol.coolercontrold
+      pkgs-unstable.coolercontrol.coolercontrol-gui
+      pkgs-unstable.coolercontrol.coolercontrol-liqctld
       pkgs.vscode
       pkgs-unstable.dbgate
       pkgs.kubernetes-helm
     ];
   };
+
+  programs.coolercontrol.enable = true;
 
   programs.zsh = {
     enable = true;
