@@ -194,6 +194,8 @@
       pkgs.vscode
       pkgs-unstable.dbgate
       pkgs.kubernetes-helm
+      pkgs.rustc 
+      pkgs.cargo 
     ];
   };
 
