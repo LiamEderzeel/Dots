@@ -1,9 +1,13 @@
 { pkgs,
   pkgs-unstable,
   username,
+  inputs,
  ...}:
 let
   themes = pkgs.callPackage  ./configs/sddm-themes.nix {};
+  packages = [ 
+    inputs.tmux-booster
+  ];
   unstable = with pkgs-unstable; [
     ferdium
     spotify
@@ -85,5 +89,5 @@ let
   ];
 in
 {
-  environment.systemPackages = stable ++ unstable;
+  environment.systemPackages = stable ++ unstable ++ packages;
 }

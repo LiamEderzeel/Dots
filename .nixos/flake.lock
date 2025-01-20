@@ -132,6 +132,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1737062831,
+        "narHash": "sha256-Tbk1MZbtV2s5aG+iM99U8FqwxU/YNArMcWAv6clcsBc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "5df43628fdf08d642be8ba5b3625a6c70731c19c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "proxmox-nixos": {
       "inputs": {
         "crane": "crane",
@@ -159,7 +175,8 @@
         "nix-ld": "nix-ld",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "proxmox-nixos": "proxmox-nixos"
+        "proxmox-nixos": "proxmox-nixos",
+        "tmux-booster": "tmux-booster"
       }
     },
     "systems": {
@@ -174,6 +191,24 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tmux-booster": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1737380516,
+        "narHash": "sha256-wdd7rx/2azZe17NKZK8vn4Z7dOaTCX8IRZh95v04eaE=",
+        "owner": "LiamEderzeel",
+        "repo": "tmux-booster",
+        "rev": "7f446a31623ffe019bc503c9d90d22f9fc0fa750",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LiamEderzeel",
+        "repo": "tmux-booster",
         "type": "github"
       }
     },

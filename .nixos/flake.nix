@@ -10,6 +10,9 @@
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
+    tmux-booster = {
+      url = "github:LiamEderzeel/tmux-booster";
+    };
   };
   outputs = {
     self,
@@ -17,6 +20,7 @@
     nixpkgs-unstable,
     proxmox-nixos,
     nix-ld,
+    tmux-booster,
   # nixos-boot,
     ...
   } @ inputs: let
