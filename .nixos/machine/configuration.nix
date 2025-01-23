@@ -47,8 +47,7 @@
   #   enable = true;  # Enables wireless support via wpa_supplicant.
   #   networks."Netbarry-Home-N".psk = "eTnFMNCbXnh3Egbp";
   # };
-
-  # Configure network proxy if necessary
+# Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
@@ -202,6 +201,7 @@
       pkgs.vscode
       pkgs-unstable.dbgate
       pkgs.kubernetes-helm
+      pkgs.skaffold
       pkgs.rustc 
       pkgs.cargo 
     ];
