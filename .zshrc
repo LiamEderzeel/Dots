@@ -64,7 +64,7 @@ alias p='tmux-booster -d ~/projects/personal -d ~/projects/whas -d ~/projects/ho
 
 
 if exists_in_path exa; then 
-  alias ls='eza auto --icons=always '
+  alias ls='eza --icons=always '
   export EXA_ICON_SPACING=2; 
 fi
 
