@@ -8,6 +8,7 @@
   imports = [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../common/pkgs.nix
+      ../common/kanata.nix
       ../common/wayland.nix
       ../common/configs/fonts.nix
   ];
@@ -157,7 +158,7 @@
     # '';
   };
 
-  services.keyd.enable = true;
+  # services.keyd.enable = true;
   
   services.dbus.enable = true;
   xdg.portal = {
