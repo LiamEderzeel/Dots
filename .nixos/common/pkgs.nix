@@ -1,6 +1,6 @@
 { pkgs,
   pkgs-unstable,
-  username,
+  system,
   inputs,
  ...}:
 let
@@ -17,6 +17,8 @@ let
     nodejs_20
     mongodb-compass
     mongosh
+    mongodb-tools
+    darktable
   ];
   stable = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -36,6 +38,7 @@ let
     keyd
     dolphin
     gnome.nautilus
+    eog
     xwayland
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
@@ -86,6 +89,8 @@ let
     jq
     weston
     lm_sensors
+    gimp
+    baobab
   ];
 in
 {

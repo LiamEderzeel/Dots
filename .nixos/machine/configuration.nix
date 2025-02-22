@@ -205,6 +205,10 @@
       pkgs.skaffold
       pkgs.rustc 
       pkgs.cargo 
+      pkgs.pnpm 
+      pkgs.deno
+      pkgs.ueberzugpp
+      pkgs.yazi
     ];
   };
 
