@@ -1,7 +1,7 @@
 export DOTDIR=~/.config
 export ZDOTDIR=$DOTDIR/zsh
 export EDITOR='nvim'
-export TERM=xterm-256color
+# export TERM=xterm-256color
 DEFAULT_USER='liamederzeel'
 
 # Completion init
@@ -59,7 +59,7 @@ alias dc='docker compose'
 alias sudo='sudo '
 # alias p='tmux-booster -d ~/projects/personal -d ~/projects/whas -d ~/projects/hot -d ~/projects/personal/valideer'
 
-alias p='tmux-booster -d ~/projects/personal -d ~/projects/whas -d ~/projects/hot -d ~/projects/hoph'
+alias p='tmux-booster -d ~/projects/personal -d ~/projects/whas -d ~/projects/hot -d ~/projects/hoph -p ~/.nixos'
 
 
 
