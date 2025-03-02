@@ -19,6 +19,11 @@ let
     mongosh
     mongodb-tools
     darktable
+    obsidian
+    librewolf
+    fastfetch
+    ranger
+    ueberzugpp
   ];
   stable = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -36,13 +41,11 @@ let
     alacritty 
     rofi-wayland
     keyd
-    dolphin
     gnome.nautilus
     eog
     xwayland
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
-    neofetch
     nix-prefetch-git
     libsForQt5.qt5.qtquickcontrols2
     libsForQt5.qt5.qtgraphicaleffects
@@ -64,7 +67,6 @@ let
     vlc
     mpv
     kitty
-    ranger
     lf
     gwenview
     gcc
@@ -91,6 +93,7 @@ let
     lm_sensors
     gimp
     baobab
+    zoxide
   ];
 in
 {

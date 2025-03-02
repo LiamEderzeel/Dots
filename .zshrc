@@ -105,3 +105,6 @@ docker_remove_unamed_volumes () {
 }
 
 source_save ~/.zshenv
+
+# zoxide init
+eval "$(zoxide init zsh)"
