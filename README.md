@@ -1,3 +1,6 @@
+<div align="center"><img src="assets/nixos-logo.png" width="300px"></div>
+<h1 align="center">System Configuration</h1>
+
 # Dots
 
 ## install
@@ -18,5 +21,3 @@
 
 - https://www.atlassian.com/git/tutorials/dotfiles
 - https://news.ycombinator.com/item?id=11071754
-
-
