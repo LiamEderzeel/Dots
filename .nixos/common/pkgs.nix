@@ -13,8 +13,6 @@ let
     spotify
     lazygit
     lazydocker
-    nodePackages."@antfu/ni"
-    nodejs_20
     mongodb-compass
     mongosh
     mongodb-tools
@@ -24,6 +22,15 @@ let
     fastfetch
     ranger
     ueberzugpp
+
+    nodePackages."@antfu/ni"
+    nodejs_22
+    pnpm_10
+    # corepack_latest
+    deno
+    yazi
+    rustc 
+    cargo 
   ];
   stable = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -41,7 +48,7 @@ let
     alacritty 
     rofi-wayland
     keyd
-    gnome.nautilus
+    nautilus
     eog
     xwayland
     xdg-desktop-portal-hyprland
@@ -63,7 +70,7 @@ let
     btop
     slurp
     grim
-    cinnamon.nemo-with-extensions   
+    nemo-with-extensions   
     vlc
     mpv
     kitty
@@ -76,8 +83,6 @@ let
     kubectl
     kubeseal
     doctl
-    transmission
-    transmission-gtk
     python3
     playerctl
     inkscape
@@ -85,7 +90,8 @@ let
     lua-language-server
     xz
     exfat
-    gnome.gnome-disk-utility
+    # gnome.gnome-disk-utility
+    gnome-disk-utility
     docker-compose
     unzip
     jq
@@ -94,8 +100,10 @@ let
     gimp
     baobab
     zoxide
+    kubernetes-helm
+    skaffold
   ];
 in
 {
-  environment.systemPackages = stable ++ unstable ++ packages;
+  environment.systemPackages = unstable ++ stable ++ packages;
 }

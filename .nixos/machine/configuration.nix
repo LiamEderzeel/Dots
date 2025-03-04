@@ -196,18 +196,11 @@
       XDG_SESSION_DESKTOP = "Hyprland";
     };
     systemPackages = [
-      pkgs-unstable.coolercontrol.coolercontrold
-      pkgs-unstable.coolercontrol.coolercontrol-gui
-      pkgs-unstable.coolercontrol.coolercontrol-liqctld
+      # pkgs-unstable.coolercontrol.coolercontrold
+      # pkgs-unstable.coolercontrol.coolercontrol-gui
+      # pkgs-unstable.coolercontrol.coolercontrol-liqctld
       pkgs.vscode
-      pkgs-unstable.dbgate
-      pkgs.kubernetes-helm
-      pkgs.skaffold
-      pkgs.rustc 
-      pkgs.cargo 
-      pkgs.pnpm 
-      pkgs.deno
-      pkgs.yazi
+      # pkgs-unstable.dbgate
     ];
   };
 
