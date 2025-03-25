@@ -1,7 +1,5 @@
 <div align="center"><img src="assets/nixos-logo.png" width="300px"></div>
-<h1 align="center">System Configuration</h1>
-
-# Dots
+<h1 align="center">System Configurations</h1>
 
 ## install
 
