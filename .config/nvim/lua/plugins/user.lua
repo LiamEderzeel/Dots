@@ -112,7 +112,7 @@ return {
   {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
-    lazy = true,
+    lazy = false,
     ft = "markdown",
     -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
     -- event = {
@@ -128,8 +128,8 @@ return {
 
       -- see below for full list of optional dependencies 👇
     },
-    opts = {
-      workspaces = {
+    opts = function(_, opts)
+      opts.workspaces = {
         {
           name = "personal",
           path = "~/vaults/personal",
@@ -138,10 +138,13 @@ return {
           name = "work",
           path = "~/vaults/work",
         },
-      },
+      }
+
+      local maps = opts.mappings
+      local obsidian = require "obsidian"
 
       -- see below for full list of options 👇
-    },
+    end,
   },
   {
     "folke/zen-mode.nvim",
@@ -224,6 +227,28 @@ return {
       on_open = function(win) end,
       -- callback where you can add custom code when the Zen window closes
       on_close = function() end,
+    },
+    {
+      "folke/noice.nvim",
+      event = "VeryLazy",
+      opts = {
+        -- add any options here
+      },
+      presets = {
+        bottom_search = true, -- use a classic bottom cmdline for search
+        command_palette = true, -- position the cmdline and popupmenu together
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false, -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = false, -- add a border to hover docs and signature help
+      },
+      dependencies = {
+        -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+        "MunifTanjim/nui.nvim",
+        -- OPTIONAL:
+        --   `nvim-notify` is only needed, if you want to use the notification view.
+        --   If not available, we use `mini` as the fallback
+        "rcarriga/nvim-notify",
+      },
     },
   },
 }
