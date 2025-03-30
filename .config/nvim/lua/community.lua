@@ -14,7 +14,6 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.github-nvim-theme" },
-  { import = "astrocommunity.pack.typescript-deno" },
 
   -- import/override with your plugins folder
 }
