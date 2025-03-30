@@ -9,6 +9,7 @@ let
     inputs.tmux-booster
   ];
   unstable = with pkgs-unstable; [
+    neovim
     ferdium
     spotify
     lazygit
@@ -38,7 +39,6 @@ let
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     wlr-randr
-    neovim
     tmux
     git
     openssh
