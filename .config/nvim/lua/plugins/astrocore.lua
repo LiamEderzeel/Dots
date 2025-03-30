@@ -1,28 +1,21 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
-local get_icon = require("astroui").get_icon
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
-    git_worktrees = {
-      {
-        toplevel = vim.env.HOME,
-        gitdir = vim.env.HOME .. "/.dots",
-      },
-    },
     -- Configure core features of AstroNvim
     features = {
       large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
-      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+      diagnostics = { virtual_text = true, virtual_lines = false }, -- diagnostic settings on startup
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
@@ -30,6 +23,19 @@ return {
     diagnostics = {
       virtual_text = true,
       underline = true,
+    },
+    -- passed to `vim.filetype.add`
+    filetypes = {
+      -- see `:h vim.filetype.add` for usage
+      extension = {
+        foo = "fooscript",
+      },
+      filename = {
+        [".foorc"] = "fooscript",
+      },
+      pattern = {
+        [".*/etc/foo/.*"] = "fooscript",
+      },
     },
     -- vim options can be configured here
     options = {
@@ -66,11 +72,6 @@ return {
           end,
           desc = "Close buffer from tabline",
         },
-
-        -- ["<Leader>o"] = { desc = "Obsidian" },
-        ["<Leader>o"] = { function() print "" end, desc = get_icon("Obsidian", 1, true) .. "Obsidian" },
-        ["<Leader>of"] = { "<Cmd>ObsidianQuickSwitch<CR>", desc = "Quick switch" },
-        ["<Leader>z"] = { function() require("zen-mode").toggle() end, desc = "Zen mode" },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
