@@ -42,6 +42,9 @@
 
     127.0.0.1 hot.test
     127.0.0.1 academy.hot.test
+    127.0.0.1 admin.hot.test
+    127.0.0.1 ams.hot.test
+    127.0.0.1 ams2.hot.test
   '';
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.wireless = {
