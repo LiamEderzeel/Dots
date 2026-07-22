@@ -165,6 +165,9 @@ let
     freecadWayland
     # orcaSlicerWrapped
     orca-slicer
+    gphoto2
+    kdePackages.kdenlive
+    chromium
   ];
 in
 {
