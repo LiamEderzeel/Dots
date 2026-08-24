@@ -53,7 +53,7 @@
 
   stateVersion = "25.11"; 
     username = "liamederzeel"; 
-    desktop = "machine"; 
+    desktop = "toaster"; 
     laptop = "lisa"; 
     lab1 = "lab1"; 
     system = "x86_64-linux"; # Rarely, change system architecture

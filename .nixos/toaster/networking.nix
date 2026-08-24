@@ -11,6 +11,8 @@
     127.0.0.1 ams.hot.test
     127.0.0.1 ams2.hot.test
   '';
+
+  networking.nameservers = [ "192.168.1.101" ];
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.wireless = {
   #   enable = true;  # Enables wireless support via wpa_supplicant.
@@ -31,14 +33,14 @@
     };
   };
 
-  networking.wg-quick.interfaces = {
-    wg0 = {
-      configFile = "/etc/wireguard/wg0.conf";
-    };
-    wg1 = {
-      configFile = "/etc/wireguard/wg1.conf";
-    };
-  };
+  # networking.wg-quick.interfaces = {
+  #   wg0 = {
+  #     configFile = "/etc/wireguard/wg0.conf";
+  #   };
+  #   wg1 = {
+  #     configFile = "/etc/wireguard/wg1.conf";
+  #   };
+  # };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
