@@ -90,6 +90,8 @@ let
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     slack
     telegram-desktop
+    thunderbird
+    gajim
   ];
   stable = with pkgs; [
     kdePackages.sddm
