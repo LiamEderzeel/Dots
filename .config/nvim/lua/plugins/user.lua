@@ -235,6 +235,10 @@ return {
           name = "rogue-trader",
           path = "~/Documents/obsidian/rogue-trader",
         },
+        {
+          name = "training-manager-spec",
+          path = "~/projects/hot/training-manager-spec",
+        },
       },
 
       -- see below for full list of options 👇

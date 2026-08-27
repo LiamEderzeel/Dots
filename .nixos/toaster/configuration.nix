@@ -15,6 +15,7 @@
       ../common/nvidia.nix
       ../common/syncthing.nix
       ../common/tailscale.nix
+      ../common/terminal.nix
       ../common/mail.nix
       ./networking.nix
       ./audio.nix

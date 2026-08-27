@@ -34,20 +34,13 @@ let
     inputs.zen-browser.packages."${system}".specific
   ];
   unstable = with pkgs-unstable; [
-    neovim
     ferdium
     spotify
-    lazygit
-    lazydocker
     obsidian
-    fastfetch
-    ranger
-    ueberzugpp
     nodejs_22
     pnpm_10
     # corepack_latest
     deno
-    yazi
     rustc 
     rust-analyzer
     clippy
@@ -65,12 +58,10 @@ let
     awww
     openssl
     sqlitebrowser
-    zip
     slurp
     grim
     teensy-loader-cli
     teensy-udev-rules
-    hyprpanel
     darktable
     signal-desktop
     xdg-desktop-portal-hyprland
@@ -83,7 +74,6 @@ let
     bibata-cursors
     glib
     gsettings-desktop-schemas
-    ladybird
     ripgrep
     easyeffects
     quickshell
@@ -97,15 +87,14 @@ let
     kdePackages.sddm
     where-is-my-sddm-theme
     # themes.where-is-my-sddm-theme
-    wlr-randr
     tmux
     git
-    openssh
+    lazygit
+    lazydocker
     hyprpaper
     waybar
     waypaper
     firefox 
-    alacritty 
     rofi
     keyd
     nautilus
@@ -116,20 +105,15 @@ let
     libsForQt5.qt5.qtquickcontrols2
     libsForQt5.qt5.qtgraphicaleffects
     fzf
-    wl-clipboard
-    killall
     hyprlock
     hypridle
     pavucontrol
     wev # xevents to see keyboard and mouse events
     brightnessctl
     eza
-    btop
     nemo-with-extensions   
     vlc
     mpv
-    kitty
-    lf
     kdePackages.gwenview
     gcc
     librsvg
@@ -143,25 +127,16 @@ let
     playerctl
     inkscape
     lua-language-server
-    xz
-    exfat
     gnome-disk-utility
     docker-compose
-    unzip
     jq
-    lm_sensors
     gimp
     baobab
-    zoxide
     kubernetes-helm
     skaffold
-    wireguard-tools
-    dig
-    usbutils
     showmethekey
     kicad
     blender
-    dysk
     libreoffice
     # freecad
     freecadWayland
