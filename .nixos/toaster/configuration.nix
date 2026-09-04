@@ -162,7 +162,7 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" "audio" "docker" "plugdev" "lp" "scanner" "dialout"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker" "plugdev" "lp" "scanner" "dialout" "video" "render" ];
     packages = with pkgs; [];
   };
   users.defaultUserShell = pkgs.zsh;

@@ -35,11 +35,11 @@ let
   ];
   unstable = with pkgs-unstable; [
     ferdium
-    spotify
     obsidian
     nodejs_22
     pnpm_10
     # corepack_latest
+    corepack
     deno
     rustc 
     rust-analyzer
@@ -48,7 +48,6 @@ let
     cargo 
     television
     fd
-    minikube
     networkmanagerapplet
     proton-vpn
     postman
@@ -82,6 +81,7 @@ let
     telegram-desktop
     thunderbird
     gajim
+    beekeeper-studio
   ];
   stable = with pkgs; [
     kdePackages.sddm
@@ -145,6 +145,7 @@ let
     gphoto2
     kdePackages.kdenlive
     chromium
+    spotify
   ];
 in
 {
