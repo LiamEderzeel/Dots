@@ -84,7 +84,6 @@ let
     beekeeper-studio
   ];
   stable = with pkgs; [
-    kdePackages.sddm
     where-is-my-sddm-theme
     # themes.where-is-my-sddm-theme
     tmux
